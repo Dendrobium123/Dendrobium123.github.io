@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>笔记 on Dendrobiumcgk</title>
+        <link>https:Dendrobium123.github.iocategories/%E7%AC%94%E8%AE%B0/</link>
+        <description>Recent content in 笔记 on Dendrobiumcgk</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Fri, 01 Mar 2024 21:56:02 +0800</lastBuildDate><atom:link href="https:Dendrobium123.github.iocategories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>模拟电子技术笔记</title>
+        <link>https:Dendrobium123.github.iop/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Fri, 01 Mar 2024 21:56:02 +0800</pubDate>
+        
+        <guid>https:Dendrobium123.github.iop/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/微信图片_20240303141619.jpg" alt="Featured image of post 模拟电子技术笔记" /&gt;&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=3947467&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
+&lt;h1 id=&#34;模拟电路&#34;&gt;模拟电路&lt;/h1&gt;
+&lt;h3 id=&#34;模拟电路是指用来对模拟信号进行传输变换处理放大测量和显示等工作的电路它主要包括放大电路信号运算和处理电路振荡电路调制和解调电路及电源&#34;&gt;模拟电路是指用来对模拟信号进行传输、变换、处理、放大、测量和显示等工作的电路。它主要包括放大电路、信号运算和处理电路、振荡电路、调制和解调电路及电源。&lt;/h3&gt;
+&lt;h3 id=&#34;何为模拟&#34;&gt;何为模拟？&lt;/h3&gt;
+&lt;p&gt;在模拟电路中，电压高低（或电流大小）是模拟了所代表的物理量的变化，例如声音信号，声音被话筒转换成电压时，电压的高低直接反映了音量大小，声音的频率（音调）直接就是电信号的频率，此谓模拟的概念。&lt;/p&gt;
+&lt;h3 id=&#34;半导体基础&#34;&gt;半导体基础&lt;/h3&gt;
+&lt;h4 id=&#34;1本征半导体无杂质的稳定结构其本身导电能力差一般为4价的硅晶体&#34;&gt;1.本征半导体：无杂质的稳定结构，其本身导电能力差（一般为+4价的硅晶体&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;其中不同原子的电子会形成共价键&lt;/li&gt;
+&lt;li&gt;载流子浓度低&lt;/li&gt;
+&lt;li&gt;易受温度影响&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;2何为载流子&#34;&gt;2.何为载流子？&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;脱离共价键的电子称为自由电子（negative&lt;/li&gt;
+&lt;li&gt;原先的空缺位称为空穴（positive&lt;/li&gt;
+&lt;li&gt;方便数学处理，将空穴视为一种粒子，因此可与自由电子称为载流子&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;3杂质半导体在本征半导体中掺杂5价元素和3价元素&#34;&gt;3.杂质半导体（在本征半导体中掺杂+5价元素和+3价元素&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;N型半导体：多数载流子为自由电子（掺杂5价元素磷，施主原子—&amp;gt;PN结构中为➕&lt;/li&gt;
+&lt;li&gt;P型半导体：多数载流子为空穴（掺杂3价元素硼，受主原子—&amp;gt;PN结构中为➖&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;4pn结单向导电性的原因&#34;&gt;4.PN结（单向导电性的原因&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;本质原因（2 stages
+&lt;ul&gt;
+&lt;li&gt;扩散运动（多子参与）：参杂的交接面的剧烈浓度差导致，作用后，P区与N区交界面饱和，载流子不再扩散，中间部分称为耗尽层。
+&lt;ul&gt;
+&lt;li&gt;高掺杂—&amp;gt;耗尽层宽度变窄&lt;/li&gt;
+&lt;li&gt;低掺杂—&amp;gt;耗尽层交宽&lt;/li&gt;
+&lt;li&gt;多子意义为大部分载流子&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;漂移运动（少子参与）：扩散运动后，耗尽层不是一个电中和的状态，因此会有內电场，从而在內电场的作用下，少子受电场力作用产生的漂移运动
+&lt;ul&gt;
+&lt;li&gt;P区自由电子飘向N区，N区空穴飘向P区，最终参与扩散运动的多子数等于参与漂移的少子数，达到动态平衡，PN结由此产生。&lt;/li&gt;
+&lt;li&gt;少子意义为少部分载流子&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;5单向导电性半导体存在意义&#34;&gt;5.单向导电性（半导体存在意义&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;P+正电，N为负电，电场被削弱，PN结导通
+&lt;ul&gt;
+&lt;li&gt;正向导通时，因接触电场的存在，将会在结上形成一固定降压，硅PN结降压一般为0.6V左右，为了好算直接按0.7V计算（0.7必定够用~）&lt;/li&gt;
+&lt;li&gt;正向导通时—&amp;gt;耗尽层变窄—&amp;gt;扩散运动加剧，多子运动浓度高—&amp;gt;扩散电流上升，从而导通&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;N加负，P加正（反向电压—&amp;gt;截止
+&lt;ul&gt;
+&lt;li&gt;耗尽层变大—&amp;gt;内建电场增强—&amp;gt;利于漂移运动—&amp;gt;扩散现象减弱—&amp;gt;漂移电流减少，从而截止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;6pn结的反向击穿&#34;&gt;6.PN结的反向击穿&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;高浓度掺杂—&amp;gt;齐纳击穿
+&lt;ul&gt;
+&lt;li&gt;耗尽层窄，从而很小的反向电压就能击穿&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;低浓度掺杂—&amp;gt;雪崩击穿
+&lt;ul&gt;
+&lt;li&gt;耗尽层宽，需要较大电流才能击穿（由于载流子是以类似链式反应的速率1撞10，10撞100的效率反向运动，类似雪崩，因此被称为雪崩击穿&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;两种击穿都会产生大量的热，从而损坏元器件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;二极管&#34;&gt;二极管&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;硅管，导通电压 0.6～0.8v&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;锗管，导通电压  0.1～0.3v&lt;/p&gt;
+&lt;p&gt;​																			&lt;em&gt;伏安特性曲线&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/fb68bf930f1d7a747b71a4a038ecc02.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;整流作用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;整流二极管的原理是利用PN结的非线性特性，在正向偏置下允许电流通过，在反向偏置下阻止电流通过。这使得整流二极管可以用于电路中的整流（将交流信号转换为直流信号）和电流保护等应用&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/20240303122125.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;二极管等效电路&#34;&gt;二极管等效电路&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/20240303122328.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;二极管微变等效电路&#34;&gt;二极管微变等效电路&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;静态工作点：二极管添加直流偏置，此时在伏安特性曲线上所对应的点为静态工作点，此时可将二极管等效为一个动态电阻 公式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;稳压二极管&#34;&gt;稳压二极管&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;硅管反向击穿时，在一定反向电流范围内，可表现出稳压特性&lt;/li&gt;
+&lt;li&gt;要保证在一定功率下工作，超出该功率就会爆炸&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
