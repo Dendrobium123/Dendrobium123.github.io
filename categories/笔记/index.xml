@@ -2,16 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>笔记 on Dendrobiumcgk</title>
-        <link>https:Dendrobium123.github.iocategories/%E7%AC%94%E8%AE%B0/</link>
+        <link>https://dendrobiumcgk.chat/categories/%E7%AC%94%E8%AE%B0/</link>
         <description>Recent content in 笔记 on Dendrobiumcgk</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 01 Mar 2024 21:56:02 +0800</lastBuildDate><atom:link href="https:Dendrobium123.github.iocategories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 14 Apr 2024 12:20:50 +0800</lastBuildDate><atom:link href="https://dendrobiumcgk.chat/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>深度学习_00</title>
+        <link>https://dendrobiumcgk.chat/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0_00/</link>
+        <pubDate>Sun, 14 Apr 2024 12:20:50 +0800</pubDate>
+        
+        <guid>https://dendrobiumcgk.chat/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0_00/</guid>
+        <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/深度学习00cover.jpg" alt="Featured image of post 深度学习_00" /&gt;&lt;center&gt;&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=565970070&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/center&gt;
+&lt;h2 id=&#34;深度学习基础知识&#34;&gt;深度学习基础知识&lt;/h2&gt;
+&lt;p&gt;几种“学习”间的关系&lt;/p&gt;
+&lt;h4 id=&#34;机器学习---最大的概念&#34;&gt;机器学习&amp;mdash;最大的概念&lt;/h4&gt;
+&lt;p&gt;&amp;lt;让机器通过学习的方式得到一个可以解决问题的模型&amp;gt;&lt;/p&gt;
+&lt;p&gt;学习方法：KNN（K近邻），k means（k均值解决聚类问题），SVM，深度学习&lt;/p&gt;
+&lt;p&gt;机器学习，隐式学习&lt;/p&gt;
+&lt;p&gt;神经网络：输入层，隐藏层，输出层&lt;/p&gt;
+&lt;center&gt;&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/神经网络.jpg&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;center&gt;
+&lt;p&gt;神经元&lt;/p&gt;
+&lt;p&gt;不改变网络层和算法的情况下，影响输出结果的是各神经元连接线路上的数值权重&lt;/p&gt;
+&lt;center&gt;&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/神经元.jpg&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;center&gt;
+&lt;p&gt;除了一系列加减乘除的线性变换外，还引入了激活函数&lt;/p&gt;
+&lt;h3 id=&#34;激活函数阶跃函数不用&#34;&gt;激活函数：阶跃函数（不用&lt;/h3&gt;
+&lt;p&gt;希望通过梯度下降的方式求得参数更新的过程，阶跃函数无法正常求导，需要引入δ函数，因此使用别的函数作为激活函数Sigmoid，以此解决阶跃函数不可导的问题&lt;/p&gt;
+&lt;h4 id=&#34;sigmoid&#34;&gt;Sigmoid：&lt;/h4&gt;
+&lt;p&gt;$$
+S(x)=\dfrac{1}{1+e^{-x}}
+$$&lt;/p&gt;
+&lt;p&gt;sigmoid导数：
+$$
+S&amp;rsquo;(x)=\dfrac{e^{-x}}{(1+e^{-x})^2}=S(x)(1-S(x))
+$$
+Sigmoid函数及其导数的图像：&lt;/p&gt;
+&lt;center&gt;&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/sigmoid.jpg&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;center&gt;
+&lt;center&gt;注：取值范围在0—1间的sigmoid函数叫logistic函数&lt;center&gt;
+&lt;h4 id=&#34;tanh&#34;&gt;tanh：&lt;/h4&gt;
+&lt;p&gt;$$
+tanh=\dfrac{e^x-e^{-x}}{e^x+e^{-x}}
+$$&lt;/p&gt;
+&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/tanh.jpg&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;范围在（-1，1）间的激活函数&lt;/p&gt;
+&lt;h4 id=&#34;relu函数&#34;&gt;Relu函数&lt;/h4&gt;
+&lt;p&gt;$$
+f(x)=\begin{cases}x &amp;amp; x\geq0 \\0&amp;amp;x&amp;lt; 0\end{cases}
+$$&lt;/p&gt;
+&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/relu.jpg&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;每个神经元所做的事：
+$$
+g_{output}=g(w_1\times a+w_2\times b+w_3\times c+w_4\times d)—&amp;gt;relu
+$$
+注：a,b,c,d为权重值，神经元输出结果为各参数加权后通过一个relu函数所得的值&lt;/p&gt;
+&lt;p&gt;机器学习的目的是在给定前提情况下，寻找能得到最好输出的w参数们&lt;/p&gt;
+&lt;h4 id=&#34;梯度下降&#34;&gt;梯度下降&lt;/h4&gt;
+&lt;p&gt;如何寻找需要的W&lt;/p&gt;
+&lt;p&gt;通过当前所计算得出的结果与已知的正确结果做差，考虑到所得结果的正负号问题，采用对式子求平方的方式（平方好求导，绝对值不好求导）
+$$
+L=(f(x)-y)^2
+$$&lt;/p&gt;
+&lt;p&gt;L越小，模型性能越好，f(x)与参数w有关，因此L也是个关于w的函数。&lt;/p&gt;
+&lt;p&gt;可以通过调整w来使L的取值变小&lt;/p&gt;
+&lt;p&gt;动态更新W，eg：初始值w0，第一刻w1&amp;hellip;..
+$$
+W_1=W_0-lr\cdot \frac{\partial L}{\partial W_0}
+\\W_2=W_0-lr\cdot \frac{\partial L}{\partial W_1}
+\...
+$$&lt;/p&gt;
+&lt;h4 id=&#34;局部最优全局最优&#34;&gt;局部最优/全局最优&lt;/h4&gt;
+&lt;p&gt;类似高等数学函数章节中的极值和最值问题，局部导数为0的极值点不代表此处是整个函数的极值&lt;/p&gt;
+&lt;center&gt;~~乐经良：说明它是一个地头蛇~~&lt;center&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;ps:顺带吐槽一句，这个hugo对LateX数学公式的键入好像不是很友好，比如公式间的换行用要用\\，但是他识别代码的时候只识别一条杠\，这就导致像&lt;/em&gt;
+$$
+f(x)=\begin{cases}x &amp;amp; x\geq0 \\0&amp;amp;x&amp;lt; 0\end{cases}
+$$
+&lt;em&gt;这种分段的函数会显示成这样&lt;/em&gt;
+$$
+f(x)=\begin{cases}x &amp;amp; x\geq0 \0&amp;amp;x&amp;lt; 0\end{cases}
+$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;byd后来我发现你只需要打3个\就能解决问题了。&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>模拟电子技术笔记</title>
-        <link>https:Dendrobium123.github.iop/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</link>
+        <link>https://dendrobiumcgk.chat/p/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Fri, 01 Mar 2024 21:56:02 +0800</pubDate>
         
-        <guid>https:Dendrobium123.github.iop/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://dendrobiumcgk.chat/p/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/微信图片_20240303141619.jpg" alt="Featured image of post 模拟电子技术笔记" /&gt;&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=3947467&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
 &lt;h1 id=&#34;模拟电路&#34;&gt;模拟电路&lt;/h1&gt;
 &lt;h3 id=&#34;模拟电路是指用来对模拟信号进行传输变换处理放大测量和显示等工作的电路它主要包括放大电路信号运算和处理电路振荡电路调制和解调电路及电源&#34;&gt;模拟电路是指用来对模拟信号进行传输、变换、处理、放大、测量和显示等工作的电路。它主要包括放大电路、信号运算和处理电路、振荡电路、调制和解调电路及电源。&lt;/h3&gt;
