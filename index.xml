@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Dendrobiumcgk</title>
-        <link>https://dendrobiumcgk.chat/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on Dendrobiumcgk</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 14 Apr 2024 12:20:50 +0800</lastBuildDate><atom:link href="https://dendrobiumcgk.chat/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 14 Apr 2024 12:20:50 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>深度学习_00</title>
-        <link>https://dendrobiumcgk.chat/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0_00/</link>
+        <link>http://localhost:1313/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0_00/</link>
         <pubDate>Sun, 14 Apr 2024 12:20:50 +0800</pubDate>
         
-        <guid>https://dendrobiumcgk.chat/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0_00/</guid>
+        <guid>http://localhost:1313/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0_00/</guid>
         <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/深度学习00cover.jpg" alt="Featured image of post 深度学习_00" /&gt;&lt;center&gt;&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=565970070&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;/center&gt;
 &lt;h2 id=&#34;深度学习基础知识&#34;&gt;深度学习基础知识&lt;/h2&gt;
 &lt;p&gt;几种“学习”间的关系&lt;/p&gt;
@@ -67,7 +67,7 @@ $$&lt;/p&gt;
 $$
 W_1=W_0-lr\cdot \frac{\partial L}{\partial W_0}
 \\W_2=W_0-lr\cdot \frac{\partial L}{\partial W_1}
-\...
+\\&amp;hellip;
 $$&lt;/p&gt;
 &lt;h4 id=&#34;局部最优全局最优&#34;&gt;局部最优/全局最优&lt;/h4&gt;
 &lt;p&gt;类似高等数学函数章节中的极值和最值问题，局部导数为0的极值点不代表此处是整个函数的极值&lt;/p&gt;
@@ -86,10 +86,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>中国后现代主义与网络亚文化的发展以“抽象文化”为例</title>
-        <link>https://dendrobiumcgk.chat/p/%E4%B8%AD%E5%9B%BD%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BA%9A%E6%96%87%E5%8C%96%E7%9A%84%E5%8F%91%E5%B1%95%E4%BB%A5%E6%8A%BD%E8%B1%A1%E6%96%87%E5%8C%96%E4%B8%BA%E4%BE%8B/</link>
+        <link>http://localhost:1313/p/%E4%B8%AD%E5%9B%BD%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BA%9A%E6%96%87%E5%8C%96%E7%9A%84%E5%8F%91%E5%B1%95%E4%BB%A5%E6%8A%BD%E8%B1%A1%E6%96%87%E5%8C%96%E4%B8%BA%E4%BE%8B/</link>
         <pubDate>Sun, 03 Mar 2024 13:10:42 +0800</pubDate>
         
-        <guid>https://dendrobiumcgk.chat/p/%E4%B8%AD%E5%9B%BD%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BA%9A%E6%96%87%E5%8C%96%E7%9A%84%E5%8F%91%E5%B1%95%E4%BB%A5%E6%8A%BD%E8%B1%A1%E6%96%87%E5%8C%96%E4%B8%BA%E4%BE%8B/</guid>
+        <guid>http://localhost:1313/p/%E4%B8%AD%E5%9B%BD%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BA%9A%E6%96%87%E5%8C%96%E7%9A%84%E5%8F%91%E5%B1%95%E4%BB%A5%E6%8A%BD%E8%B1%A1%E6%96%87%E5%8C%96%E4%B8%BA%E4%BE%8B/</guid>
         <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/db7641dcd583699a45fbb9a138a5679.jpg" alt="Featured image of post 中国后现代主义与网络亚文化的发展以“抽象文化”为例" /&gt;&lt;p&gt;这篇文章是我之前一门通识课所布置的作业，今天闲的没事就想水一篇文章。&lt;/p&gt;
 &lt;p&gt;小石我纵横现代简中互联网多年，对如今的网络文化也有一定的思考，借着通识课作业的契机一并谈谈我对当今网络抽象话的了解。&lt;/p&gt;
 &lt;hr&gt;
@@ -144,10 +144,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>模拟电子技术笔记</title>
-        <link>https://dendrobiumcgk.chat/p/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</link>
+        <link>http://localhost:1313/p/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Fri, 01 Mar 2024 21:56:02 +0800</pubDate>
         
-        <guid>https://dendrobiumcgk.chat/p/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</guid>
+        <guid>http://localhost:1313/p/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/微信图片_20240303141619.jpg" alt="Featured image of post 模拟电子技术笔记" /&gt;&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=3947467&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
 &lt;h1 id=&#34;模拟电路&#34;&gt;模拟电路&lt;/h1&gt;
 &lt;h3 id=&#34;模拟电路是指用来对模拟信号进行传输变换处理放大测量和显示等工作的电路它主要包括放大电路信号运算和处理电路振荡电路调制和解调电路及电源&#34;&gt;模拟电路是指用来对模拟信号进行传输、变换、处理、放大、测量和显示等工作的电路。它主要包括放大电路、信号运算和处理电路、振荡电路、调制和解调电路及电源。&lt;/h3&gt;
@@ -275,10 +275,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>我做了一个异世界的梦</title>
-        <link>https://dendrobiumcgk.chat/p/%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BC%82%E4%B8%96%E7%95%8C%E7%9A%84%E6%A2%A6/</link>
+        <link>http://localhost:1313/p/%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BC%82%E4%B8%96%E7%95%8C%E7%9A%84%E6%A2%A6/</link>
         <pubDate>Sat, 24 Feb 2024 20:46:50 +0800</pubDate>
         
-        <guid>https://dendrobiumcgk.chat/p/%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BC%82%E4%B8%96%E7%95%8C%E7%9A%84%E6%A2%A6/</guid>
+        <guid>http://localhost:1313/p/%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BC%82%E4%B8%96%E7%95%8C%E7%9A%84%E6%A2%A6/</guid>
         <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/cover terraria.jpg" alt="Featured image of post 我做了一个异世界的梦" /&gt;&lt;h1 id=&#34;纪念一下terraria大师模式的通关&#34;&gt;纪念一下terraria大师模式的通关&lt;/h1&gt;
 &lt;p&gt;​	虽然之前就知道terraria有四种职业玩法，但从来没试过只用一种职业搭配通关游戏，因为这个游戏的自由度太高了，在没有了解功略的情况下很难自发有意识地控制自己的套装搭配，我想大部分人玩这个游戏都是所谓的散人套装吧。不得不说，分工明确的开荒确实能提高不少效率，在一昧的战斗之外，我也是第一次发现了建筑的乐趣，来看看我造的小家吧！&lt;/p&gt;
 &lt;h2 id=&#34;我造的小家&#34;&gt;&lt;em&gt;我造的小家&lt;/em&gt;&lt;/h2&gt;
@@ -436,10 +436,10 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>第一篇博客</title>
-        <link>https://dendrobiumcgk.chat/p/hello-world/</link>
+        <link>http://localhost:1313/p/hello-world/</link>
         <pubDate>Fri, 23 Feb 2024 15:46:50 +0800</pubDate>
         
-        <guid>https://dendrobiumcgk.chat/p/hello-world/</guid>
+        <guid>http://localhost:1313/p/hello-world/</guid>
         <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/cover2.jpg" alt="Featured image of post 第一篇博客" /&gt;&lt;h2 id=&#34;我只想说做blog好难尤其是对我这种毫无经验的若至来说&#34;&gt;&lt;em&gt;我只想说，做blog好难，尤其是对我这种毫无经验的若至来说&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;markdown语法现在也没研究明白，不知道要怎么弄&lt;/p&gt;
 &lt;p&gt;第一次发博客就随便放两张我们胡桃的照片好了，啊~真可爱啊。&lt;/p&gt;
@@ -463,26 +463,26 @@ $$&lt;/p&gt;
         </item>
         <item>
         <title>文档(っ °Д °;)っ</title>
-        <link>https://dendrobiumcgk.chat/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://dendrobiumcgk.chat/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>检索(＠_＠;)</title>
-        <link>https://dendrobiumcgk.chat/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://dendrobiumcgk.chat/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         <item>
         <title>友链( •̀ ω •́ )</title>
-        <link>https://dendrobiumcgk.chat/%E5%8F%8B%E9%93%BE-%CC%80-%CF%89-%CC%81/</link>
+        <link>http://localhost:1313/%E5%8F%8B%E9%93%BE-%CC%80-%CF%89-%CC%81/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://dendrobiumcgk.chat/%E5%8F%8B%E9%93%BE-%CC%80-%CF%89-%CC%81/</guid>
+        <guid>http://localhost:1313/%E5%8F%8B%E9%93%BE-%CC%80-%CF%89-%CC%81/</guid>
         <description>&lt;h4 id=&#34;不知道放什么链接好姑且在这里放个vrc的链接吧我超爱&#34;&gt;&lt;em&gt;不知道放什么链接好，姑且在这里放个vrc的链接吧，我超爱！&lt;/em&gt;&lt;/h4&gt;
 </description>
         </item>
