@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='不知道写什么'>
 <title>第一篇博客</title>
 
-<link rel='canonical' href='https://dendrobiumcgk.chat/p/hello-world/'>
+<link rel='canonical' href='https://Dendrobium123.github.io/p/hello-world/'>
 
 <link rel="stylesheet" href="/scss/style.min.da3d88bf53b63ddbe70587f56e6f8bc7873237e9b584dc45a039f284c5f29101.css"><meta property='og:title' content='第一篇博客'>
 <meta property='og:description' content='不知道写什么'>
-<meta property='og:url' content='https://dendrobiumcgk.chat/p/hello-world/'>
+<meta property='og:url' content='https://Dendrobium123.github.io/p/hello-world/'>
 <meta property='og:site_name' content='Dendrobiumcgk'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='阿米诺斯' /><meta property='article:published_time' content='2024-02-23T15:46:50&#43;08:00'/><meta property='article:modified_time' content='2024-02-23T15:46:50&#43;08:00'/><meta property='og:image' content='http://tuchuang.dendrobiumcgk.chat/pic/cover2.jpg' />
 <meta name="twitter:title" content="第一篇博客">
@@ -214,7 +214,7 @@
 
                     <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
                         
-                            <option value="https://dendrobiumcgk.chat/" selected>中文</option>
+                            <option value="https://Dendrobium123.github.io/" selected>中文</option>
                         
                     </select>
                 </li>
@@ -468,51 +468,24 @@
      
     
         
-    <script src="https://utteranc.es/client.js" 
-        repo="Dendrobium123/Dendrobium123.github.io"
-        issue-term="pathname"
-        
-        crossorigin="anonymous"
-        async
-        >
-</script>
-
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
 <style>
-    .utterances {
-        max-width: unset;
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
     }
-</style>
-
-<script>
-    let utterancesLoaded = false;
-
-    function setUtterancesTheme(theme) {
-        let utterances = document.querySelector('.utterances iframe');
-        if (utterances) {
-            utterances.contentWindow.postMessage(
-                {
-                    type: 'set-theme',
-                    theme: `github-${theme}`
-                },
-                'https://utteranc.es'
-            );
-        }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
     }
-
-    addEventListener('message', event => {
-        if (event.origin !== 'https://utteranc.es') return;
-
-        
-        utterancesLoaded = true;
-        setUtterancesTheme(document.documentElement.dataset.scheme)
-    });
-
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (!utterancesLoaded) return;
-        setUtterancesTheme(e.detail)
-    })
+</style><script>
+    
+    Waline.init({"avatar":"","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili","https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji","https://npm.elemecdn.com/@waline/emojis@1.1.0/weibo"],"lang":"zh-CN","locale":{"admin":"Admin"},"placeholder":"随便讲点什么~","requiredMeta":["name","email","url"],"serverURL":"https://waline-test-theta-rust.vercel.app/","visitor":"false"});
 </script>
-
 
     
 

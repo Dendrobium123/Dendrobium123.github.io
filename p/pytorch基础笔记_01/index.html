@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='“自由就是人通过分泌自己的虚无来淘汰自己的过去——萨特”'>
 <title>PyTorch基础笔记_01</title>
 
-<link rel='canonical' href='https://dendrobiumcgk.chat/p/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0_01/'>
+<link rel='canonical' href='https://Dendrobium123.github.io/p/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0_01/'>
 
 <link rel="stylesheet" href="/scss/style.min.da3d88bf53b63ddbe70587f56e6f8bc7873237e9b584dc45a039f284c5f29101.css"><meta property='og:title' content='PyTorch基础笔记_01'>
 <meta property='og:description' content='“自由就是人通过分泌自己的虚无来淘汰自己的过去——萨特”'>
-<meta property='og:url' content='https://dendrobiumcgk.chat/p/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0_01/'>
+<meta property='og:url' content='https://Dendrobium123.github.io/p/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0_01/'>
 <meta property='og:site_name' content='Dendrobiumcgk'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='深度学习' /><meta property='article:tag' content='pytorch' /><meta property='article:tag' content='知识' /><meta property='article:published_time' content='2024-04-18T21:02:02&#43;08:00'/><meta property='article:modified_time' content='2024-04-18T21:02:02&#43;08:00'/><meta property='og:image' content='http://tuchuang.dendrobiumcgk.chat/pic/pytorch_0.jpg' />
 <meta name="twitter:title" content="PyTorch基础笔记_01">
@@ -214,7 +214,7 @@
 
                     <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
                         
-                            <option value="https://dendrobiumcgk.chat/" selected>中文</option>
+                            <option value="https://Dendrobium123.github.io/" selected>中文</option>
                         
                     </select>
                 </li>
@@ -731,51 +731,24 @@ $$</p>
      
     
         
-    <script src="https://utteranc.es/client.js" 
-        repo="Dendrobium123/Dendrobium123.github.io"
-        issue-term="pathname"
-        
-        crossorigin="anonymous"
-        async
-        >
-</script>
-
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
 <style>
-    .utterances {
-        max-width: unset;
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
     }
-</style>
-
-<script>
-    let utterancesLoaded = false;
-
-    function setUtterancesTheme(theme) {
-        let utterances = document.querySelector('.utterances iframe');
-        if (utterances) {
-            utterances.contentWindow.postMessage(
-                {
-                    type: 'set-theme',
-                    theme: `github-${theme}`
-                },
-                'https://utteranc.es'
-            );
-        }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
     }
-
-    addEventListener('message', event => {
-        if (event.origin !== 'https://utteranc.es') return;
-
-        
-        utterancesLoaded = true;
-        setUtterancesTheme(document.documentElement.dataset.scheme)
-    });
-
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (!utterancesLoaded) return;
-        setUtterancesTheme(e.detail)
-    })
+</style><script>
+    
+    Waline.init({"avatar":"","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili","https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji","https://npm.elemecdn.com/@waline/emojis@1.1.0/weibo"],"lang":"zh-CN","locale":{"admin":"Admin"},"placeholder":"随便讲点什么~","requiredMeta":["name","email","url"],"serverURL":"https://waline-test-theta-rust.vercel.app/","visitor":"false"});
 </script>
-
 
     
 

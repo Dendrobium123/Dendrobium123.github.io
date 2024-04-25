@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pytorch on Dendrobiumcgk</title>
-        <link>https://dendrobiumcgk.chat/tags/pytorch/</link>
+        <link>https://Dendrobium123.github.io/tags/pytorch/</link>
         <description>Recent content in Pytorch on Dendrobiumcgk</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 18 Apr 2024 21:02:02 +0800</lastBuildDate><atom:link href="https://dendrobiumcgk.chat/tags/pytorch/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 18 Apr 2024 21:02:02 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/pytorch/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PyTorch基础笔记_01</title>
-        <link>https://dendrobiumcgk.chat/p/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0_01/</link>
+        <link>https://Dendrobium123.github.io/p/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0_01/</link>
         <pubDate>Thu, 18 Apr 2024 21:02:02 +0800</pubDate>
         
-        <guid>https://dendrobiumcgk.chat/p/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0_01/</guid>
+        <guid>https://Dendrobium123.github.io/p/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0_01/</guid>
         <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/pytorch_0.jpg" alt="Featured image of post PyTorch基础笔记_01" /&gt;&lt;h1 id=&#34;pytorch基础笔记_01&#34;&gt;PyTorch基础笔记_01&lt;/h1&gt;
  &lt;center&gt;&lt;/center&gt;&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=3914386&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;&lt;center&gt;&lt;/center&gt;
 &lt;p&gt;常用库：torch，numpy，pandas，matplotlib&lt;/p&gt;
