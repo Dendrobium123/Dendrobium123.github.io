@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='PReNet渐近递归网络&#43;模块改进 PReNet是什么 PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶段性结'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='PReNet渐近递归网络&#43;模块改进gam PReNet是什么 PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶'>
 <title></title>
 
 <link rel='canonical' href='https://Dendrobium123.github.io/p/'>
 
-<link rel="stylesheet" href="/scss/style.min.da3d88bf53b63ddbe70587f56e6f8bc7873237e9b584dc45a039f284c5f29101.css"><meta property='og:title' content=''>
-<meta property='og:description' content='PReNet渐近递归网络&#43;模块改进 PReNet是什么 PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶段性结'>
+<link rel="stylesheet" href="/scss/style.min.fd84fa461f4eb19f9e5fb7388a9a3dc4f845c261e6a05ed0bd9006b7cbbbb619.css"><meta property='og:title' content=''>
+<meta property='og:description' content='PReNet渐近递归网络&#43;模块改进gam PReNet是什么 PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶'>
 <meta property='og:url' content='https://Dendrobium123.github.io/p/'>
 <meta property='og:site_name' content='Dendrobiumcgk'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="PReNet渐近递归网络&#43;模块改进 PReNet是什么 PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶段性结">
+<meta name="twitter:description" content="PReNet渐近递归网络&#43;模块改进gam PReNet是什么 PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -280,7 +280,7 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#prenet渐近递归网络模块改进">PReNet渐近递归网络+模块改进</a>
+    <li><a href="#prenet渐近递归网络模块改进gam">PReNet渐近递归网络+模块改进gam</a>
       <ol>
         <li>
           <ol>
@@ -288,6 +288,17 @@
             <li><a href="#resnet">ResNet</a></li>
           </ol>
         </li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#1作用">1、作用</a></li>
+        <li><a href="#2机制">2、机制</a></li>
+        <li><a href="#3独特优势">3、独特优势</a></li>
+        <li><a href="#4代码">4、代码</a></li>
       </ol>
     </li>
   </ol>
@@ -333,7 +344,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -348,11 +359,139 @@
     <section class="article-content">
     
     
-    <h2 id="prenet渐近递归网络模块改进">PReNet渐近递归网络+模块改进</h2>
+    <h2 id="prenet渐近递归网络模块改进gam">PReNet渐近递归网络+模块改进gam</h2>
 <h4 id="prenet是什么"><strong>PReNet是什么</strong></h4>
 <p>PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶段性结果和原始多雨图像作为每个ResNet的输入，来提高去雨的性能。该网络能够有效地去除雨滴，对于图像去雨领域的研究具有重要意义，并可作为未来图像去雨研究的合适基础。</p>
 <h4 id="resnet">ResNet</h4>
-
+<p>我准备以PReNet为基底</p>
+<h1 id="21gam模块">21、gam模块</h1>
+<p>论文《Global Attention Mechanism: Retain Information to Enhance Channel-Spatial Interactions》</p>
+<h3 id="1作用">1、作用</h3>
+<p>这篇论文提出了全局注意力机制（Global Attention Mechanism, GAM），旨在通过保留通道和空间方面的信息来增强跨维度交互，从而提升深度神经网络的性能。GAM通过引入3D排列与多层感知器（MLP）用于通道注意力，并辅以卷积空间注意力子模块，提高了图像分类任务的表现。该方法在CIFAR-100和ImageNet-1K数据集上的图像分类任务中均稳定地超越了几种最新的注意力机制，包括在ResNet和轻量级MobileNet模型上的应用。</p>
+<h3 id="2机制">2、机制</h3>
+<p>1、<strong>通道注意力子模块</strong>：</p>
+<p>利用3D排列保留跨三个维度的信息，并通过两层MLP放大跨维度的通道-空间依赖性。这个子模块通过编码器-解码器结构，以一个缩减比例r（与BAM相同）来实现。</p>
+<p>2、<strong>空间注意力子模块</strong>：</p>
+<p>为了聚焦空间信息，使用了两个卷积层进行空间信息的融合。同时，为了进一步保留特征图，移除了池化操作。此外，为了避免参数数量显著增加，当应用于ResNet50时，采用了分组卷积与通道混洗。</p>
+<h3 id="3独特优势">3、独特优势</h3>
+<p>1、<strong>效率与灵活性</strong>：</p>
+<p>GAM展示了与现有的高效SR方法相比，如IMDN，其模型大小小了3倍，同时实现了可比的性能，展现了在内存使用上的高效性。</p>
+<p>2、<strong>动态空间调制</strong>：</p>
+<p>通过利用独立学习的多尺度特征表示并动态地进行空间调制，GAM能够高效地聚合特征，提升重建性能，同时保持低计算和存储成本。</p>
+<p>3、<strong>有效整合局部和非局部特征</strong>：</p>
+<p>GAM通过其层和CCM的结合，有效地整合了局部和非局部特征信息，实现了更精确的图像超分辨率重建。</p>
+<h3 id="4代码">4、代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">GAM_Attention</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">(</span><span class="n">GAM_Attention</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 通道注意力子模块</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">channel_attention</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 降维，减少参数数量和计算复杂度</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># 非线性激活</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 升维，恢复到原始通道数</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">),</span> <span class="n">in_channels</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 空间注意力子模块</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">spatial_attention</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 使用7x7卷积核进行空间特征的降维处理</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">),</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">)),</span>  <span class="c1"># 批归一化，加速收敛，提升稳定性</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># 非线性激活</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 使用7x7卷积核进行空间特征的升维处理</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">),</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">)</span>  <span class="c1"># 批归一化</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 输入张量的维度信息</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 调整张量形状以适配通道注意力处理</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_permute</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 应用通道注意力，并恢复原始张量形状</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_att_permute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel_attention</span><span class="p">(</span><span class="n">x_permute</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 生成通道注意力图</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_channel_att</span> <span class="o">=</span> <span class="n">x_att_permute</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 应用通道注意力图进行特征加权</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x_channel_att</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 生成空间注意力图并应用进行特征加权</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_spatial_att</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spatial_attention</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x_spatial_att</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例代码：使用GAM_Attention对一个随机初始化的张量进行处理</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># 随机生成输入张量</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 获取输入张量的维度信息</span>
+</span></span><span class="line"><span class="cl">    <span class="n">net</span> <span class="o">=</span> <span class="n">GAM_Attention</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># 实例化GAM_Attention模块</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">net</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 通过GAM_Attention模块处理输入张量</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 打印输出张量的维度信息</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
