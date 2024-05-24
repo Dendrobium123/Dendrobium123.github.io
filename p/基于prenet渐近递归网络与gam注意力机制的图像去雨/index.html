@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='“一种融合了GAM模块的RNN去雨网络”'>
+<title>基于PReNet渐近递归网络与gam注意力机制的图像去雨</title>
+
+<link rel='canonical' href='https://Dendrobium123.github.io/p/%E5%9F%BA%E4%BA%8Eprenet%E6%B8%90%E8%BF%91%E9%80%92%E5%BD%92%E7%BD%91%E7%BB%9C%E4%B8%8Egam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E5%9B%BE%E5%83%8F%E5%8E%BB%E9%9B%A8/'>
+
+<link rel="stylesheet" href="/scss/style.min.d4ad52c86fac04375e49925c314cebf2c9480f7f7a62e8ad3774859a40e752aa.css"><meta property='og:title' content='基于PReNet渐近递归网络与gam注意力机制的图像去雨'>
+<meta property='og:description' content='“一种融合了GAM模块的RNN去雨网络”'>
+<meta property='og:url' content='https://Dendrobium123.github.io/p/%E5%9F%BA%E4%BA%8Eprenet%E6%B8%90%E8%BF%91%E9%80%92%E5%BD%92%E7%BD%91%E7%BB%9C%E4%B8%8Egam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E5%9B%BE%E5%83%8F%E5%8E%BB%E9%9B%A8/'>
+<meta property='og:site_name' content='Dendrobiumcgk'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='深度学习' /><meta property='article:published_time' content='2024-05-24T13:10:42&#43;08:00'/><meta property='article:modified_time' content='2024-05-24T13:10:42&#43;08:00'/><meta property='og:image' content='http://tuchuang.dendrobiumcgk.chat/pic/image-20240524215731380.png' />
+<meta name="twitter:title" content="基于PReNet渐近递归网络与gam注意力机制的图像去雨">
+<meta name="twitter:description" content="“一种融合了GAM模块的RNN去雨网络”"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://tuchuang.dendrobiumcgk.chat/pic/image-20240524215731380.png' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu15923fdef5dddd0a3bbf32bc1788a0e6_26629_300x0_resize_q75_box.jpg" width="300"
+                            height="302" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Dendrobiumcgk</a></h1>
+            <h2 class="site-description">希望我们都能成为更好的人。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='http://discordapp.com/users/1192070612269662218'
+                        target="_blank"
+                        title="discord"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1708678400289" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8940" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M404.992 156.992L380 160s-112.128 12.256-194.016 78.016h-0.96l-1.024 0.96c-18.368 16.896-26.368 37.664-39.008 68.032a982.08 982.08 0 0 0-37.984 112C83.264 504.864 64 608.864 64 704v8l4 8c29.632 52 82.24 85.12 131.008 108 48.736 22.88 90.88 35.008 120 36l19.008 0.992 9.984-16.992 35.008-62.016c37.12 8.384 79.872 14.016 128.992 14.016 49.12 0 91.872-5.632 128.992-14.016l35.008 62.016 10.016 16.992 18.976-0.992c29.12-0.992 71.264-13.12 120-36 48.768-22.88 101.376-56 131.008-108l4-8V704c0-95.136-19.264-199.136-43.008-284.992a982.08 982.08 0 0 0-37.984-112c-12.64-30.4-20.64-51.136-39.008-68l-0.992-1.024h-1.024C756.16 172.256 644 160 644 160l-24.992-3.008-9.024 23.008s-9.248 23.36-14.976 50.016A643.04 643.04 0 0 0 512 224c-17.12 0-46.72 1.12-83.008 6.016-5.76-26.656-15.008-50.016-15.008-50.016z m-44 73.024c1.376 4.48 2.752 8.352 4 12-41.376 10.24-85.504 25.856-125.984 50.976l33.984 54.016C356 295.488 475.232 288 512 288c36.736 0 156 7.488 239.008 59.008l33.984-54.016c-40.48-25.12-84.608-40.736-125.984-51.008 1.248-3.616 2.624-7.488 4-12 29.856 6.016 86.88 19.776 133.984 57.024-0.256 0.128 12 18.624 23.008 44.992 11.264 27.136 23.744 63.264 35.008 104 21.632 78.112 38.624 173.248 40 256.992-20.16 30.752-57.504 58.496-97.024 77.024a311.808 311.808 0 0 1-77.984 24.96L704 768c9.504-3.52 18.88-7.36 27.008-11.008 49.248-21.632 76-44.992 76-44.992l-42.016-48s-17.984 16.512-60 35.008C663.04 717.504 598.88 736 512 736s-151.008-18.496-192.992-36.992c-42.016-18.496-60-35.008-60-35.008l-42.016 48s26.752 23.36 76 44.992c8.128 3.648 17.504 7.52 27.008 11.008l-16 27.008a311.808 311.808 0 0 1-78.016-25.024c-39.488-18.496-76.864-46.24-96.96-76.992 1.344-83.744 18.336-178.88 40-256.992a917.216 917.216 0 0 1 34.976-104c11.008-26.368 23.264-44.864 23.008-44.992 47.104-37.248 104.128-51.008 133.984-56.992zM400 448c-24.736 0-46.624 14.112-60 32-13.376 17.888-20 39.872-20 64s6.624 46.112 20 64c13.376 17.888 35.264 32 60 32 24.736 0 46.624-14.112 60-32 13.376-17.888 20-39.872 20-64s-6.624-46.112-20-64c-13.376-17.888-35.264-32-60-32z m224 0c-24.736 0-46.624 14.112-60 32-13.376 17.888-20 39.872-20 64s6.624 46.112 20 64c13.376 17.888 35.264 32 60 32 24.736 0 46.624-14.112 60-32 13.376-17.888 20-39.872 20-64s-6.624-46.112-20-64c-13.376-17.888-35.264-32-60-32z m-224 64c1.76 0 4 0.64 8 6.016 4 5.344 8 14.72 8 25.984 0 11.264-4 20.64-8 26.016-4 5.344-6.24 5.984-8 5.984-1.76 0-4-0.64-8-6.016A44.832 44.832 0 0 1 384 544c0-11.264 4-20.64 8-26.016 4-5.344 6.24-5.984 8-5.984z m224 0c1.76 0 4 0.64 8 6.016 4 5.344 8 14.72 8 25.984 0 11.264-4 20.64-8 26.016-4 5.344-6.24 5.984-8 5.984-1.76 0-4-0.64-8-6.016A44.832 44.832 0 0 1 608 544c0-11.264 4-20.64 8-26.016 4-5.344 6.24-5.984 8-5.984z" p-id="8941" fill="#707070"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:1025877249chen@gmail.com'
+                        target="_blank"
+                        title="email"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1714130549113" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2338" data-spm-anchor-id="a313x.search_index.0.i0.16e33a81Yt19of" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M892.915499 191.942567H130.4961c-36.734646 0-66.514903 29.780257-66.514903 66.514903v570.537208c0 36.734646 29.780257 66.514903 66.514903 66.514903h762.419399c36.734646 0 66.514903-29.780257 66.514903-66.514903V258.45747c0-36.735669-29.779234-66.514903-66.514903-66.514903z m-28.145013 63.960731c0.517793 0 1.032516 0.013303 1.544169 0.038885L511.87925 564.945863 157.434635 255.932973c0.401136-0.01535 0.802272-0.030699 1.206478-0.030699h706.129373z m0 575.645552H158.641113c-16.95516 0-30.699186-13.744026-30.699186-30.699186V314.877457l362.226859 315.797409c5.995551 5.995551 13.853519 8.991792 21.710464 8.991792 7.857968 0.001023 15.715937-2.996241 21.710464-8.991792l361.879958-315.49451v485.668285c0 16.95516-13.744026 30.700209-30.699186 30.700209z" p-id="2339" fill="#707070"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Dendrobium123'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1714131165171" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4054" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M886.7 298.5c-10.3-18.3-22.5-30.4-32.5-38v-68.9c1.5-13 4.3-56.2-21.1-81.6-9.5-9.5-26.6-20.1-53.5-16.4-34.2 4.7-72.5 22.3-103.2 36.5-11.3 5.2-26.5 12.2-32.3 13.8-5.3-0.3-16.5-2.1-26.4-3.6-23.4-3.6-55.3-8.6-85.7-8.6-30.4 0-62.3 5-85.7 8.6-10 1.5-21.1 3.3-26.4 3.6-5.8-1.6-21-8.6-32.3-13.8-30.7-14.2-69-31.8-103.2-36.5-27-3.7-44 6.9-53.5 16.4-25.4 25.4-22.6 68.6-21.1 81.6v68.9c-10 7.6-22.2 19.7-32.5 38-24.8 44.1-28.8 104.4-11.9 179.3 16.9 74.8 61.3 135.1 128.3 174.6 21.1 12.4 41.3 20.9 57.9 26.6-12.7 31.7-20.3 72.6-22.8 122.2-63.6-0.8-109.8-15.7-133.8-43.1-23.4-26.7-19.7-57.7-19.5-59v0.3c0.1-0.5 0.2-1 0.2-1.6 2.2-16.4-9.3-31.5-25.8-33.7-16.4-2.2-31.5 9.3-33.7 25.8 0 0.2 0 0.4-0.1 0.6-0.4 3-2.2 16.7 0.7 35.6 4 26.2 15 50.5 32 70.3 36 42 96.4 63.7 179.5 64.7 0.8 25.1 2.5 41.9 2.6 43 1.7 16.5 16.4 28.5 32.9 26.8 16.5-1.7 28.5-16.4 26.8-32.9 0-0.4-4.2-41.5-2-90.2 2.6-60 13.8-106.2 31.3-130.3 6.2-8.5 7.6-19.5 3.6-29.2-4-9.7-12.7-16.5-23-18.1-1.6-0.3-38.3-6.9-78.1-30.7-52.2-31.3-85.3-76.7-98.5-135.1-16.1-71.1-7-111.3 3.5-132.5 9.4-19 21.2-25.8 23.5-27 12.2-4.1 18.8-14.9 18.8-27.9v-87.4c0-1.4-0.1-2.7-0.3-4.1-1.7-13.4 0.4-28.6 3.4-32.8 0.6-0.1 1.6-0.1 3.3 0.2 25.4 3.5 60.6 19.7 86.3 31.6 28.4 13.1 42.7 19.4 55.9 19.4 9 0 20.8-1.8 37.1-4.4 22.6-3.5 50.8-7.9 76.5-7.9 25.7 0 53.9 4.4 76.5 7.9 16.3 2.5 28.1 4.4 37.1 4.4 13.2 0 27.5-6.3 55.9-19.4 25.7-11.8 60.9-28.1 86.3-31.6 1.6-0.2 2.7-0.2 3.2-0.2 1 1.6 3.1 6.4 3.8 15.7 0.7 8.8-0.2 16.4-0.3 17.1-0.2 1.4-0.3 2.6-0.3 4.1V277c0 12.9 6.6 23.8 18.8 27.9 2.4 1.2 14.2 8 23.5 27 10.5 21.2 19.6 61.4 3.5 132.5-13.2 58.3-46.3 103.8-98.5 135.1-39.7 23.8-76.5 30.4-78.1 30.7-10.3 1.6-19 8.5-23 18.1-4 9.7-2.6 20.7 3.6 29.2 37.3 51 33.8 176.4 29.3 220.4-1.7 16.5 10.3 31.2 26.8 32.9 1 0.1 2.1 0.2 3.1 0.2 15.2 0 28.2-11.5 29.8-26.9 0.2-1.8 4.6-45.2 2.3-98.1-2.2-51.9-9.9-94.4-23-127.2 16.5-5.7 36.8-14.2 57.9-26.6 67.1-39.5 111.4-99.8 128.3-174.6 17.1-74.7 13.1-135.1-11.7-179.1z" p-id="4055" fill="#707070"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://steamcommunity.com/profiles/76561198193378990/'
+                        target="_blank"
+                        title="steam"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1708678608527" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10076" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M895.51 350.26a415.67 415.67 0 0 0-782.86 49l59.73 24.59c39.23-151.32 176.93-263.35 340.3-263.35 193.82 0 351.5 157.68 351.5 351.5S706.5 863.5 512.68 863.5c-119.33 0-225-59.78-288.53-151l-96.22-43.43c0.63 1.55 1.27 3.08 1.91 4.62a415.6 415.6 0 0 0 765.67-323.43z" p-id="10077" fill="#707070"></path><path d="M627.655345 424.39011m-61.539174 14.524565a63.23 63.23 0 1 0 123.078348-29.049129 63.23 63.23 0 1 0-123.078348 29.049129Z" p-id="10078" fill="#707070"></path><path d="M395.55 755.79a99.31 99.31 0 0 0 99.31-99.31v-1.92l120-93.8c4.24 0.39 8.53 0.6 12.87 0.6a137 137 0 1 0-137-137q0 6.17 0.55 12.18L396.87 557.2h-1.32a98.87 98.87 0 0 0-50.1 13.55L100.34 460.39a421.9 421.9 0 0 0 3.85 128.13l193.94 87.31a99.34 99.34 0 0 0 97.42 79.96zM627.67 335a89.42 89.42 0 1 1-89.41 89.41A89.41 89.41 0 0 1 627.67 335zM375.4 710.61a57.63 57.63 0 0 0 76.21-28.89 57.63 57.63 0 0 0-28.89-76.2L371 582.24a78.2 78.2 0 1 1-47.33 105.08z" p-id="10079" fill="#707070"></path></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页o(￣▽￣)ｄ</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>文档(っ °Д °;)っ</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>检索(＠_＠;)</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE-%CC%80-%CF%89-%CC%81/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链( •̀ ω •́ )</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://Dendrobium123.github.io/" selected>中文</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#heading"></a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#背景摘要">背景+摘要</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#prenet是什么"><strong>PReNet是什么</strong></a></li>
+        <li><a href="#prenet结构">PReNet结构</a>
+          <ol>
+            <li><a href="#1-输入层">(1) 输入层</a></li>
+            <li><a href="#2-循环层">(2) 循环层</a></li>
+            <li><a href="#3-resblocks">(3) ResBlocks</a></li>
+            <li><a href="#4-输出层">(4) 输出层</a></li>
+            <li><a href="#5-损失函数">(5) 损失函数</a></li>
+            <li><a href="#6-总体结构">(6) 总体结构</a></li>
+          </ol>
+        </li>
+        <li><a href="#gam模块">GAM模块</a>
+          <ol>
+            <li><a href="#1作用">1、作用</a></li>
+            <li><a href="#2机制">2、机制</a></li>
+            <li><a href="#3独特优势">3、独特优势</a></li>
+            <li><a href="#4代码">4、代码</a></li>
+          </ol>
+        </li>
+        <li><a href="#se-net模块">SE Net模块</a>
+          <ol>
+            <li><a href="#1作用-1">1、作用</a></li>
+          </ol>
+        </li>
+        <li><a href="#2机制-1">2、<strong>机制</strong></a></li>
+        <li><a href="#3独特优势-1">3、<strong>独特优势</strong></a></li>
+        <li><a href="#4代码-1">4、<strong>代码：</strong></a></li>
+        <li><a href="#消融实验ablation">消融实验ablation</a>
+          <ol>
+            <li><a href="#实验环境">实验环境</a></li>
+            <li><a href="#评估指标">评估指标</a></li>
+            <li><a href="#实验数据集">实验数据集</a></li>
+            <li><a href="#损失函数">损失函数</a></li>
+            <li><a href="#实验设计">实验设计</a></li>
+            <li><a href="#在rain100l上的消融实验结果">在Rain100L上的消融实验结果</a></li>
+          </ol>
+        </li>
+        <li><a href="#对比实验">对比实验</a>
+          <ol>
+            <li><a href="#1-合成数据集">(1) 合成数据集</a></li>
+            <li><a href="#2-真实雨图">(2) 真实雨图</a></li>
+          </ol>
+        </li>
+        <li><a href="#最后的网络结构">最后的网络结构</a></li>
+        <li><a href="#总结与展望">总结与展望</a>
+          <ol>
+            <li><a href="#总结">总结</a></li>
+            <li><a href="#展望">展望</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#写在最后的ps">写在最后的ps</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E5%9F%BA%E4%BA%8Eprenet%E6%B8%90%E8%BF%91%E9%80%92%E5%BD%92%E7%BD%91%E7%BB%9C%E4%B8%8Egam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E5%9B%BE%E5%83%8F%E5%8E%BB%E9%9B%A8/">
+                
+                    <img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524215731380.png" loading="lazy" alt="Featured image of post 基于PReNet渐近递归网络与gam注意力机制的图像去雨" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%9F%A5%E8%AF%86/" style="background-color: #FF8247; color: #fff;">
+                知识
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%9F%BA%E4%BA%8Eprenet%E6%B8%90%E8%BF%91%E9%80%92%E5%BD%92%E7%BD%91%E7%BB%9C%E4%B8%8Egam%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E5%9B%BE%E5%83%8F%E5%8E%BB%E9%9B%A8/">基于PReNet渐近递归网络与gam注意力机制的图像去雨</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            “一种融合了GAM模块的RNN去雨网络”
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 24, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 18 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h4 id="heading"></h4>
+<h1 id="heading-1"></h1>
+<h3 id="背景摘要">背景+摘要</h3>
+<p>图像作为视觉信息的主要传播媒介，在拍摄过程中常常会受到如雨、雾、雪等 外界因素的干扰，这些因素会显著降低图像的质量或掩盖关键信息，进而影响图像 的后续处理和应用。图像去雨便成为了亟需解决的问题，其主要挑战包括准确识别 各种大小和形状的雨滴，并在保持图像细节的同时去除这些干扰元素。因为除雨对于确保图像信息的准确传达至关重要，尤其是在交通监控和自动驾驶系统等对视觉精度要求较高的应用中。在雨天拍摄的未经处理的图像可能会导致视觉系统错误识别或遗漏关键信息，从而影响决策和操作的安全性和效率。</p>
+<p>在图像去雨的研究中，传统方法和基于深度学习的策略是两种主流技术。</p>
+<p>而随着深度学习今年 来在计算视觉领域的逐步应用，基于深度学习的去雨技术已成为近年来的研究热点。 这种方法利用大规模数据集对深度网络模型进行训练，然后将训练好的模型应用于 待处理的图像，从而有效地去除图像中的雨滴。</p>
+<p>本论文围绕对单画幅图像去雨展开研究，采用深度学习的方法，在PReNet算法 基础上提出了一种通过集成GAM注意力机制来增强去雨性能的新方法。PReNet是 一个高效的递归网络，专注于去除图像中的雨滴，但在处理复杂场景时仍存在一些 局限性。为了解决这一问题，本文在每个残差模块后引入了GAM注意力机制，通 过加强网络对有雨区域的感知能力，从而更精准地去除雨迹。本文在Rain100L和 Rain1400 等主流去雨数据集上进行了广泛的实验，实验结果显示，与原始PReNet模 型相比，集成了GAM注意力机制的新模型在峰值信噪比（PSNR）和结构相似性指 数（SSIM）上都有显著提高。结果证明了GAM注意力机制在去雨任务中的有效性 和潜在的应用价值。</p>
+<p>图像去雨是指从雨天拍摄的含有雨线和雨纹的非目标图像中恢复清晰的原始背景信息，主要解决雨线遮挡和雨线积聚雨雾造成的局部模糊问题。</p>
+<h1 id="heading-2"></h1>
+<h3 id="prenet是什么"><strong>PReNet是什么</strong></h3>
+<p>以下为PReNet论文原文：</p>
+<div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+  <p><a href="https://arxiv.org/abs/1901.09221">[1901.09221] Progressive Image Deraining Networks: A Better and Simpler Baseline (arxiv.org)</a></p>
+</div>
+<p>PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶段性结果和原始多雨图像作为每个ResNet的输入，来提高去雨的性能。该网络能够有效地去除雨滴，对于图像去雨领域的研究具有重要意义，并可作为未来图像去雨研究的合适基础。</p>
+<p>PReNet，全称为Progressive Recurrent Network，是一个专门为单图像去雨任务设计的深度学习架构。这种网络采用了递归神经网络的设计思想，通过逐步精细化的方式去除图像中的雨滴，逐渐恢复干净的背景图像。本文选取PReNet模型作为图像去雨算法的基本框架，接下来对PReNet网络结构进行介绍。</p>
+<h3 id="prenet结构">PReNet结构</h3>
+<h4 id="1-输入层">(1) 输入层</h4>
+<p>输入卷积层由一个核大小为3*3、填充大小为1的标准卷积层构成，其后跟随有ReLU非线性激活函数,该层输入为6通道,输出为32通道。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="p">(</span><span class="n">conv0</span><span class="p">):</span> <span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">ReLU</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2-循环层">(2) 循环层</h4>
+<p>循环层使用的是LSTM(Long short-term memory),LSTM结构有两个传输状态$c^t$和$h^t$。通过前一个阶段传递下来的状态 $h^{t-1}$以及当前的输入状态 $x^t$拼接训练得到四个状态。LSTM的内部结构如下图所示,图中第一个公式得到的$c^t$是传给下一个阶段的状态，$h^t$表示该阶段的隐藏状态，$y^t$表示输出。
+<img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524221149862.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>⊙表示表示矩阵中对应元素相乘的操作,而相乘的两个矩阵为同型矩阵,⊕表示矩阵加法操作。LSTM结构内部有忘记、选择记忆和输出这三个阶段。</p>
+<p>LSTM的输入为64通道，输出为32通道,卷积核大小为3*3,填充大小为1。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">  <span class="p">(</span><span class="n">conv_i</span><span class="p">):</span> <span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">Sigmoid</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="n">conv_f</span><span class="p">):</span> <span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">Sigmoid</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="n">conv_g</span><span class="p">):</span> <span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">Tanh</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="n">conv_o</span><span class="p">):</span> <span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">Sigmoid</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="3-resblocks">(3) ResBlocks</h4>
+<p>ResBlocks是通过递归展开一个残差块5次来实现的。每个这样的残差块包括两个普通的卷积层，每层后接一个ReLU激活函数,ResBlocks中的每个卷积层输入输出通道数均为32,核大小为3*3,填充大小为1。整个ResBlocks的结构如图3.2所示,图中的5个ResBlock具有相同结构,且参数共享。而单个残差块以残差块1为例，结构如下方代码所示。由于整个模型网络参数主要来自ResBlocks,因此使得模型整体大小由于重复计算而显著减小。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="p">(</span><span class="n">res_conv1</span><span class="p">):</span> <span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">ReLU</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="n">ReLU</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><center><img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524221312386.png" style="zoom:67%;" /></center>
+<h4 id="4-输出层">(4) 输出层</h4>
+<p>输出层是由一个核大小为3*3的标准卷积层构成,填充大小为1,输入为32通道,输出为3通道。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="p">(</span><span class="n">conv</span><span class="p">):</span> <span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="5-损失函数">(5) 损失函数</h4>
+<p>在网络训练方面,PReNet使用了负结构相似性(-SSIM)损失函数。</p>
+<h4 id="6-总体结构">(6) 总体结构</h4>
+<p>PReNet模型的6个阶段共享相同的网络参数,将一个ResBlock在一个阶段内反复展开5次,以显著减少网络的参数。PReNet模型包含四个部分:输入卷积层、循环层、ResBlocks和输出卷积层,其整体结构如图3.3所示,左边的图为单个阶段的具体结构,右边图为PReNet模型的整体结构。PReNet模型阶段t的结构的推导公式如下:
+$$
+x^{t-0.5} =f_{\text{in}}(x^{t-1}, y), \\
+s^t = f_{\text{recurrent}}(s^{t-1}, x^{t-0.5}), \\
+x^t = f_{\text{out}}(f_{\text{res}}(s_t)).
+$$
+其中, $f_{\text{in}}$$x^{t-1} $和待去雨图像 y 的拼接结果,第一阶段的输入是两个待去雨图像的拼接, $x^{t-0.5}$ 即为输入层的输出, $s^{t-1}$为上一阶段循环层$LSTM$ 传递过来的信息,$f_{\text{recurrent}} $ 表示循环层的作用,$s^t$表示当前阶段循环层的输出,$f_{\text{res}}$表示$Resblocks$, $f_{\text{out}} $表示输出层, $x^t$表示当前阶段的去雨结果。</p>
+<center><img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524221729723.png" alt="image-20240524221729723" style="zoom:80%;" /></center>
+<h3 id="gam模块">GAM模块</h3>
+<p>论文《Global Attention Mechanism: Retain Information to Enhance Channel-Spatial Interactions》</p>
+<div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+  <p><a href="https://arxiv.org/abs/2112.05561">[2112.05561] Global Attention Mechanism: Retain Information to Enhance Channel-Spatial Interactions(arxiv.org)</a></p>
+</div>
+<h4 id="1作用">1、作用</h4>
+<p>这篇论文提出了全局注意力机制（Global Attention Mechanism, GAM），旨在通过保留通道和空间方面的信息来增强跨维度交互，从而提升深度神经网络的性能。GAM通过引入3D排列与多层感知器（MLP）用于通道注意力，并辅以卷积空间注意力子模块，提高了图像分类任务的表现。该方法在CIFAR-100和ImageNet-1K数据集上的图像分类任务中均稳定地超越了几种最新的注意力机制，包括在ResNet和轻量级MobileNet模型上的应用。</p>
+<h4 id="2机制">2、机制</h4>
+<p><img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524222051713.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240524222051713"
+	
+	
+>
+$$
+F_2 = M_c(F_1) \otimes F_1
+\\
+F_3 = M_s(F_2) \otimes F_2
+$$
+1、<strong>通道注意力子模块</strong>：</p>
+<p>利用3D排列保留跨三个维度的信息，并通过两层MLP放大跨维度的通道-空间依赖性。这个子模块通过编码器-解码器结构，以一个缩减比例r（与BAM相同）来实现。</p>
+<center><img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524222841628.png" alt="image-20240524222841628" style="zoom:80%;" /></center>
+<p>2、<strong>空间注意力子模块</strong>：</p>
+<p>为了聚焦空间信息，使用了两个卷积层进行空间信息的融合。同时，为了进一步保留特征图，移除了池化操作。此外，为了避免参数数量显著增加，当应用于ResNet50时，采用了分组卷积与通道混洗。</p>
+<center><img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524222939131.png" alt="image-20240524222939131" style="zoom:80%;" /></center>
+<h4 id="3独特优势">3、独特优势</h4>
+<p>1、<strong>效率与灵活性</strong>：</p>
+<p>GAM展示了与现有的高效SR方法相比，如IMDN，其模型大小小了3倍，同时实现了可比的性能，展现了在内存使用上的高效性。</p>
+<p>2、<strong>动态空间调制</strong>：</p>
+<p>通过利用独立学习的多尺度特征表示并动态地进行空间调制，GAM能够高效地聚合特征，提升重建性能，同时保持低计算和存储成本。</p>
+<p>3、<strong>有效整合局部和非局部特征</strong>：</p>
+<p>GAM通过其层和CCM的结合，有效地整合了局部和非局部特征信息，实现了更精确的图像超分辨率重建。</p>
+<h4 id="4代码">4、代码</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">GAM_Attention</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">(</span><span class="n">GAM_Attention</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 通道注意力子模块</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">channel_attention</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 降维，减少参数数量和计算复杂度</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># 非线性激活</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 升维，恢复到原始通道数</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">),</span> <span class="n">in_channels</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 空间注意力子模块</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">spatial_attention</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 使用7x7卷积核进行空间特征的降维处理</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">),</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">)),</span>  <span class="c1"># 批归一化，加速收敛，提升稳定性</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># 非线性激活</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 使用7x7卷积核进行空间特征的升维处理</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">),</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">)</span>  <span class="c1"># 批归一化</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 输入张量的维度信息</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 调整张量形状以适配通道注意力处理</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_permute</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 应用通道注意力，并恢复原始张量形状</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_att_permute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel_attention</span><span class="p">(</span><span class="n">x_permute</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 生成通道注意力图</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_channel_att</span> <span class="o">=</span> <span class="n">x_att_permute</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 应用通道注意力图进行特征加权</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x_channel_att</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 生成空间注意力图并应用进行特征加权</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_spatial_att</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spatial_attention</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x_spatial_att</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例代码：使用GAM_Attention对一个随机初始化的张量进行处理</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># 随机生成输入张量</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 获取输入张量的维度信息</span>
+</span></span><span class="line"><span class="cl">    <span class="n">net</span> <span class="o">=</span> <span class="n">GAM_Attention</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># 实例化GAM_Attention模块</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">net</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 通过GAM_Attention模块处理输入张量</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 打印输出张量的维度信息</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="se-net模块">SE Net模块</h3>
+<p>论文《Squeeze-and-Excitation Networks》</p>
+<div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+  <p><a href="https://arxiv.org/abs/1709.01507">[1709.01507] Squeeze-and-Excitation Networks(arxiv.org)</a></p>
+</div>
+<h4 id="1作用-1">1、作用</h4>
+<p>SE 模块通过引入一个新的结构单元——“Squeeze-and-Excitation”（SE）块——来增强卷积神经网络的代表能力。是提高卷积神经网络（CNN）的表征能力，通过显式地建模卷积特征通道之间的依赖关系，从而在几乎不增加计算成本的情况下显著提升网络性能。SE模块由两个主要操作组成：压缩（Squeeze）和激励（Excitation）</p>
+<h3 id="2机制-1">2、<strong>机制</strong></h3>
+<p><strong>1、压缩操作：</strong></p>
+<p>SE模块首先通过全局平均池化操作对输入特征图的空间维度（高度H和宽度W）进行聚合，为每个通道生成一个通道描述符。这一步有效地将全局空间信息压缩成一个通道向量，捕获了通道特征响应的全局分布。这一全局信息对于接下来的重新校准过程至关重要。</p>
+<p><strong>2、激励操作：</strong></p>
+<p>在压缩步骤之后，应用一个激励机制，该机制本质上是由两个全连接（FC）层和一个非线性激活函数（通常是sigmoid）组成的自门控机制。第一个FC层降低了通道描述符的维度，应用ReLU非线性激活，随后第二个FC层将其投影回原始通道维度。这个过程建模了通道间的非线性交互，并产生了一组通道权重。</p>
+<p><strong>3、特征重新校准：</strong></p>
+<p>激励操作的输出用于重新校准原始输入特征图。输入特征图的每个通道都由激励输出中对应的标量进行缩放。这一步骤有选择地强调信息丰富的特征，同时抑制不太有用的特征，使模型能够专注于任务中最相关的特征。</p>
+ <center><img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524230759056.png" alt="image-20240524230759056" style="zoom:80%;" /></center>
+<h3 id="3独特优势-1">3、<strong>独特优势</strong></h3>
+<p>1、<strong>通道间依赖的显式建模</strong>：</p>
+<p>SE Net的核心贡献是通过SE块显式建模通道间的依赖关系，有效地提升了网络对不同通道特征重要性的适应性和敏感性。这种方法允许网络学会动态地调整各个通道的特征响应，以增强有用的特征并抑制不那么重要的特征。</p>
+<p>2、<strong>轻量级且高效</strong>：</p>
+<p>尽管SE块为网络引入了额外的计算，但其设计非常高效，额外的参数量和计算量相对较小。这意味着SENet可以在几乎不影响模型大小和推理速度的情况下，显著提升模型性能。</p>
+<p>3、<strong>模块化和灵活性</strong>：</p>
+<p>SE块可以视为一个模块，轻松插入到现有CNN架构中的任何位置，包括ResNet、Inception和VGG等流行模型。这种模块化设计提供了极大的灵活性，使得SENet可以广泛应用于各种架构和任务中，无需对原始网络架构进行大幅度修改。</p>
+<p>4、<strong>跨任务和跨数据集的泛化能力</strong>：</p>
+<p>SENet在多个基准数据集上展现出了优异的性能，包括图像分类、目标检测和语义分割等多个视觉任务。这表明SE块不仅能提升特定任务的性能，还具有良好的泛化能力，能够跨任务和跨数据集提升模型的效果。</p>
+<p>5、<strong>增强的特征表征能力</strong>：</p>
+<p>通过调整通道特征的重要性，SENet能够更有效地利用模型的特征表征能力。这种增强的表征能力使得模型能够在更细粒度上理解图像内容，从而提高决策的准确性和鲁棒性。</p>
+<h3 id="4代码-1">4、<strong>代码：</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torch.nn</span> <span class="kn">import</span> <span class="n">init</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SEAttention</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 初始化SE模块，channel为通道数，reduction为降维比率</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">avg_pool</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">AdaptiveAvgPool2d</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 自适应平均池化层，将特征图的空间维度压缩为1x1</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>  <span class="c1"># 定义两个全连接层作为激励操作，通过降维和升维调整通道重要性</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">channel</span> <span class="o">//</span> <span class="n">reduction</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>  <span class="c1"># 降维，减少参数数量和计算量</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># ReLU激活函数，引入非线性</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">channel</span> <span class="o">//</span> <span class="n">reduction</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>  <span class="c1"># 升维，恢复到原始通道数</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>  <span class="c1"># Sigmoid激活函数，输出每个通道的重要性系数</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 权重初始化方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">init_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">modules</span><span class="p">():</span>  <span class="c1"># 遍历模块中的所有子模块</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">):</span>  <span class="c1"># 对于卷积层</span>
+</span></span><span class="line"><span class="cl">                <span class="n">init</span><span class="o">.</span><span class="n">kaiming_normal_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;fan_out&#39;</span><span class="p">)</span>  <span class="c1"># 使用Kaiming初始化方法初始化权重</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">bias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 如果有偏置项，则初始化为0</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">):</span>  <span class="c1"># 对于批归一化层</span>
+</span></span><span class="line"><span class="cl">                <span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 权重初始化为1</span>
+</span></span><span class="line"><span class="cl">                <span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 偏置初始化为0</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">):</span>  <span class="c1"># 对于全连接层</span>
+</span></span><span class="line"><span class="cl">                <span class="n">init</span><span class="o">.</span><span class="n">normal_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>  <span class="c1"># 权重使用正态分布初始化</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">bias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 偏置初始化为0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 前向传播方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>  <span class="c1"># 获取输入x的批量大小b和通道数c</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">avg_pool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>  <span class="c1"># 通过自适应平均池化层后，调整形状以匹配全连接层的输入</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 通过全连接层计算通道重要性，调整形状以匹配原始特征图的形状</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="o">.</span><span class="n">expand_as</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 将通道重要性系数应用到原始特征图上，进行特征重新校准</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 示例使用</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># 随机生成一个输入特征图</span>
+</span></span><span class="line"><span class="cl">    <span class="n">se</span> <span class="o">=</span> <span class="n">SEAttention</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># 实例化SE模块，设置降维比率为8</span>
+</span></span><span class="line"><span class="cl">    <span class="n">output</span> <span class="o">=</span> <span class="n">se</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>  <span class="c1"># 将输入特征图通过SE模块进行处理</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 打印处理后的特征图形状，验证SE模块的作用</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="消融实验ablation">消融实验ablation</h3>
+<h4 id="实验环境">实验环境</h4>
+<p>本文的实验平台为64位windows11系统，GPU为NVIDIA GeForce RTX 4070(12GB/华硕)，搭配的处理器为intel i5-13490F。Anaconda版本为23.7.4。cuda版本为12.1。Pytorch版本2.1.2。Python版本为3.9.18。tensorboard版本为2.16.2。</p>
+<p>本实验中所有的网络都使用相同的训练设置,填充大小是100*100,batchsize大小是18,本文使用优化器为ADAM来训练模型,对Rain100L数据集的训练周期为100个epoch(对于其他大数据集如Rain1400等由于时间问题，并没有达到这个迭代周期),初始学习率设置为0.001,当epoch分别为30、50、80时,学习率均乘以0.2。</p>
+<h4 id="评估指标">评估指标</h4>
+<p>本文使用图像去雨领域常用的图像质量评价指标PSNR、SSIM来对算法进行有效评估与比较。</p>
+<h5 id="峰值信噪比psnr">峰值信噪比PSNR</h5>
+<p>PSNR 的计算基于均方误差（MSE）。首先计算 MSE，它是原始图像和失真图像对应像素差的平方值的平均值。PSNR的值越高表示处理后的图像与原图越接近。PSNR通过下面的公式计算：</p>
+<p>​ <br>
+$$
+PSNR = 10\cdot\log_{10}\left(\frac{{MAX}^2}{{MSE}}\right)
+$$
+其中，$\text{MAX}$是可能的最大像素值，通常对于8位图像是255，$\text{MSE}$（Mean Squared Error）表示均方误差。而MSE的计算方式如下：</p>
+<p>$$
+MSE = \frac{1}{mn} \sum_{i=1}^m \sum_{j=1}^n(I(i, j) - K(i, j))^2
+$$
+其中，$m$ 和 $n$ 分别是图像的行数和列数，$I(i, j)$ 是原始图像在位置 $(i, j)$ 的像素值，$K(i, j)$ 是失真或重建图像在位置 $(i, j)$ 的像素值。</p>
+<h5 id="结构相似性ssim">结构相似性SSIM</h5>
+<p>SSIM基于三个比较维度：亮度（luminance）、对比度（contrast）和结构（structure）。SSIM指数通过比较两幅图像的亮度、对比度和结构的相似性来计算。SSIM的值范围从-1到1，其中1表示两图像完全相同。其计算方式如下：</p>
+<p>$$
+\text{SSIM}(x, y) = \left( \frac{2 \mu_x \mu_y + C_1}{\mu_x^2 + \mu_y^2 + C_1} \right) \times \left( \frac{2 \sigma_{xy} + C_2}{\sigma_x^2 + \sigma_y^2 + C_2} \right) \times \left( \frac{\sigma_{xy} + C_3}{\sigma_x \sigma_y + C_3} \right)
+$$</p>
+<p>其中
+$\mu_x$ 和 $\mu_y$ 分别是图像 $x$ 和 $y$ 的平均亮度。
+$\sigma_x^2$ 和 $\sigma_y^2$ 分别是图像 $x$ 和 $y$ 的方差。
+$\sigma_{xy}$ 是图像 $x$ 和 $y$ 的协方差。
+$C_1, C_2, C_3$ 是小常数，用以维持稳定性，通常 $C_3 = \frac{C_2}{2}$。</p>
+<h4 id="实验数据集">实验数据集</h4>
+<p>本文的所有的消融实验都是在合成的小雨数据集Rain100L上进行的，Rain100L数据集里面包含有雨图片和对应的无雨图片,雨纹的密度较小,其训练集有200张有雨图片,测试集有100张有雨图片。对比实验在Rain100L，Rain1400以及Rain12上进行。</p>
+<h4 id="损失函数">损失函数</h4>
+<p>本文的loss function选择与原PReNet论文一直，采用negative SSIM作为loss，通过取负，我们可以将最大化SSIM的问题转化为最小化负SSIM的问题从而符合求最小损失这个前提。且ssim的评估方式更符合人眼直觉。本loss function表达式为：
+$$
+L_s=-SSIM
+$$</p>
+<p>我在第一层卷积层后缝合了gam模块</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">PReNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recurrent_iter</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">use_GPU</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">(</span><span class="n">PReNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">iteration</span> <span class="o">=</span> <span class="n">recurrent_iter</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">use_GPU</span> <span class="o">=</span> <span class="n">use_GPU</span>
+</span></span><span class="line"><span class="cl">		<span class="o">...</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>   
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">gam</span><span class="o">=</span><span class="n">GAM_Attention</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span><span class="c1">#GAM</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">batch_size</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    	<span class="o">...</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iteration</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="nb">input</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gam</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">...</span>
+</span></span><span class="line"><span class="cl">            <span class="o">...</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_list</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="实验设计">实验设计</h4>
+<p>本部分通过引入SE通道注意力机制模块以及GAM全局注意力机制模块，分别安插在PReNet网络的不同位置进行性能比对，从而筛选出更优质的改进方案。嵌入位置如下图：</p>
+<center><img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524231523089.png" alt="image-20240524231448362" style="zoom:80%;" /></center>
+<p>对于不同注意力模块以及其在网络中嵌入的不同位置，后以不同名字指代如表1.1所示。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">注意力模块的相对位置</th>
+<th style="text-align:center">后续的网络命名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GAM模块在残差块内</td>
+<td style="text-align:center">PReNet_GAM_R</td>
+</tr>
+<tr>
+<td style="text-align:center">SE 模块在残差块内</td>
+<td style="text-align:center">PReNet_SE_R</td>
+</tr>
+<tr>
+<td style="text-align:center">GAM模块在输入层后</td>
+<td style="text-align:center">PReNet_GAM_afterConv0</td>
+</tr>
+<tr>
+<td style="text-align:center">SE 模块在输入层后</td>
+<td style="text-align:center">PReNet_SE_afterConv0</td>
+</tr>
+<tr>
+<td style="text-align:center">GAM模块在输入层后，SE模块在残差块内</td>
+<td style="text-align:center">PReNet_GAM_SE</td>
+</tr>
+<tr>
+<td style="text-align:center">SE 模块在输入层后，GAM模块在残差块内</td>
+<td style="text-align:center">PReNet_SE_GAM</td>
+</tr>
+<tr>
+<td style="text-align:center">GAM模块同时在输入层后以及残差块内</td>
+<td style="text-align:center">PReNet_GAM_GAM</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="在rain100l上的消融实验结果">在Rain100L上的消融实验结果</h4>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">模型名称</th>
+<th style="text-align:center">PSNR</th>
+<th style="text-align:center">SSIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">PReNet</td>
+<td style="text-align:center">37.48</td>
+<td style="text-align:center">0.979</td>
+</tr>
+<tr>
+<td style="text-align:center">PReNet_GAM_R</td>
+<td style="text-align:center"><font color="#dd0000">37.97</font></td>
+<td style="text-align:center"><font color="#006600">0.980</font></td>
+</tr>
+<tr>
+<td style="text-align:center">PReNet_SE_R</td>
+<td style="text-align:center">37.69</td>
+<td style="text-align:center">0.979</td>
+</tr>
+<tr>
+<td style="text-align:center">PReNet_GAM_afterConv0</td>
+<td style="text-align:center">37.49</td>
+<td style="text-align:center">0.979</td>
+</tr>
+<tr>
+<td style="text-align:center">PReNet_SE_afterConv0</td>
+<td style="text-align:center">37.49</td>
+<td style="text-align:center">0.979</td>
+</tr>
+<tr>
+<td style="text-align:center">PReNet_GAM_SE</td>
+<td style="text-align:center">37.45</td>
+<td style="text-align:center">0.979</td>
+</tr>
+<tr>
+<td style="text-align:center">PReNet_SE_GAM</td>
+<td style="text-align:center"><font color="#006600">37.92</font></td>
+<td style="text-align:center"><font color="#dd0000">0.981</font></td>
+</tr>
+<tr>
+<td style="text-align:center">PReNet_GAM_GAM</td>
+<td style="text-align:center">37.91</td>
+<td style="text-align:center">0.980</td>
+</tr>
+</tbody>
+</table></div>
+<p>针对Rain100L数据集的实验结果表明，当GAM模 块单独集成在每个残差块内时，网络性能提升最为明显。这一发现表明GAM模块在 处理图像中的全局信息方面具有显著优势，能够有效地提升去雨效果。</p>
+<h3 id="对比实验">对比实验</h3>
+<p>将上文所提的PReNet_GAM_R方案在Rain1400、Rain100L和Rain12这 三个合成数据集上与3种经典的基于深度学习的图像去雨算法JORDER、RESCAN、 PReNet 算法以及本文提的PReNet_GAM_R方案进行定性定量评估比较。</p>
+<p>并在真实雨 图上进行主观感觉上的比较,来验证本方案的有效性。</p>
+<h4 id="1-合成数据集">(1) 合成数据集</h4>
+<p>本文方案与上述4种去雨算法的定量比较如表4.6所示,红色标注即为最高值。 从表中可以看出,PReNet_GAM_R方案在三个合成数据集上均能取得较高的PSNR和 SSIM 指标值,且其在三个合成数据集上的指标值基本高于其他四个去雨算法。 需要说明的是本对比实验中，PReNet_GAM_R 针对 Rain1400 数据集的训练 epoch 仅为 8 个 epochs，主要原因为 Rain1400 数据集庞大从而导致训练时间长的 问题，在RTX4070显卡夜以继日地连续72小时的工作情况下也仅仅训练到了第8 个epoch，因此此处的对比数据比原先PReNet性能略低一筹。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Dataset</strong></th>
+<th style="text-align:center"><strong>Measure</strong></th>
+<th style="text-align:center"><strong>JORDER</strong></th>
+<th style="text-align:center"><strong>RESCAN</strong></th>
+<th style="text-align:center"><strong>PReNet</strong></th>
+<th style="text-align:center"><strong>PReNet_GAM_R</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Rain100L</td>
+<td style="text-align:center">PSNR/SSIM</td>
+<td style="text-align:center">36.61/0.974</td>
+<td style="text-align:center">29.80/0.881</td>
+<td style="text-align:center">37.48/0.979</td>
+<td style="text-align:center"><font color="#dd0000">37.97/0.980</font></td>
+</tr>
+<tr>
+<td style="text-align:center">Rain12</td>
+<td style="text-align:center">PSNR/SSIM</td>
+<td style="text-align:center">33.92/0.953</td>
+<td style="text-align:center">&mdash;&ndash;</td>
+<td style="text-align:center">36.66/0.961</td>
+<td style="text-align:center"><font color="#dd0000"> 37.04/0.962</font></td>
+</tr>
+<tr>
+<td style="text-align:center">Rain1400</td>
+<td style="text-align:center">PSNR/SSIM</td>
+<td style="text-align:center">&mdash;&ndash;</td>
+<td style="text-align:center">&mdash;&ndash;</td>
+<td style="text-align:center"><font color="#dd0000">32.60/0.946</font></td>
+<td style="text-align:center">32.41/0.945</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="2-真实雨图">(2) 真实雨图</h4>
+<p>接下来将改进的PReNet_GAM_R与原先的PReNet在真实雨图上的去雨效果进 行比对，如下方图所示，从左到右依次为原始图像，PReNet图像，PReNet_GAM_R 图像，从上到下一共展示三组真实雨图，此处所用于测试的模型为在Rain1400数据 集上训练8epochs的PReNet_GAM_R网络 。</p>
+<center><img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524234636220.png" alt="image-20240524234528791"  /></center>
+<p>通过观察可以发现，PReNet_GAM_R改进后的去雨图像在清晰度上比PReNet的 去雨图像更为清晰，在细节部分没有出现丢失的情况，整幅图片看起来更为透彻，在 图像的清晰度提高和细节保留更完整，从而提供了更加令人满意的视觉效果。此外， 从感官体验的角度来看，图像的细节，如建筑线条、环境纹理和边缘清晰度等，在去 除雨水后都被更好地保留了下来，几乎与无雨的原始场景无异。</p>
+<h3 id="最后的网络结构">最后的网络结构</h3>
+<p><img src="http://tuchuang.dendrobiumcgk.chat/pic/image-20240524215731380.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="总结与展望">总结与展望</h3>
+<h4 id="总结">总结</h4>
+<p>本文介绍了在PReNet网络中集成不同的注意力机制模块的融合实验。通过详细的实验设计，分析了SE和GAM模块单独插入原网络输入层后和残差块内的效果，还考察了这两种模块同时使用时的性能变化。实验结果通过PSNR和 SSIM 指标进行量化，以评估不同配置对去雨效果的影响。针对Rain100L数据集的 实验结果表明，当GAM模块单独集成在每个残差块内时，网络性能提升最为明显。 本文的研究表明，注意力机制，尤其是全局注意力机制在提高深度网络处理复 杂去雨任务中的有效性。GAM模块通过其对全局信息的高效整合，使得网络能够更 准确地识别和去除图像中的雨滴，同时保留更多的背景细节。这一点在图像去雨的应用中尤为重要，因为背景信息的保留直接关系到去雨图像的视觉质量和实用价值。</p>
+<h4 id="展望">展望</h4>
+<p>本文改进的GAM融合PReNet去雨算法在进行单幅图像去雨工作时有一定的 提升效果,但与最新发布的去雨研究相比，仍存在一定的差距。此外，受限于硬件 资源和时间成本，本研究未能对多个大型数据集进行深入分析，甚至在唯一使用的 Rain1400 数据集上的训练周期也仅限于8个epochs。这些限制使得研究结果可能未 能完全体现潜在的优化效果。因此，未来研究的方向和展望可以从以下几个方面进 行扩展和深化：</p>
+<p>(1) 本文已经尝试了集成不同的注意力机制以优化去雨性能。未来工作可以继续 在这一方向上进行创新，例如探索新的神经网络架构或改进现有的深度学习模块，以适应去雨处理的特定需求。此外，调整和优化模型参数也是实现更有效去雨处理的 关键途径。</p>
+<p>(2) 尽管通过合成的虚拟雨图可以以更多样本地进行全监督学习，但这些数据往 往无法完全复现真实雨景的复杂性和多样性。因此，开发和使用更接近真实世界条 件的雨图数据集将是未来研究的重要方向。这将帮助模型更好地理解和处理实际场 景中的雨效应，提高去雨技术的实际应用价值。</p>
+<p>(3) 目前常用的图像质量评估指标如PSNR和SSIM虽然提供了量化的性能评估， 但并不能完全代表人类的视觉感知。应该设计一种更符合人类视觉感知的评价方法， 能更准确地反映去雨效果的优劣，这对于推动去雨技术的发展具有重要意义。</p>
+<p>(4) 考虑到降雨的复杂性，将模型驱动方法与数据驱动方法结合起来，可能是解 决去雨问题的一种有效策略。这种融合方法可以充分利用两种学习方式的优势，提高去雨算法的准确性和鲁棒性。 希望未来通过在上述几方面的努力，可以使得去雨研究有望实现更大的突破，为相关领域带来更深远的影响。</p>
+<h2 id="写在最后的ps">写在最后的ps</h2>
+<p>所谓的毕设就这么莫名其妙的搞完了，其实工作量很小，多半的工作量是前期阅读论文以及复现各种其他的去雨算法来选择一个比较合适的改进平台，后期所有的实验基本上只花了几天的功夫，反正现在答辩也弄完了，后面空闲的时间可能会做几个开源项目，然后再次投入那场“永恒轮回”的地狱中。</p>
+<p>复旦get out，中科院 come instead！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/pytorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0_01/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="http://tuchuang.dendrobiumcgk.chat/pic/pytorch_0.jpg" loading="lazy" data-key="" data-hash="http://tuchuang.dendrobiumcgk.chat/pic/pytorch_0.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PyTorch基础笔记_01</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0_00/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="http://tuchuang.dendrobiumcgk.chat/pic/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a000cover.jpg" loading="lazy" data-key="" data-hash="http://tuchuang.dendrobiumcgk.chat/pic/深度学习00cover.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">深度学习_00</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="http://tuchuang.dendrobiumcgk.chat/pic/%e5%be%ae%e4%bf%a1%e5%9b%be%e7%89%87_20240303141619.jpg" loading="lazy" data-key="" data-hash="http://tuchuang.dendrobiumcgk.chat/pic/微信图片_20240303141619.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">模拟电子技术笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"avatar":"","dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili","https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji","https://npm.elemecdn.com/@waline/emojis@1.1.0/weibo"],"lang":"zh-CN","locale":{"admin":"Admin"},"placeholder":"随便讲点什么~","requiredMeta":["name","email","url"],"serverURL":"https://comment.dendrobiumcgk.chat/","visitor":"false"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 Dendrobiumcgk
+    </section>
+    
+    <section class="powerby">
+        
+            The world opens itself before those with noble hearts. <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
