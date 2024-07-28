@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Ssl证书过期 on Dendrobiumcgk</title>
+        <link>https://Dendrobium123.github.io/tags/ssl%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F/</link>
+        <description>Recent content in Ssl证书过期 on Dendrobiumcgk</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language><atom:link href="https://Dendrobium123.github.io/tags/ssl%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>突然打开blog发现图片居然全都崩坏？！</title>
+        <link>https://Dendrobium123.github.io/p/%E7%AA%81%E7%84%B6%E6%89%93%E5%BC%80blog%E5%8F%91%E7%8E%B0%E5%9B%BE%E7%89%87%E5%B1%85%E7%84%B6%E5%85%A8%E9%83%BD%E5%B4%A9%E5%9D%8F/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://Dendrobium123.github.io/p/%E7%AA%81%E7%84%B6%E6%89%93%E5%BC%80blog%E5%8F%91%E7%8E%B0%E5%9B%BE%E7%89%87%E5%B1%85%E7%84%B6%E5%85%A8%E9%83%BD%E5%B4%A9%E5%9D%8F/</guid>
+        <description>&lt;p&gt;​		本来想传几张照片到博客的，结果从日本回来发现博客的照片全都裂了，一打开七牛云才发现原来是ssl证书过期了，没办法只能重新申请一个了。&lt;/p&gt;
+&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/image-20240728201600345.png&#34; alt=&#34;image-20240728201600345&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;点开发现证书已过期。&lt;/p&gt;
+&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/image-20240728212705397.png&#34; alt=&#34;image-20240728212705397&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;还好，七牛云上可以免费申请TrustAsia的免费域名证书。&lt;/p&gt;
+&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/image-20240728213319088.png&#34; alt=&#34;image-20240728213319088&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;填完信息以后，只要在自己申请域名的云那边解析一下就可以用了。&lt;/p&gt;
+&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/image-20240728213447056.png&#34; alt=&#34;image-20240728213447056&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;虽然不知道为什么，我一开始复制记录值里的3b5835&amp;hellip;这行数字的时候，粘贴出来总是不对，感觉像是加密了一样，最后还是手打出来的，有没有懂哥能告诉我为什么。&lt;/p&gt;
+&lt;p&gt;最后吐槽一下，之前七牛云的机器人系统帮我申请的那个ssl证书，信息填的也太随便了。&lt;/p&gt;
+&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/image-20240728213713661.png&#34; alt=&#34;image-20240728213713661&#34; style=&#34;zoom:50%;&#34; /&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
