@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://Dendrobium123.github.io/page/'>
 
-<link rel="stylesheet" href="/scss/style.min.64555d0ccb50ba6932194fff692124e3dae535f5f63f818c791ae034b7472de0.css"><meta property='og:title' content='Pages'>
+<link rel="stylesheet" href="/scss/style.min.95556dc3c435d85428c8e612a46304e58c0c061b81140ff20f287b4e5897619a.css"><meta property='og:title' content='Pages'>
 <meta property='og:description' content='希望我们都能成为更好的人。'>
 <meta property='og:url' content='https://Dendrobium123.github.io/page/'>
 <meta property='og:site_name' content='Dendrobiumcgk'>
@@ -493,7 +493,52 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.js" defer></script><script>
+document.addEventListener('DOMContentLoaded', function () {
+  const pagination = document.querySelector('.pagination');
+  if (!pagination) return;
+
+  const indicator = document.createElement('div');
+  indicator.classList.add('hover-indicator');
+  pagination.appendChild(indicator);
+
+  const links = pagination.querySelectorAll('.page-link');
+
+  const moveToLink = (link) => {
+    const rect = link.getBoundingClientRect();
+    const parentRect = pagination.getBoundingClientRect();
+
+    const left = rect.left - parentRect.left;
+    const top = rect.top - parentRect.top;
+    const width = rect.width*0.93;
+    const height = rect.height*0.92;
+
+    
+    const borderFix = 2;
+
+    indicator.style.left = `${left - borderFix}px`;
+    indicator.style.top = `${top - borderFix}px`;
+    indicator.style.width = `${width + borderFix * 2}px`;
+    indicator.style.height = `${height + borderFix * 2}px`;
+  };
+
+  links.forEach(link => {
+    link.addEventListener('mouseenter', () => moveToLink(link));
+  });
+
+  
+  pagination.addEventListener('mouseleave', () => {
+    const current = pagination.querySelector('.page-link.current');
+    if (current) moveToLink(current);
+  });
+
+  
+  const current = pagination.querySelector('.page-link.current');
+  if (current) moveToLink(current);
+});
+</script>
+
+
 <script>
     (function () {
         const customFont = document.createElement('link');
