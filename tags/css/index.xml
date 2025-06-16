@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>CSS on Dendrobiumcgk</title>
+        <link>https://Dendrobium123.github.io/tags/css/</link>
+        <description>Recent content in CSS on Dendrobiumcgk</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sat, 14 Jun 2025 13:10:42 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>博客装修日志</title>
+        <link>https://Dendrobium123.github.io/p/%E5%8D%9A%E5%AE%A2%E8%A3%85%E4%BF%AE%E6%97%A5%E5%BF%97/</link>
+        <pubDate>Sat, 14 Jun 2025 13:10:42 +0800</pubDate>
+        
+        <guid>https://Dendrobium123.github.io/p/%E5%8D%9A%E5%AE%A2%E8%A3%85%E4%BF%AE%E6%97%A5%E5%BF%97/</guid>
+        <description>&lt;img src="https://tuchuang.dendrobiumcgk.chat/pic/blog-fitment.jpg" alt="Featured image of post 博客装修日志" /&gt;&lt;h1 id=&#34;缘起&#34;&gt;缘起&lt;/h1&gt;
+&lt;p&gt;之前6月10号看了APPLE的发布会，这次新推出的主题叫液态玻璃，虽然推出后马上遭到网友狂喷说特别丑，但说实话还蛮对我胃口的，我其实蛮喜欢这种玻璃风格。一想到我的博客页面还特别简陋，就想试试能不能稍微装修一下。&lt;/p&gt;
+&lt;h3 id=&#34;6月14日&#34;&gt;6月14日&lt;/h3&gt;
+&lt;h5 id=&#34;sidebar&#34;&gt;sidebar&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了sidebar.scss中的menu模块，改变了sidebar背景透明度，添加了一个三种颜色组合的圆形渐变层加伸缩变化来模仿光晕效果，修改了hover的border效果，使得鼠标移动上去后按钮会做x轴的位移并且border会变色，并且鼠标点击后整个按钮会弹跳一下。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 同理修改了暗色模式的toggle，鼠标放置后会做y轴的轻微位移。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;背景&#34;&gt;背景&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了网页背景颜色为两种混合色&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;avatar&#34;&gt;avatar&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 为头像容器加入玻璃拟态样式，包括 &lt;code&gt;blur()&lt;/code&gt; 和 &lt;code&gt;border&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加了头像 hover 动效，放大、光圈泛动，使头像特效类似Instagram的snap限动。&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了文章article的背景颜色，使其看起来是半透明的。同时添加了伸缩的hover，并且修改了原始状态和伸缩后hover的box-shadow使其在光标放上去后效果看着像悬浮起来。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6月15日&#34;&gt;6月15日&lt;/h3&gt;
+&lt;p&gt;重新处理了域名访问过慢的问题，尝试了很多方案，包括使用cloudflare的dns服务，腾讯云的cos+cdn服务等，前者速度比原先还慢，后者因为没备案所以无法执行，本来还启用了腾讯云的cdn加速服务，但因为是回源是托管在vercel上的，所以启用cdn后被微信网页段屏蔽，后来重新解析了dns并且取消了cdn才解决，最后发现ssl证书过期了，重新申请后速度变快不少，但今天6月16日push后访问速度又变龟速了不知道为什么，真的崩溃，想充钱给域名备案了。在中国大陆境内就是无论做什么都要比原先的流程要多一步，真的无语。所以这天没有继续美化网站。&lt;/p&gt;
+&lt;h3 id=&#34;6月16日&#34;&gt;6月16日&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 主要修改了底部分页栏pagination，修改了pagination的背景使其变为半透明，添加了hover在page-link上使其在js文件的加持下可以跟随鼠标移动，同时挪开鼠标会自动回弹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 优化了修改过程中内部的page-link滑块被父容器pagination遮挡的问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 在pagination上添加了keyframe使得光标放上去后数字会q弹地抖动。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 将同样的效果施加在sidebar的menu上，取消了原先的x轴移动。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
