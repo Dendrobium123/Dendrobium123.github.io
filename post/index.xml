@@ -35,7 +35,7 @@
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了文章article的背景颜色，使其看起来是半透明的。同时添加了伸缩的hover，并且修改了原始状态和伸缩后hover的box-shadow使其在光标放上去后效果看着像悬浮起来。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;6月15日&#34;&gt;6月15日&lt;/h3&gt;
-&lt;p&gt;重新处理了域名访问过慢的问题，尝试了很多方案，包括使用cloudflare的dns服务，腾讯云的cos+cdn服务等，前者速度比原先还慢，后者因为没备案所以无法执行，本来还启用了腾讯云的cdn加速服务，但因为是回源是托管在vercel上的，所以启用cdn后被微信网页段屏蔽，后来重新解析了dns并且取消了cdn才解决，最后发现ssl证书过期了，重新申请后速度变快不少，但今天6月16日push后访问速度又变龟速了不知道为什么，真的崩溃，想充钱给域名备案了。在中国大陆境内就是无论做什么都要比原先的流程要多一步，真的无语。所以这天没有继续美化网站。&lt;/p&gt;
+&lt;p&gt;重新处理了域名访问过慢的问题，尝试了很多方案，包括使用cloudflare的dns服务，腾讯云的cos+cdn服务等，前者速度比原先还慢，后者因为没备案所以无法执行，本来还启用了腾讯云的cdn加速服务，但因为是回源是托管在vercel上的，所以启用cdn后被微信网页段屏蔽，后来重新解析了dns并且取消了cdn才解决，最后发现ssl证书过期了，重新申请后速度变快不少，但今天6月16日push后访问速度又变龟速了不知道为什么，真的崩溃，想充钱给域名备案了，真的无语。所以这天没有继续美化网站。&lt;/p&gt;
 &lt;h3 id=&#34;6月16日&#34;&gt;6月16日&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -50,6 +50,14 @@
 &lt;li&gt;
 &lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 将同样的效果施加在sidebar的menu上，取消了原先的x轴移动。&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6月18日&#34;&gt;6月18日&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加了&amp;quot;开往 travelling&amp;quot;的博客社区链接，并在官方github里issue了申请&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 重新调整了左侧menu按钮的布局&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化了social-menu的icon和hover&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了几个icon的svg代码，把里面的fill=“#XXXXXX”改成fill=&amp;ldquo;currentColor&amp;quot;就可以丝滑切换浅色和深色主题了&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 把原先pagination的跟踪滑块移除&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
@@ -1708,6 +1716,15 @@ $$&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://Dendrobium123.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://Dendrobium123.github.io/p/</guid>
+        <description>&lt;p&gt;维特根斯坦说“语言是思想的边界”。对于很多上了年纪的老人来说，他们可能会因为国语的不流利和本身语言的匮乏而不善于表达自己，但这种匮乏并不会限制他们细腻的情感，这两天我见了一位九十多岁的太里太，本地话的太里太是比曾祖母再大一个辈分的长辈，她看到我跟我寒暄，虽然只是用最简单的本地话问我现在怎么样，居然长这么高，我用我洋泾浜的土话回应，居然发现太里太讲着讲着突然眼泪汪汪。也许语言限制了她的思考，把她困在一个由方言和生活琐事构成的小世界里，但那又怎么能阻止她们有时候内心翻涌的巨大的情感，而这些朴素的强烈的情感支撑他们做了一辈子温柔善良的人。我希望所有善良的人们都能好好的。有时候我也觉得学习讲方言不只是为了所谓的文化认同，也是一把钥匙，去通向这些不会讲国语的，温柔的长辈的思想世界里去。&lt;/p&gt;
 </description>
         </item>
         <item>

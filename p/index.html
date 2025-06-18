@@ -1,20 +1,75 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='PReNet渐近递归网络&#43;模块改进gam PReNet是什么 PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='维特根斯坦说“语言是思想的边界”。对于很多上了年纪的老人来说，他们可能会因为国语的不流利和本身语言的匮乏而不善于表达自己，但这种匮乏并不会限'>
 <title></title>
 
 <link rel='canonical' href='https://Dendrobium123.github.io/p/'>
 
-<link rel="stylesheet" href="/scss/style.min.d4ad52c86fac04375e49925c314cebf2c9480f7f7a62e8ad3774859a40e752aa.css"><meta property='og:title' content=''>
-<meta property='og:description' content='PReNet渐近递归网络&#43;模块改进gam PReNet是什么 PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶'>
+<link rel="stylesheet" href="/scss/style.min.7fd5308d6c8c9a01d09201b26b46e2408f2fece65759c519b988c95a7e20bea4.css"><meta property='og:title' content=''>
+<meta property='og:description' content='维特根斯坦说“语言是思想的边界”。对于很多上了年纪的老人来说，他们可能会因为国语的不流利和本身语言的匮乏而不善于表达自己，但这种匮乏并不会限'>
 <meta property='og:url' content='https://Dendrobium123.github.io/p/'>
 <meta property='og:site_name' content='Dendrobiumcgk'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="PReNet渐近递归网络&#43;模块改进gam PReNet是什么 PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶">
+<meta name="twitter:description" content="维特根斯坦说“语言是思想的边界”。对于很多上了年纪的老人来说，他们可能会因为国语的不流利和本身语言的匮乏而不善于表达自己，但这种匮乏并不会限">
     <link rel="shortcut icon" href="/favicon.ico" />
+<svg style="display: none">
+    <filter
+      id="glass-distortion"
+      x="0%"
+      y="0%"
+      width="100%"
+      height="100%"
+      filterUnits="objectBoundingBox"
+    >
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.001 0.005"
+        numOctaves="1"
+        seed="17"
+        result="turbulence"
+      />
+      
 
+      <feComponentTransfer in="turbulence" result="mapped">
+        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+      </feComponentTransfer>
+
+      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+
+      <feSpecularLighting
+        in="softMap"
+        surfaceScale="5"
+        specularConstant="1"
+        specularExponent="100"
+        lighting-color="white"
+        result="specLight"
+      >
+        <fePointLight x="-200" y="-200" z="300" />
+      </feSpecularLighting>
+
+      <feComposite
+        in="specLight"
+        operator="arithmetic"
+        k1="0"
+        k2="1"
+        k3="1"
+        k4="0"
+        result="litImage"
+      />
+
+      <feDisplacementMap
+        in="SourceGraphic"
+        in2="softMap"
+        scale="200"
+        xChannelSelector="R"
+        yChannelSelector="G"
+      />
+    </filter>
+  </svg>
     </head>
     <body class="
     article-page
@@ -52,6 +107,7 @@
         
             
             <figure class="site-avatar">
+                <div class="avatar-wrapper">
                 <a href="/">
                 
                     
@@ -63,6 +119,7 @@
                     
                 
                 </a>
+            </div>
                 
             </figure>
             
@@ -83,7 +140,7 @@
                     >
                         
                         
-                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1708678400289" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8940" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M404.992 156.992L380 160s-112.128 12.256-194.016 78.016h-0.96l-1.024 0.96c-18.368 16.896-26.368 37.664-39.008 68.032a982.08 982.08 0 0 0-37.984 112C83.264 504.864 64 608.864 64 704v8l4 8c29.632 52 82.24 85.12 131.008 108 48.736 22.88 90.88 35.008 120 36l19.008 0.992 9.984-16.992 35.008-62.016c37.12 8.384 79.872 14.016 128.992 14.016 49.12 0 91.872-5.632 128.992-14.016l35.008 62.016 10.016 16.992 18.976-0.992c29.12-0.992 71.264-13.12 120-36 48.768-22.88 101.376-56 131.008-108l4-8V704c0-95.136-19.264-199.136-43.008-284.992a982.08 982.08 0 0 0-37.984-112c-12.64-30.4-20.64-51.136-39.008-68l-0.992-1.024h-1.024C756.16 172.256 644 160 644 160l-24.992-3.008-9.024 23.008s-9.248 23.36-14.976 50.016A643.04 643.04 0 0 0 512 224c-17.12 0-46.72 1.12-83.008 6.016-5.76-26.656-15.008-50.016-15.008-50.016z m-44 73.024c1.376 4.48 2.752 8.352 4 12-41.376 10.24-85.504 25.856-125.984 50.976l33.984 54.016C356 295.488 475.232 288 512 288c36.736 0 156 7.488 239.008 59.008l33.984-54.016c-40.48-25.12-84.608-40.736-125.984-51.008 1.248-3.616 2.624-7.488 4-12 29.856 6.016 86.88 19.776 133.984 57.024-0.256 0.128 12 18.624 23.008 44.992 11.264 27.136 23.744 63.264 35.008 104 21.632 78.112 38.624 173.248 40 256.992-20.16 30.752-57.504 58.496-97.024 77.024a311.808 311.808 0 0 1-77.984 24.96L704 768c9.504-3.52 18.88-7.36 27.008-11.008 49.248-21.632 76-44.992 76-44.992l-42.016-48s-17.984 16.512-60 35.008C663.04 717.504 598.88 736 512 736s-151.008-18.496-192.992-36.992c-42.016-18.496-60-35.008-60-35.008l-42.016 48s26.752 23.36 76 44.992c8.128 3.648 17.504 7.52 27.008 11.008l-16 27.008a311.808 311.808 0 0 1-78.016-25.024c-39.488-18.496-76.864-46.24-96.96-76.992 1.344-83.744 18.336-178.88 40-256.992a917.216 917.216 0 0 1 34.976-104c11.008-26.368 23.264-44.864 23.008-44.992 47.104-37.248 104.128-51.008 133.984-56.992zM400 448c-24.736 0-46.624 14.112-60 32-13.376 17.888-20 39.872-20 64s6.624 46.112 20 64c13.376 17.888 35.264 32 60 32 24.736 0 46.624-14.112 60-32 13.376-17.888 20-39.872 20-64s-6.624-46.112-20-64c-13.376-17.888-35.264-32-60-32z m224 0c-24.736 0-46.624 14.112-60 32-13.376 17.888-20 39.872-20 64s6.624 46.112 20 64c13.376 17.888 35.264 32 60 32 24.736 0 46.624-14.112 60-32 13.376-17.888 20-39.872 20-64s-6.624-46.112-20-64c-13.376-17.888-35.264-32-60-32z m-224 64c1.76 0 4 0.64 8 6.016 4 5.344 8 14.72 8 25.984 0 11.264-4 20.64-8 26.016-4 5.344-6.24 5.984-8 5.984-1.76 0-4-0.64-8-6.016A44.832 44.832 0 0 1 384 544c0-11.264 4-20.64 8-26.016 4-5.344 6.24-5.984 8-5.984z m224 0c1.76 0 4 0.64 8 6.016 4 5.344 8 14.72 8 25.984 0 11.264-4 20.64-8 26.016-4 5.344-6.24 5.984-8 5.984-1.76 0-4-0.64-8-6.016A44.832 44.832 0 0 1 608 544c0-11.264 4-20.64 8-26.016 4-5.344 6.24-5.984 8-5.984z" p-id="8941" fill="#707070"></path></svg>
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1708678400289" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8940" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M404.992 156.992L380 160s-112.128 12.256-194.016 78.016h-0.96l-1.024 0.96c-18.368 16.896-26.368 37.664-39.008 68.032a982.08 982.08 0 0 0-37.984 112C83.264 504.864 64 608.864 64 704v8l4 8c29.632 52 82.24 85.12 131.008 108 48.736 22.88 90.88 35.008 120 36l19.008 0.992 9.984-16.992 35.008-62.016c37.12 8.384 79.872 14.016 128.992 14.016 49.12 0 91.872-5.632 128.992-14.016l35.008 62.016 10.016 16.992 18.976-0.992c29.12-0.992 71.264-13.12 120-36 48.768-22.88 101.376-56 131.008-108l4-8V704c0-95.136-19.264-199.136-43.008-284.992a982.08 982.08 0 0 0-37.984-112c-12.64-30.4-20.64-51.136-39.008-68l-0.992-1.024h-1.024C756.16 172.256 644 160 644 160l-24.992-3.008-9.024 23.008s-9.248 23.36-14.976 50.016A643.04 643.04 0 0 0 512 224c-17.12 0-46.72 1.12-83.008 6.016-5.76-26.656-15.008-50.016-15.008-50.016z m-44 73.024c1.376 4.48 2.752 8.352 4 12-41.376 10.24-85.504 25.856-125.984 50.976l33.984 54.016C356 295.488 475.232 288 512 288c36.736 0 156 7.488 239.008 59.008l33.984-54.016c-40.48-25.12-84.608-40.736-125.984-51.008 1.248-3.616 2.624-7.488 4-12 29.856 6.016 86.88 19.776 133.984 57.024-0.256 0.128 12 18.624 23.008 44.992 11.264 27.136 23.744 63.264 35.008 104 21.632 78.112 38.624 173.248 40 256.992-20.16 30.752-57.504 58.496-97.024 77.024a311.808 311.808 0 0 1-77.984 24.96L704 768c9.504-3.52 18.88-7.36 27.008-11.008 49.248-21.632 76-44.992 76-44.992l-42.016-48s-17.984 16.512-60 35.008C663.04 717.504 598.88 736 512 736s-151.008-18.496-192.992-36.992c-42.016-18.496-60-35.008-60-35.008l-42.016 48s26.752 23.36 76 44.992c8.128 3.648 17.504 7.52 27.008 11.008l-16 27.008a311.808 311.808 0 0 1-78.016-25.024c-39.488-18.496-76.864-46.24-96.96-76.992 1.344-83.744 18.336-178.88 40-256.992a917.216 917.216 0 0 1 34.976-104c11.008-26.368 23.264-44.864 23.008-44.992 47.104-37.248 104.128-51.008 133.984-56.992zM400 448c-24.736 0-46.624 14.112-60 32-13.376 17.888-20 39.872-20 64s6.624 46.112 20 64c13.376 17.888 35.264 32 60 32 24.736 0 46.624-14.112 60-32 13.376-17.888 20-39.872 20-64s-6.624-46.112-20-64c-13.376-17.888-35.264-32-60-32z m224 0c-24.736 0-46.624 14.112-60 32-13.376 17.888-20 39.872-20 64s6.624 46.112 20 64c13.376 17.888 35.264 32 60 32 24.736 0 46.624-14.112 60-32 13.376-17.888 20-39.872 20-64s-6.624-46.112-20-64c-13.376-17.888-35.264-32-60-32z m-224 64c1.76 0 4 0.64 8 6.016 4 5.344 8 14.72 8 25.984 0 11.264-4 20.64-8 26.016-4 5.344-6.24 5.984-8 5.984-1.76 0-4-0.64-8-6.016A44.832 44.832 0 0 1 384 544c0-11.264 4-20.64 8-26.016 4-5.344 6.24-5.984 8-5.984z m224 0c1.76 0 4 0.64 8 6.016 4 5.344 8 14.72 8 25.984 0 11.264-4 20.64-8 26.016-4 5.344-6.24 5.984-8 5.984-1.76 0-4-0.64-8-6.016A44.832 44.832 0 0 1 608 544c0-11.264 4-20.64 8-26.016 4-5.344 6.24-5.984 8-5.984z" p-id="8941" fill="currentColor"></path></svg>
                         
                     </a>
                 </li>
@@ -97,7 +154,7 @@
                     >
                         
                         
-                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1714130549113" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2338" data-spm-anchor-id="a313x.search_index.0.i0.16e33a81Yt19of" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M892.915499 191.942567H130.4961c-36.734646 0-66.514903 29.780257-66.514903 66.514903v570.537208c0 36.734646 29.780257 66.514903 66.514903 66.514903h762.419399c36.734646 0 66.514903-29.780257 66.514903-66.514903V258.45747c0-36.735669-29.779234-66.514903-66.514903-66.514903z m-28.145013 63.960731c0.517793 0 1.032516 0.013303 1.544169 0.038885L511.87925 564.945863 157.434635 255.932973c0.401136-0.01535 0.802272-0.030699 1.206478-0.030699h706.129373z m0 575.645552H158.641113c-16.95516 0-30.699186-13.744026-30.699186-30.699186V314.877457l362.226859 315.797409c5.995551 5.995551 13.853519 8.991792 21.710464 8.991792 7.857968 0.001023 15.715937-2.996241 21.710464-8.991792l361.879958-315.49451v485.668285c0 16.95516-13.744026 30.700209-30.699186 30.700209z" p-id="2339" fill="#707070"></path></svg>
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1714130549113" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2338" data-spm-anchor-id="a313x.search_index.0.i0.16e33a81Yt19of" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M892.915499 191.942567H130.4961c-36.734646 0-66.514903 29.780257-66.514903 66.514903v570.537208c0 36.734646 29.780257 66.514903 66.514903 66.514903h762.419399c36.734646 0 66.514903-29.780257 66.514903-66.514903V258.45747c0-36.735669-29.779234-66.514903-66.514903-66.514903z m-28.145013 63.960731c0.517793 0 1.032516 0.013303 1.544169 0.038885L511.87925 564.945863 157.434635 255.932973c0.401136-0.01535 0.802272-0.030699 1.206478-0.030699h706.129373z m0 575.645552H158.641113c-16.95516 0-30.699186-13.744026-30.699186-30.699186V314.877457l362.226859 315.797409c5.995551 5.995551 13.853519 8.991792 21.710464 8.991792 7.857968 0.001023 15.715937-2.996241 21.710464-8.991792l361.879958-315.49451v485.668285c0 16.95516-13.744026 30.700209-30.699186 30.700209z" p-id="2339" fill="currentColor"></path></svg>
                         
                     </a>
                 </li>
@@ -111,7 +168,7 @@
                     >
                         
                         
-                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1714131165171" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4054" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M886.7 298.5c-10.3-18.3-22.5-30.4-32.5-38v-68.9c1.5-13 4.3-56.2-21.1-81.6-9.5-9.5-26.6-20.1-53.5-16.4-34.2 4.7-72.5 22.3-103.2 36.5-11.3 5.2-26.5 12.2-32.3 13.8-5.3-0.3-16.5-2.1-26.4-3.6-23.4-3.6-55.3-8.6-85.7-8.6-30.4 0-62.3 5-85.7 8.6-10 1.5-21.1 3.3-26.4 3.6-5.8-1.6-21-8.6-32.3-13.8-30.7-14.2-69-31.8-103.2-36.5-27-3.7-44 6.9-53.5 16.4-25.4 25.4-22.6 68.6-21.1 81.6v68.9c-10 7.6-22.2 19.7-32.5 38-24.8 44.1-28.8 104.4-11.9 179.3 16.9 74.8 61.3 135.1 128.3 174.6 21.1 12.4 41.3 20.9 57.9 26.6-12.7 31.7-20.3 72.6-22.8 122.2-63.6-0.8-109.8-15.7-133.8-43.1-23.4-26.7-19.7-57.7-19.5-59v0.3c0.1-0.5 0.2-1 0.2-1.6 2.2-16.4-9.3-31.5-25.8-33.7-16.4-2.2-31.5 9.3-33.7 25.8 0 0.2 0 0.4-0.1 0.6-0.4 3-2.2 16.7 0.7 35.6 4 26.2 15 50.5 32 70.3 36 42 96.4 63.7 179.5 64.7 0.8 25.1 2.5 41.9 2.6 43 1.7 16.5 16.4 28.5 32.9 26.8 16.5-1.7 28.5-16.4 26.8-32.9 0-0.4-4.2-41.5-2-90.2 2.6-60 13.8-106.2 31.3-130.3 6.2-8.5 7.6-19.5 3.6-29.2-4-9.7-12.7-16.5-23-18.1-1.6-0.3-38.3-6.9-78.1-30.7-52.2-31.3-85.3-76.7-98.5-135.1-16.1-71.1-7-111.3 3.5-132.5 9.4-19 21.2-25.8 23.5-27 12.2-4.1 18.8-14.9 18.8-27.9v-87.4c0-1.4-0.1-2.7-0.3-4.1-1.7-13.4 0.4-28.6 3.4-32.8 0.6-0.1 1.6-0.1 3.3 0.2 25.4 3.5 60.6 19.7 86.3 31.6 28.4 13.1 42.7 19.4 55.9 19.4 9 0 20.8-1.8 37.1-4.4 22.6-3.5 50.8-7.9 76.5-7.9 25.7 0 53.9 4.4 76.5 7.9 16.3 2.5 28.1 4.4 37.1 4.4 13.2 0 27.5-6.3 55.9-19.4 25.7-11.8 60.9-28.1 86.3-31.6 1.6-0.2 2.7-0.2 3.2-0.2 1 1.6 3.1 6.4 3.8 15.7 0.7 8.8-0.2 16.4-0.3 17.1-0.2 1.4-0.3 2.6-0.3 4.1V277c0 12.9 6.6 23.8 18.8 27.9 2.4 1.2 14.2 8 23.5 27 10.5 21.2 19.6 61.4 3.5 132.5-13.2 58.3-46.3 103.8-98.5 135.1-39.7 23.8-76.5 30.4-78.1 30.7-10.3 1.6-19 8.5-23 18.1-4 9.7-2.6 20.7 3.6 29.2 37.3 51 33.8 176.4 29.3 220.4-1.7 16.5 10.3 31.2 26.8 32.9 1 0.1 2.1 0.2 3.1 0.2 15.2 0 28.2-11.5 29.8-26.9 0.2-1.8 4.6-45.2 2.3-98.1-2.2-51.9-9.9-94.4-23-127.2 16.5-5.7 36.8-14.2 57.9-26.6 67.1-39.5 111.4-99.8 128.3-174.6 17.1-74.7 13.1-135.1-11.7-179.1z" p-id="4055" fill="#707070"></path></svg>
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1714131165171" class="icon" viewBox="0 0 1024 1024" stroke-width="2" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4054" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M886.7 298.5c-10.3-18.3-22.5-30.4-32.5-38v-68.9c1.5-13 4.3-56.2-21.1-81.6-9.5-9.5-26.6-20.1-53.5-16.4-34.2 4.7-72.5 22.3-103.2 36.5-11.3 5.2-26.5 12.2-32.3 13.8-5.3-0.3-16.5-2.1-26.4-3.6-23.4-3.6-55.3-8.6-85.7-8.6-30.4 0-62.3 5-85.7 8.6-10 1.5-21.1 3.3-26.4 3.6-5.8-1.6-21-8.6-32.3-13.8-30.7-14.2-69-31.8-103.2-36.5-27-3.7-44 6.9-53.5 16.4-25.4 25.4-22.6 68.6-21.1 81.6v68.9c-10 7.6-22.2 19.7-32.5 38-24.8 44.1-28.8 104.4-11.9 179.3 16.9 74.8 61.3 135.1 128.3 174.6 21.1 12.4 41.3 20.9 57.9 26.6-12.7 31.7-20.3 72.6-22.8 122.2-63.6-0.8-109.8-15.7-133.8-43.1-23.4-26.7-19.7-57.7-19.5-59v0.3c0.1-0.5 0.2-1 0.2-1.6 2.2-16.4-9.3-31.5-25.8-33.7-16.4-2.2-31.5 9.3-33.7 25.8 0 0.2 0 0.4-0.1 0.6-0.4 3-2.2 16.7 0.7 35.6 4 26.2 15 50.5 32 70.3 36 42 96.4 63.7 179.5 64.7 0.8 25.1 2.5 41.9 2.6 43 1.7 16.5 16.4 28.5 32.9 26.8 16.5-1.7 28.5-16.4 26.8-32.9 0-0.4-4.2-41.5-2-90.2 2.6-60 13.8-106.2 31.3-130.3 6.2-8.5 7.6-19.5 3.6-29.2-4-9.7-12.7-16.5-23-18.1-1.6-0.3-38.3-6.9-78.1-30.7-52.2-31.3-85.3-76.7-98.5-135.1-16.1-71.1-7-111.3 3.5-132.5 9.4-19 21.2-25.8 23.5-27 12.2-4.1 18.8-14.9 18.8-27.9v-87.4c0-1.4-0.1-2.7-0.3-4.1-1.7-13.4 0.4-28.6 3.4-32.8 0.6-0.1 1.6-0.1 3.3 0.2 25.4 3.5 60.6 19.7 86.3 31.6 28.4 13.1 42.7 19.4 55.9 19.4 9 0 20.8-1.8 37.1-4.4 22.6-3.5 50.8-7.9 76.5-7.9 25.7 0 53.9 4.4 76.5 7.9 16.3 2.5 28.1 4.4 37.1 4.4 13.2 0 27.5-6.3 55.9-19.4 25.7-11.8 60.9-28.1 86.3-31.6 1.6-0.2 2.7-0.2 3.2-0.2 1 1.6 3.1 6.4 3.8 15.7 0.7 8.8-0.2 16.4-0.3 17.1-0.2 1.4-0.3 2.6-0.3 4.1V277c0 12.9 6.6 23.8 18.8 27.9 2.4 1.2 14.2 8 23.5 27 10.5 21.2 19.6 61.4 3.5 132.5-13.2 58.3-46.3 103.8-98.5 135.1-39.7 23.8-76.5 30.4-78.1 30.7-10.3 1.6-19 8.5-23 18.1-4 9.7-2.6 20.7 3.6 29.2 37.3 51 33.8 176.4 29.3 220.4-1.7 16.5 10.3 31.2 26.8 32.9 1 0.1 2.1 0.2 3.1 0.2 15.2 0 28.2-11.5 29.8-26.9 0.2-1.8 4.6-45.2 2.3-98.1-2.2-51.9-9.9-94.4-23-127.2 16.5-5.7 36.8-14.2 57.9-26.6 67.1-39.5 111.4-99.8 128.3-174.6 17.1-74.7 13.1-135.1-11.7-179.1z" p-id="4055" fill="currentColor"></path></svg>
                         
                     </a>
                 </li>
@@ -125,7 +182,7 @@
                     >
                         
                         
-                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1708678608527" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10076" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M895.51 350.26a415.67 415.67 0 0 0-782.86 49l59.73 24.59c39.23-151.32 176.93-263.35 340.3-263.35 193.82 0 351.5 157.68 351.5 351.5S706.5 863.5 512.68 863.5c-119.33 0-225-59.78-288.53-151l-96.22-43.43c0.63 1.55 1.27 3.08 1.91 4.62a415.6 415.6 0 0 0 765.67-323.43z" p-id="10077" fill="#707070"></path><path d="M627.655345 424.39011m-61.539174 14.524565a63.23 63.23 0 1 0 123.078348-29.049129 63.23 63.23 0 1 0-123.078348 29.049129Z" p-id="10078" fill="#707070"></path><path d="M395.55 755.79a99.31 99.31 0 0 0 99.31-99.31v-1.92l120-93.8c4.24 0.39 8.53 0.6 12.87 0.6a137 137 0 1 0-137-137q0 6.17 0.55 12.18L396.87 557.2h-1.32a98.87 98.87 0 0 0-50.1 13.55L100.34 460.39a421.9 421.9 0 0 0 3.85 128.13l193.94 87.31a99.34 99.34 0 0 0 97.42 79.96zM627.67 335a89.42 89.42 0 1 1-89.41 89.41A89.41 89.41 0 0 1 627.67 335zM375.4 710.61a57.63 57.63 0 0 0 76.21-28.89 57.63 57.63 0 0 0-28.89-76.2L371 582.24a78.2 78.2 0 1 1-47.33 105.08z" p-id="10079" fill="#707070"></path></svg>
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1708678608527" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10076" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M895.51 350.26a415.67 415.67 0 0 0-782.86 49l59.73 24.59c39.23-151.32 176.93-263.35 340.3-263.35 193.82 0 351.5 157.68 351.5 351.5S706.5 863.5 512.68 863.5c-119.33 0-225-59.78-288.53-151l-96.22-43.43c0.63 1.55 1.27 3.08 1.91 4.62a415.6 415.6 0 0 0 765.67-323.43z" p-id="10077" fill="currentColor"></path><path d="M627.655345 424.39011m-61.539174 14.524565a63.23 63.23 0 1 0 123.078348-29.049129 63.23 63.23 0 1 0-123.078348 29.049129Z" p-id="10078" fill="currentColor"></path><path d="M395.55 755.79a99.31 99.31 0 0 0 99.31-99.31v-1.92l120-93.8c4.24 0.39 8.53 0.6 12.87 0.6a137 137 0 1 0-137-137q0 6.17 0.55 12.18L396.87 557.2h-1.32a98.87 98.87 0 0 0-50.1 13.55L100.34 460.39a421.9 421.9 0 0 0 3.85 128.13l193.94 87.31a99.34 99.34 0 0 0 97.42 79.96zM627.67 335a89.42 89.42 0 1 1-89.41 89.41A89.41 89.41 0 0 1 627.67 335zM375.4 710.61a57.63 57.63 0 0 0 76.21-28.89 57.63 57.63 0 0 0-28.89-76.2L371 582.24a78.2 78.2 0 1 1-47.33 105.08z" p-id="10079" fill="currentColor"></path></svg>
                         
                     </a>
                 </li>
@@ -194,7 +251,7 @@
         
         
         <li >
-            <a href='/%E5%8F%8B%E9%93%BE-%CC%80-%CF%89-%CC%81/' >
+            <a href='/%E5%8F%8B%E9%93%BE%CE%B5/' >
                 
                 
                 
@@ -207,31 +264,24 @@
 
 
                 
-                <span>友链( •̀ ω •́ )</span>
+                <span>友链(・ε・)</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%BC%80%E5%BE%80%CF%89/' target="_blank">
+                
+                
+                
+                    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1750224759490" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3933" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><path d="M725.333333 213.333333c58.794667 0 106.666667 47.829333 106.666667 106.666667v426.666667a106.666667 106.666667 0 0 1-101.674667 106.410666l56.106667 96.170667a21.333333 21.333333 0 0 1-36.864 21.504L681.088 853.333333H342.912l-68.48 117.418667a21.333333 21.333333 0 1 1-36.864-21.504l56.106667-96.170667A106.666667 106.666667 0 0 1 192 746.666667v-426.666667C192 261.12 239.829333 213.333333 298.666667 213.333333z m-64 682.666667a21.333333 21.333333 0 0 1 0 42.666667h-298.666666a21.333333 21.333333 0 0 1 0-42.666667zM512 42.666667c174.08 0 302.848 51.2 382.72 152.106666 66.389333 83.797333 83.712 183.466667 86.613333 252.330667v241.749333a233.941333 233.941333 0 0 1-85.205333 180.906667l-51.626667 42.666667a21.248 21.248 0 0 1-30.08-2.858667 21.333333 21.333333 0 0 1 2.858667-30.037333l51.626667-42.666667A191.402667 191.402667 0 0 0 938.666667 688.853333V448.426667C932.906667 312.618667 869.674667 85.333333 512 85.333333 116.096 85.333333 85.333333 362.922667 85.333333 448v241.408c0 57.173333 25.173333 110.933333 69.12 147.498667l51.2 42.666666a21.333333 21.333333 0 1 1-27.306666 32.853334l-51.242667-42.752A234.026667 234.026667 0 0 1 42.666667 689.408V448c0-55.082667 11.008-161.237333 84.650666-253.354667C208.042667 93.866667 337.493333 42.666667 512 42.666667z m277.333333 576h-554.666666v128c0 35.285333 28.714667 64 64 64h426.666666c35.285333 0 64-28.714667 64-64v-128zM330.666667 682.666667a32 32 0 1 1 0 64 32 32 0 0 1 0-64z m362.666666 0a32 32 0 1 1 0 64 32 32 0 0 1 0-64zM725.333333 256H298.666667c-35.285333 0-64 28.714667-64 64v256h554.666666v-256c0-35.285333-28.714667-64-64-64z" fill="currentColor" p-id="3934"></path></svg>
+                
+                <span>开往(,,・ω・,,)</span>
             </a>
         </li>
         
 
         <div class="menu-bottom-section">
-                <li id="i18n-switch">  
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 5h7" />
-  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
-  <path d="M12 20l4 -9l4 9" />
-  <path d="M19.1 18h-6.2" />
-</svg>
-
-
-
-                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
-                        
-                            <option value="https://Dendrobium123.github.io/" selected>中文</option>
-                        
-                    </select>
-                </li>
-            
             
             
                 <li id="dark-mode-toggle">
@@ -258,81 +308,17 @@
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">目录</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#prenet渐近递归网络模块改进gam">PReNet渐近递归网络+模块改进gam</a>
-      <ol>
-        <li>
-          <ol>
-            <li><a href="#prenet是什么"><strong>PReNet是什么</strong></a></li>
-            <li><a href="#resnet">ResNet</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#21gam模块">21、gam模块</a>
-      <ol>
-        <li><a href="#1作用">1、作用</a></li>
-        <li><a href="#2机制">2、机制</a></li>
-        <li><a href="#3独特优势">3、独特优势</a></li>
-        <li><a href="#4代码">4、代码</a></li>
-      </ol>
-    </li>
-    <li><a href="#缝合se_attention">缝合SE_ATTENTION</a>
-      <ol>
-        <li><a href="#1se-net模块">1、SE Net模块</a></li>
-        <li><a href="#1作用-1">1、作用</a></li>
-        <li><a href="#2机制-1">2、<strong>机制</strong></a></li>
-        <li><a href="#3独特优势-1">3、<strong>独特优势</strong></a></li>
-        <li><a href="#4代码-1">4、<strong>代码：</strong></a></li>
-        <li><a href="#对比实验">对比实验</a>
-          <ol>
-            <li><a href="#prenet_se_behindres">PReNet_SE_behindRES</a></li>
-            <li><a href="#prenet_gam_behindres">PReNet_GAM_behindRES</a></li>
-            <li><a href="#prenet_gam_behindconv0">PReNet_GAM_behindConv0</a></li>
-            <li><a href="#prenet_se_behindconv0">PReNet_SE_behindConv0</a></li>
-            <li><a href="#prenet_gam_se">PReNet_GAM_SE</a></li>
-            <li><a href="#prenet_se_gam">PReNet_SE_GAM</a></li>
-          </ol>
-        </li>
-        <li><a href="#prenet_gam_gam">PReNet_GAM_GAM</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
             <main class="main full-width">
     <article class="main-article">
-    <header class="article-header">
-
-    <div class="article-details">
+    <header class="article-header liquidGlass-wrapper">
+    <div class="liquidGlass-effect"></div>
+    <div class="liquidGlass-tint"></div>
+    <div class="liquidGlass-shine"></div>
+    <div class="liquidGlass-text">
+  
+      <div class="article-details">
     
 
     <div class="article-title-wrapper">
@@ -361,7 +347,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 14 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -371,1062 +357,69 @@
     
 </div>
 
-</header>
+    </div>
+  </header>
+  <svg style="display: none">
+    <filter
+      id="glass-distortion"
+      x="0%"
+      y="0%"
+      width="100%"
+      height="100%"
+      filterUnits="objectBoundingBox"
+    >
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.001 0.005"
+        numOctaves="1"
+        seed="17"
+        result="turbulence"
+      />
+      
+
+      <feComponentTransfer in="turbulence" result="mapped">
+        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+      </feComponentTransfer>
+
+      <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+
+      <feSpecularLighting
+        in="softMap"
+        surfaceScale="5"
+        specularConstant="1"
+        specularExponent="100"
+        lighting-color="white"
+        result="specLight"
+      >
+        <fePointLight x="-200" y="-200" z="300" />
+      </feSpecularLighting>
+
+      <feComposite
+        in="specLight"
+        operator="arithmetic"
+        k1="0"
+        k2="1"
+        k3="1"
+        k4="0"
+        result="litImage"
+      />
+
+      <feDisplacementMap
+        in="SourceGraphic"
+        in2="softMap"
+        scale="200"
+        xChannelSelector="R"
+        yChannelSelector="G"
+      />
+    </filter>
+  </svg>
 
     <section class="article-content">
     
     
-    <h2 id="prenet渐近递归网络模块改进gam">PReNet渐近递归网络+模块改进gam</h2>
-<h4 id="prenet是什么"><strong>PReNet是什么</strong></h4>
-<p>PReNet是一种渐进递归网络，通过在基于ResNet的网络中引入递归层，以及将阶段性结果和原始多雨图像作为每个ResNet的输入，来提高去雨的性能。该网络能够有效地去除雨滴，对于图像去雨领域的研究具有重要意义，并可作为未来图像去雨研究的合适基础。</p>
-<h4 id="resnet">ResNet</h4>
-<p>我准备以PReNet为基底</p>
-<h2 id="21gam模块">21、gam模块</h2>
-<p>论文《Global Attention Mechanism: Retain Information to Enhance Channel-Spatial Interactions》</p>
-<h3 id="1作用">1、作用</h3>
-<p>这篇论文提出了全局注意力机制（Global Attention Mechanism, GAM），旨在通过保留通道和空间方面的信息来增强跨维度交互，从而提升深度神经网络的性能。GAM通过引入3D排列与多层感知器（MLP）用于通道注意力，并辅以卷积空间注意力子模块，提高了图像分类任务的表现。该方法在CIFAR-100和ImageNet-1K数据集上的图像分类任务中均稳定地超越了几种最新的注意力机制，包括在ResNet和轻量级MobileNet模型上的应用。</p>
-<h3 id="2机制">2、机制</h3>
-<p>1、<strong>通道注意力子模块</strong>：</p>
-<p>利用3D排列保留跨三个维度的信息，并通过两层MLP放大跨维度的通道-空间依赖性。这个子模块通过编码器-解码器结构，以一个缩减比例r（与BAM相同）来实现。</p>
-<p>2、<strong>空间注意力子模块</strong>：</p>
-<p>为了聚焦空间信息，使用了两个卷积层进行空间信息的融合。同时，为了进一步保留特征图，移除了池化操作。此外，为了避免参数数量显著增加，当应用于ResNet50时，采用了分组卷积与通道混洗。</p>
-<h3 id="3独特优势">3、独特优势</h3>
-<p>1、<strong>效率与灵活性</strong>：</p>
-<p>GAM展示了与现有的高效SR方法相比，如IMDN，其模型大小小了3倍，同时实现了可比的性能，展现了在内存使用上的高效性。</p>
-<p>2、<strong>动态空间调制</strong>：</p>
-<p>通过利用独立学习的多尺度特征表示并动态地进行空间调制，GAM能够高效地聚合特征，提升重建性能，同时保持低计算和存储成本。</p>
-<p>3、<strong>有效整合局部和非局部特征</strong>：</p>
-<p>GAM通过其层和CCM的结合，有效地整合了局部和非局部特征信息，实现了更精确的图像超分辨率重建。</p>
-<h3 id="4代码">4、代码</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">GAM_Attention</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">(</span><span class="n">GAM_Attention</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 通道注意力子模块</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">channel_attention</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 降维，减少参数数量和计算复杂度</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">)),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># 非线性激活</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 升维，恢复到原始通道数</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">),</span> <span class="n">in_channels</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 空间注意力子模块</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">spatial_attention</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 使用7x7卷积核进行空间特征的降维处理</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">),</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">)),</span>  <span class="c1"># 批归一化，加速收敛，提升稳定性</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># 非线性激活</span>
-</span></span><span class="line"><span class="cl">            <span class="c1"># 使用7x7卷积核进行空间特征的升维处理</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">/</span> <span class="n">rate</span><span class="p">),</span> <span class="n">in_channels</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">)</span>  <span class="c1"># 批归一化</span>
-</span></span><span class="line"><span class="cl">        <span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 输入张量的维度信息</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 调整张量形状以适配通道注意力处理</span>
-</span></span><span class="line"><span class="cl">        <span class="n">x_permute</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 应用通道注意力，并恢复原始张量形状</span>
-</span></span><span class="line"><span class="cl">        <span class="n">x_att_permute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel_attention</span><span class="p">(</span><span class="n">x_permute</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># 生成通道注意力图</span>
-</span></span><span class="line"><span class="cl">        <span class="n">x_channel_att</span> <span class="o">=</span> <span class="n">x_att_permute</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 应用通道注意力图进行特征加权</span>
-</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x_channel_att</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 生成空间注意力图并应用进行特征加权</span>
-</span></span><span class="line"><span class="cl">        <span class="n">x_spatial_att</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spatial_attention</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x_spatial_att</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 示例代码：使用GAM_Attention对一个随机初始化的张量进行处理</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>  <span class="c1"># 随机生成输入张量</span>
-</span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># 获取输入张量的维度信息</span>
-</span></span><span class="line"><span class="cl">    <span class="n">net</span> <span class="o">=</span> <span class="n">GAM_Attention</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># 实例化GAM_Attention模块</span>
-</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">net</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 通过GAM_Attention模块处理输入张量</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 打印输出张量的维度信息</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>缝合代码</p>
-<p>测试后</p>
-<p><img src="C:%5cUsers%5c10258%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240428134622111.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240428134622111"
-	
-	
-></p>
-<p>第二个为输入通道数</p>
-<p>目前prenet的networks.py中</p>
-<p>要点为输入输出通道数一致，搭积木</p>
-<p><img src="C:%5cUsers%5c10258%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240428141545712.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240428141545712"
-	
-	
-></p>
-<p>在我准备缝合的prenet的前向传播的获取x输入这步拦截获得通道数</p>
-<p>插入</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">print(x.shape)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="C:%5cUsers%5c10258%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240428142031151.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240428142031151"
-	
-	
-></p>
-<p>运行了一下train.py，发现x的通道数是3</p>
-<p>现在确定x被赋值前的通道数</p>
-<p><img src="C:%5cUsers%5c10258%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240428142312938.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240428142312938"
-	
-	
-></p>
-<p><img src="C:%5cUsers%5c10258%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240428142423289.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240428142423289"
-	
-	
-></p>
-<p>发现没有变化</p>
-<p>18为一次</p>
-<p>下面是 <code>PReNet</code> 前向传播的流程图描述：</p>
-<ol>
-<li>
-<p><strong>输入数据</strong>：接收输入数据 <code>input</code>，这是图像或其他类型的特征张量。</p>
-</li>
-<li>
-<p><strong>初始化隐藏状态和细胞状态</strong>：</p>
-<ul>
-<li>初始化隐藏状态 <code>h</code> 和细胞状态 <code>c</code> 为全零张量，大小与 <code>input</code> 的空间维度相匹配。</li>
-</ul>
-</li>
-<li>
-<p><strong>检查是否使用GPU</strong>：</p>
-<ul>
-<li>如果设置了使用GPU，则将 <code>h</code> 和 <code>c</code> 转移到GPU上。</li>
-</ul>
-</li>
-<li>
-<p><strong>循环迭代</strong>：对于定义的迭代次数 <code>self.iteration</code>：</p>
-<ul>
-<li>
-<p><strong>特征合并</strong>：将 <code>input</code> 与前一步的输出 <code>x</code> 在通道维度上合并。</p>
-</li>
-<li>
-<p><strong>第一层卷积处理</strong>：通过 <code>self.conv0</code> 处理合并后的特征。</p>
-</li>
-<li>
-<p><strong>状态合并</strong>：将卷积后的特征 <code>x</code> 与隐藏状态 <code>h</code> 在通道维度上合并。</p>
-</li>
-<li>
-<p>LSTM门控制逻辑</p>
-<p>：</p>
-<ul>
-<li><strong>输入门</strong>：<code>i = self.conv_i(x)</code></li>
-<li><strong>遗忘门</strong>：<code>f = self.conv_f(x)</code></li>
-<li><strong>更新门</strong>：<code>g = self.conv_g(x)</code></li>
-<li><strong>输出门</strong>：<code>o = self.conv_o(x)</code></li>
-<li>更新细胞状态：<code>c = f * c + i * g</code></li>
-<li>更新隐藏状态：<code>h = o * torch.tanh(c)</code></li>
-</ul>
-</li>
-<li>
-<p>残差连接和激活</p>
-<p>：对每一层残差卷积模块进行处理，加上残差连接并通过ReLU激活函数：</p>
-<ul>
-<li><code>x = F.relu(self.res_conv1(x) + resx)</code></li>
-<li>依此类推，直到 <code>self.res_conv5</code></li>
-</ul>
-</li>
-<li>
-<p><strong>输出卷积处理</strong>：通过 <code>self.conv(x)</code> 获取最终的输出特征。</p>
-</li>
-<li>
-<p><strong>更新输出</strong>：将卷积输出与原始输入相加得到最终输出，保存到输出列表 <code>x_list</code> 中。</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>返回输出</strong>：迭代完成后，返回最终的输出 <code>x</code> 和每次迭代的输出列表 <code>x_list</code>。</p>
-</li>
-</ol>
-<p>我在第一层卷积层后缝合了gam模块</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
-</span><span class="lnt">78
-</span><span class="lnt">79
-</span><span class="lnt">80
-</span><span class="lnt">81
-</span><span class="lnt">82
-</span><span class="lnt">83
-</span><span class="lnt">84
-</span><span class="lnt">85
-</span><span class="lnt">86
-</span><span class="lnt">87
-</span><span class="lnt">88
-</span><span class="lnt">89
-</span><span class="lnt">90
-</span><span class="lnt">91
-</span><span class="lnt">92
-</span><span class="lnt">93
-</span><span class="lnt">94
-</span><span class="lnt">95
-</span><span class="lnt">96
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">PReNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recurrent_iter</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">use_GPU</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">(</span><span class="n">PReNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">iteration</span> <span class="o">=</span> <span class="n">recurrent_iter</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">use_GPU</span> <span class="o">=</span> <span class="n">use_GPU</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv0</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv4</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv5</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv_i</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">+</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv_f</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">+</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv_g</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">+</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv_o</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">+</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">gam</span><span class="o">=</span><span class="n">GAM_Attention</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">batch_size</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="nb">input</span>
-</span></span><span class="line"><span class="cl">        <span class="n">h</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">c</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_GPU</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">h</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="n">x_list</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iteration</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="nb">input</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gam</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_i</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">o</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_o</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">c</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">c</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">g</span>
-</span></span><span class="line"><span class="cl">            <span class="n">h</span> <span class="o">=</span> <span class="n">o</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">h</span>
-</span></span><span class="line"><span class="cl">            <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv5</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="nb">input</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_list</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>训练到61epoch，20070steps时信噪比到了37.81比原先论文中的<img src="C:%5cUsers%5c10258%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240428210706207.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240428210706207"
-	
-	
-></p>
-<p>37.48（100epoch）还高一些</p>
-<p>刚刚那个是tensorboard里给出的数据，不是针对输出结果进行的评判</p>
-<p>一番折腾搞定matlab的问题后，重新对Rain100L和Rain1400数据集进行了针对结果的图像评判</p>
-<p>评判标准为psnr和ssim</p>
-<p>对Rain100L，在我改进的PReNet-gam下表现为</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">psnr=37.5606, ssim=0.9788
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>原论文为37.48/0.979，目前psnr比原先高一些，ssim没有达到原模型效果，可能在达到100epoch后会有所改善</p>
-<p>对Rain1400，表现为</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">psnr=32.5176, ssim=0.9450
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>原论文为32.60/0.946</p>
-<p>rain100l的模型为epoch71，rain400模型为epoch41</p>
-<p>作为比较，原论文中的参数为训练100epoch</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Our progressive networks are implemented using Py torch [24], and are trained on a PC equipped with two N VIDIA GTX 1080Ti GPUs. In our experiments, all the progressive networks share the same training setting. The patch size is 100 100, and the batch size is 18. The ADAM [17] algorithm is adopted to train the models with an initial learning rate 1 10 3, and ends after 100 epochs. When reaching 30, 50 and 80 epochs, the learning rate is decayed by multiplying 02
-</span></span></code></pre></td></tr></table>
-</div>
-</div><img src="C:\Users\10258\AppData\Roaming\Typora\typora-user-images\image-20240502233246314.png" alt="image-20240502233246314" style="zoom:50%;" />
-<p>原论文中对Rain1400的结果检测为32.60和0.946，我的结果还差一点，但可能在达到100epoch后能有更好的表现</p>
-<p>之前用test_real想测试模型在真实图片上的效果，但总是报错说参数对不上，现在改一下text_real的代码</p>
-<p>发现test_real和普通的test_PReNet差别在它调用的是Generator_lstm</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># test_PReNet  Build model</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loading model ...</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">PReNet</span><span class="p">(</span><span class="n">opt</span><span class="o">.</span><span class="n">recurrent_iter</span><span class="p">,</span> <span class="n">opt</span><span class="o">.</span><span class="n">use_GPU</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">print_network</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># test_real Build model</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loading model ...</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">Generator_lstm</span><span class="p">(</span><span class="n">opt</span><span class="o">.</span><span class="n">recurrent_iter</span><span class="p">,</span> <span class="n">opt</span><span class="o">.</span><span class="n">use_GPU</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">print_network</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>于是修改Generator_lstm</p>
-<p>这个模块通过递归迭代处理图像，每一次迭代都会更新隐藏状态和细胞状态，类似于 LSTM 网络中的操作。模型首先使用一系列的卷积和 ReLU 激活层来提取特征，然后使用四个 LSTM 风格的门（input gate, forget gate, output gate 和 update gate）来更新状态。每次迭代后，都会输出一个新的图像结果。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 定义初始卷积层</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv0</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 定义残差卷积层</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv</span> <span class="o">=</span> <span class="p">[</span><span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># LSTM风格的卷积门</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv_i</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv_f</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv_g</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv_o</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># 输出卷积层</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>按照之前缝合network的经验，直接将模块代码作为class插入，然后通过实例化调用，之后在forward中，对齐通道数，直接嵌入即可</p>
-<p>于是：在forward处</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_GPU</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="nb">input</span>
-</span></span><span class="line"><span class="cl">        <span class="n">h</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_GPU</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">h</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="n">x_list</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iteration</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="nb">input</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">res_layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_conv</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">                <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">res_layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_i</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">o</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_o</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">c</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">c</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">g</span>
-</span></span><span class="line"><span class="cl">            <span class="n">h</span> <span class="o">=</span> <span class="n">o</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gam</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>  <span class="c1"># 注意力机制作用于隐藏状态</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">x_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_list</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>但输出图像似乎是本该在原有图像上减去的雨滴雨线图像，似乎是输出层出现了问题,于是我改成了这样，让输入减去输出，但结果还是不大行，跟没用这个模型一样，现在不知道问题在哪，可能我会再缝合一个se注意力模块</p>
-<img src="C:\Users\10258\AppData\Roaming\Typora\typora-user-images\image-20240503152447083.png" alt="image-20240503152447083" style="zoom:50%;" />
-<h2 id="缝合se_attention">缝合SE_ATTENTION</h2>
-<p>SE 模块的目的是通过显式地重新校准卷积层的特征通道的响应来增强特征表达。</p>
-<h3 id="1se-net模块">1、SE Net模块</h3>
-<p>论文《Squeeze-and-Excitation Networks》</p>
-<h3 id="1作用-1">1、作用</h3>
-<p>SENet通过引入一个新的结构单元——“Squeeze-and-Excitation”（SE）块——来增强卷积神经网络的代表能力。是提高卷积神经网络（CNN）的表征能力，通过显式地建模卷积特征通道之间的依赖关系，从而在几乎不增加计算成本的情况下显著提升网络性能。SE模块由两个主要操作组成：压缩（Squeeze）和激励（Excitation）</p>
-<h3 id="2机制-1">2、<strong>机制</strong></h3>
-<p><strong>1、压缩操作：</strong></p>
-<p>SE模块首先通过全局平均池化操作对输入特征图的空间维度（高度H和宽度W）进行聚合，为每个通道生成一个通道描述符。这一步有效地将全局空间信息压缩成一个通道向量，捕获了通道特征响应的全局分布。这一全局信息对于接下来的重新校准过程至关重要。</p>
-<p><strong>2、激励操作：</strong></p>
-<p>在压缩步骤之后，应用一个激励机制，该机制本质上是由两个全连接（FC）层和一个非线性激活函数（通常是sigmoid）组成的自门控机制。第一个FC层降低了通道描述符的维度，应用ReLU非线性激活，随后第二个FC层将其投影回原始通道维度。这个过程建模了通道间的非线性交互，并产生了一组通道权重。</p>
-<p><strong>3、特征重新校准：</strong></p>
-<p>激励操作的输出用于重新校准原始输入特征图。输入特征图的每个通道都由激励输出中对应的标量进行缩放。这一步骤有选择地强调信息丰富的特征，同时抑制不太有用的特征，使模型能够专注于任务中最相关的特征。</p>
-<h3 id="3独特优势-1">3、<strong>独特优势</strong></h3>
-<p>1、<strong>通道间依赖的显式建模</strong>：</p>
-<p>SE Net的核心贡献是通过SE块显式建模通道间的依赖关系，有效地提升了网络对不同通道特征重要性的适应性和敏感性。这种方法允许网络学会动态地调整各个通道的特征响应，以增强有用的特征并抑制不那么重要的特征。</p>
-<p>2、<strong>轻量级且高效</strong>：</p>
-<p>尽管SE块为网络引入了额外的计算，但其设计非常高效，额外的参数量和计算量相对较小。这意味着SENet可以在几乎不影响模型大小和推理速度的情况下，显著提升模型性能。</p>
-<p>3、<strong>模块化和灵活性</strong>：</p>
-<p>SE块可以视为一个模块，轻松插入到现有CNN架构中的任何位置，包括ResNet、Inception和VGG等流行模型。这种模块化设计提供了极大的灵活性，使得SENet可以广泛应用于各种架构和任务中，无需对原始网络架构进行大幅度修改。</p>
-<p>4、<strong>跨任务和跨数据集的泛化能力</strong>：</p>
-<p>SENet在多个基准数据集上展现出了优异的性能，包括图像分类、目标检测和语义分割等多个视觉任务。这表明SE块不仅能提升特定任务的性能，还具有良好的泛化能力，能够跨任务和跨数据集提升模型的效果。</p>
-<p>5、<strong>增强的特征表征能力</strong>：</p>
-<p>通过调整通道特征的重要性，SENet能够更有效地利用模型的特征表征能力。这种增强的表征能力使得模型能够在更细粒度上理解图像内容，从而提高决策的准确性和鲁棒性。</p>
-<h3 id="4代码-1">4、<strong>代码：</strong></h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">torch.nn</span> <span class="kn">import</span> <span class="n">init</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SEAttention</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 初始化SE模块，channel为通道数，reduction为降维比率</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">avg_pool</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">AdaptiveAvgPool2d</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 自适应平均池化层，将特征图的空间维度压缩为1x1</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>  <span class="c1"># 定义两个全连接层作为激励操作，通过降维和升维调整通道重要性</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">channel</span> <span class="o">//</span> <span class="n">reduction</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>  <span class="c1"># 降维，减少参数数量和计算量</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>  <span class="c1"># ReLU激活函数，引入非线性</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">channel</span> <span class="o">//</span> <span class="n">reduction</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>  <span class="c1"># 升维，恢复到原始通道数</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>  <span class="c1"># Sigmoid激活函数，输出每个通道的重要性系数</span>
-</span></span><span class="line"><span class="cl">        <span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># 权重初始化方法</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">init_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">modules</span><span class="p">():</span>  <span class="c1"># 遍历模块中的所有子模块</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">):</span>  <span class="c1"># 对于卷积层</span>
-</span></span><span class="line"><span class="cl">                <span class="n">init</span><span class="o">.</span><span class="n">kaiming_normal_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;fan_out&#39;</span><span class="p">)</span>  <span class="c1"># 使用Kaiming初始化方法初始化权重</span>
-</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">bias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 如果有偏置项，则初始化为0</span>
-</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">):</span>  <span class="c1"># 对于批归一化层</span>
-</span></span><span class="line"><span class="cl">                <span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 权重初始化为1</span>
-</span></span><span class="line"><span class="cl">                <span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 偏置初始化为0</span>
-</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">):</span>  <span class="c1"># 对于全连接层</span>
-</span></span><span class="line"><span class="cl">                <span class="n">init</span><span class="o">.</span><span class="n">normal_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>  <span class="c1"># 权重使用正态分布初始化</span>
-</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">bias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">init</span><span class="o">.</span><span class="n">constant_</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">bias</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 偏置初始化为0</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># 前向传播方法</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>  <span class="c1"># 获取输入x的批量大小b和通道数c</span>
-</span></span><span class="line"><span class="cl">        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">avg_pool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>  <span class="c1"># 通过自适应平均池化层后，调整形状以匹配全连接层的输入</span>
-</span></span><span class="line"><span class="cl">        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 通过全连接层计算通道重要性，调整形状以匹配原始特征图的形状</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="o">.</span><span class="n">expand_as</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 将通道重要性系数应用到原始特征图上，进行特征重新校准</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 示例使用</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># 随机生成一个输入特征图</span>
-</span></span><span class="line"><span class="cl">    <span class="n">se</span> <span class="o">=</span> <span class="n">SEAttention</span><span class="p">(</span><span class="n">channel</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># 实例化SE模块，设置降维比率为8</span>
-</span></span><span class="line"><span class="cl">    <span class="n">output</span> <span class="o">=</span> <span class="n">se</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>  <span class="c1"># 将输入特征图通过SE模块进行处理</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 打印处理后的特征图形状，验证SE模块的作用</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>目前我想法是在PReNet的每个残差块后添加 SE 模块</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="bp">self</span><span class="o">.</span><span class="n">res_conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">se1</span> <span class="o">=</span> <span class="n">SE_Attention</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">se2</span> <span class="o">=</span> <span class="n">SE_Attention</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">se3</span> <span class="o">=</span> <span class="n">SE_Attention</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv4</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">se4</span> <span class="o">=</span> <span class="n">SE_Attention</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">res_conv5</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">se5</span> <span class="o">=</span> <span class="n">SE_Attention</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">conv_i</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">+</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">            <span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>前向过程代码修改：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x_list</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iteration</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="nb">input</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gam</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_i</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">o</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv_o</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">c</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">g</span>
-</span></span><span class="line"><span class="cl">    <span class="n">h</span> <span class="o">=</span> <span class="n">o</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">h</span>
-</span></span><span class="line"><span class="cl">    <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">se1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">se2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">se3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">se4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">resx</span> <span class="o">=</span> <span class="n">x</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">se5</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_conv5</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">resx</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="nb">input</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_list</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>对Rain100L训练93epochs后，loss最低，matlab对生成结果判定：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PReNet_GAM_SE: psnr=37.4457, ssim=0.9788
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>作为对比，原论文为：37.48/0.979</p>
-<p>感觉效果还不如单放一个gam</p>
-<p>试试去掉gam，只剩se的</p>
-<p>于是，我在自己电脑上训练一个只剩se模块在各残差模块内</p>
-<p>在云端autodl上训练一个gam模块在各残差块内的，作对比实验</p>
-<h3 id="对比实验">对比实验</h3>
-<p>1.在每个残差块后加入SE_ATTENTION模块，无gam;训练数据集：Rain100L;100epochs</p>
-<p>结果：</p>
-<h4 id="prenet_se_behindres">PReNet_SE_behindRES</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">PReNet_SE_behindRES</span><span class="err">：</span><span class="n">psnr</span><span class="o">=</span><span class="n">37</span><span class="p">.</span><span class="na">6894</span><span class="p">,</span><span class="w"> </span><span class="n">ssim</span><span class="o">=</span><span class="n">0</span><span class="p">.</span><span class="na">9793</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>比论文的 37.48/0.979 更高</p>
-<p>2在每个残差块后加入gam模块，无se，训练数据集：Rain100L；100epochs</p>
-<h4 id="prenet_gam_behindres">PReNet_GAM_behindRES</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PReNet_GAM_behindRES：psnr=37.9671, ssim=0.9804
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>对Rain12 测试，论文为36.62/0.952</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">psnr=37.0380, ssim=0.9620
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>3.在第一个卷积层后添加gam模块，无se，训练数据集：Rain100L；100epochs，显卡：A100-PCIE-40GB</p>
-<h4 id="prenet_gam_behindconv0">PReNet_GAM_behindConv0</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PReNet_GAM_behindConv0：psnr=37.4934, ssim=0.9788
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>4.在第一个卷积层后添加se模块，无gam，训练数据集：Rain100L；100epochs</p>
-<h4 id="prenet_se_behindconv0">PReNet_SE_behindConv0</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PReNet_SE_behindConv0：psnr=37.4894, ssim=0.9788
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>5.第一个卷积层后加gam，每个残差块后加se；训练数据集：Rain100L；100epochs</p>
-<h4 id="prenet_gam_se">PReNet_GAM_SE</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PReNet_GAM_SE：psnr=37.4457, ssim=0.9788
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>6.第一个卷积层后加SE，每个残差块后加gam；训练数据集：Rain100L；100epochs</p>
-<h4 id="prenet_se_gam">PReNet_SE_GAM</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PReNet_SE_GAM: 37.9160, ssim=0.9810
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>A100-PCIE-40GB</p>
-<p>可以看出，在每个残差块后加入GAM模块，以及在第一个卷积层后加入SE模块，残差块后加入GAM模块，性能提升最明显</p>
-<p>而其中，单在RES层后加入GAM方案中PSNR更高，而SE_GAM方案中，ssim更高</p>
-<p>接下来尝试第一层卷积后加GAM，残差块后加入GAM，因为通过数据可知，性能主要提升发生在RES后加入GAM后，但在第一层卷积后加入GAM，性能似乎也有略微提升</p>
-<h3 id="prenet_gam_gam">PReNet_GAM_GAM</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PReNet_GAM_GAM:psnr=37.9084, ssim=0.9802
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>实验环境</p>
-<p>64位windows11系统，GPU为NVIDIA GeForce RTX 4070(12GB/华硕)，处理器为 intel i5-13490F 十核，</p>
-<p>anaconda版本conda 23.7.4</p>
-<p>cuda版本12.1</p>
-<p>pytorch版本2.1.2</p>
-<p>Python 3.9.18</p>
-<p>tensorboard版本2.16.2</p>
-<p>$$
-MSE = \frac{1}{mn} \sum_{i=1}^m \sum_{j=1}^n(I(i, j) - K(i, j))^2
-$$</p>
+    <p>维特根斯坦说“语言是思想的边界”。对于很多上了年纪的老人来说，他们可能会因为国语的不流利和本身语言的匮乏而不善于表达自己，但这种匮乏并不会限制他们细腻的情感，这两天我见了一位九十多岁的太里太，本地话的太里太是比曾祖母再大一个辈分的长辈，她看到我跟我寒暄，虽然只是用最简单的本地话问我现在怎么样，居然长这么高，我用我洋泾浜的土话回应，居然发现太里太讲着讲着突然眼泪汪汪。也许语言限制了她的思考，把她困在一个由方言和生活琐事构成的小世界里，但那又怎么能阻止她们有时候内心翻涌的巨大的情感，而这些朴素的强烈的情感支撑他们做了一辈子温柔善良的人。我希望所有善良的人们都能好好的。有时候我也觉得学习讲方言不只是为了所谓的文化认同，也是一把钥匙，去通向这些不会讲国语的，温柔的长辈的思想世界里去。</p>
 
 </section>
 
@@ -1508,7 +501,9 @@ $$</p>
     <section class="copyright">
         &copy; 
         
-        2024 Dendrobiumcgk
+            2024 - 
+        
+        2025 Dendrobiumcgk
     </section>
     
     <section class="powerby">
@@ -1516,7 +511,9 @@ $$</p>
             The world opens itself before those with noble hearts. <br/>
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+         <span>mod by <a href="https://github.com/Dendrobium123" target="_blank" rel="noopener">dendrobium</a></span>
     </section>
+    
 </footer>
 
 
@@ -1616,6 +613,18 @@ $$</p>
         document.head.appendChild(customFont);
     }());
 </script>
+<style>
+    @font-face {
+      font-family: 'AlimamaFangYuanTiVF-Thin';
+      src: url{ {Dresources.Get "/assets/font/AlimamaFangYuanTiVF-Thin.ttf"}.Permalink } format{'truetype'};
+    }
+  
+    :root {
+      --base-font-family: 'AlimamaFangYuanTiVF-Thin';
+      --code-font-family: 'AlimamaFangYuanTiVF-Thin';
+    }
+  </style>
+  <script src=https://Dendrobium123.github.io/background/sakura.js></script>
 
     </body>
 </html>
