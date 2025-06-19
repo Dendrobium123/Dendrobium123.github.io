@@ -12,7 +12,8 @@
         <pubDate>Sat, 14 Jun 2025 13:10:42 +0800</pubDate>
         
         <guid>https://Dendrobium123.github.io/p/%E5%8D%9A%E5%AE%A2%E8%A3%85%E4%BF%AE%E6%97%A5%E5%BF%97/</guid>
-        <description>&lt;img src="https://tuchuang.dendrobiumcgk.chat/pic/blog-fitment.jpg" alt="Featured image of post 博客装修日志" /&gt;&lt;h1 id=&#34;缘起&#34;&gt;缘起&lt;/h1&gt;
+        <description>&lt;img src="https://tuchuang.dendrobiumcgk.chat/pic/blog-fitment.jpg" alt="Featured image of post 博客装修日志" /&gt;&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=22826401&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
+&lt;h1 id=&#34;缘起&#34;&gt;缘起&lt;/h1&gt;
 &lt;p&gt;之前6月10号看了APPLE的发布会，这次新推出的主题叫液态玻璃，虽然推出后马上遭到网友狂喷说特别丑，但说实话还蛮对我胃口的，我其实蛮喜欢这种玻璃风格。一想到我的博客页面还特别简陋，就想试试能不能稍微装修一下。&lt;/p&gt;
 &lt;h3 id=&#34;6月14日&#34;&gt;6月14日&lt;/h3&gt;
 &lt;h5 id=&#34;sidebar&#34;&gt;sidebar&lt;/h5&gt;
@@ -53,12 +54,45 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;6月18日&#34;&gt;6月18日&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加了&amp;quot;开往 travelling&amp;quot;的博客社区链接，并在官方github里issue了申请&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 重新调整了左侧menu按钮的布局&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化了social-menu的icon和hover&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了几个icon的svg代码，把里面的fill=“#XXXXXX”改成fill=&amp;ldquo;currentColor&amp;quot;就可以丝滑切换浅色和深色主题了&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 把原先pagination的跟踪滑块移除&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 添加了&amp;quot;开往 travelling&amp;quot;的博客社区链接，并在官方github里issue了申请&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 重新调整了左侧menu按钮的布局&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化了social-menu的icon和hover&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了几个icon的svg代码，把里面的fill=“#XXXXXX”改成fill=&amp;ldquo;currentColor&amp;quot;就可以丝滑切换浅色和深色主题了&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 移除了原先pagination的跟踪滑块&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;6月19日&#34;&gt;6月19日&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了sidebar右边的widget样式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 包括tag，categories，archives的样式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 统一了所有按钮和气泡框的风格，为25px的r角，稍微拟物化的box-shadow以及粉色框框&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了文档界面的文章卡片&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了widget-TableOfContents的样式，使其看起来更合适。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 为今天修改的widget统一加了快速抖动hover&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 修改了light-theme和dark-theme的背景，分别为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; light：machu     @ &lt;a class=&#34;link&#34; href=&#34;https://www.pixiv.net/users/19389056&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;XilmO@夕末&lt;/a&gt;（pixiv作者）&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; dark：神無月、夕焼け     @&lt;a class=&#34;link&#34; href=&#34;https://www.pixiv.net/users/13750517&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Enze_恩沢&lt;/a&gt;（pixiv作者）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;del&gt;本来在主页添加了一个js文件好让博客能自动播放音乐，但好像因为是静态网页，所以每点击一次任意按钮，音乐都会重新播放，体验非常不好，所以就移除了。&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&#34;初步装修完工因为stack主题的框架没有改动所以后续可能看情况会继续修改&#34;&gt;初步装修完工，因为stack主题的框架没有改动，所以后续可能看情况会继续修改。&lt;/h2&gt;
+&lt;h4 id=&#34;关于魔改的一些css样式文件和代码后续整理之后可能会放到仓库里再说吧&#34;&gt;&lt;del&gt;关于魔改的一些css样式文件和代码后续整理之后可能会放到仓库里，再说吧&lt;/del&gt;&lt;/h4&gt;
 </description>
         </item>
         <item>
@@ -136,7 +170,8 @@ $$
         <pubDate>Sat, 04 Jan 2025 13:10:42 +0800</pubDate>
         
         <guid>https://Dendrobium123.github.io/p/%E9%AD%94%E5%A5%B3%E7%9A%84%E5%A4%9C%E5%AE%B4%E7%BB%AB%E5%9C%B0%E5%AE%81%E5%AE%81%E7%BA%BF%E9%80%9A%E5%85%B3%E6%84%9F%E5%8F%97/</guid>
-        <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/3194a89576eb4049a8b6d9cc912c2b0.png" alt="Featured image of post 魔女的夜宴，绫地宁宁线通关感受" /&gt;&lt;p&gt;坦白说，《魔女的夜宴》是我第一部认真游玩的视觉小说（虽然只推了宁宁一条线((因为我是冲着绫地宁宁的知名度才买的游戏(((甚至一开始还买错了游戏))))))，在这之前，我对玩galgame的人是抱有偏见的。这种二次元游戏似乎只是迎合某些人的幻想，用纯粹的媚男套路和虚幻的情节构建一种逃避现实的舒适圈，并不认为这些作品能传递什么真正有价值的情感，更不可能触及像我这样“坚韧不拔的内心深处”。但当我这两天通关了绫地宁宁线后，也许我需要重新审视自己的看法。&lt;/p&gt;
+        <description>&lt;img src="http://tuchuang.dendrobiumcgk.chat/pic/3194a89576eb4049a8b6d9cc912c2b0.png" alt="Featured image of post 魔女的夜宴，绫地宁宁线通关感受" /&gt;&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=34077763&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;
+&lt;p&gt;坦白说，《魔女的夜宴》是我第一部认真游玩的视觉小说（虽然只推了宁宁一条线((因为我是冲着绫地宁宁的知名度才买的游戏(((甚至一开始还买错了游戏))))))，在这之前，我对玩galgame的人是抱有偏见的。这种二次元游戏似乎只是迎合某些人的幻想，用纯粹的媚男套路和虚幻的情节构建一种逃避现实的舒适圈，并不认为这些作品能传递什么真正有价值的情感，更不可能触及像我这样“坚韧不拔的内心深处”。但当我这两天通关了绫地宁宁线后，也许我需要重新审视自己的看法。&lt;/p&gt;
 &lt;h3 id=&#34;下面大概介绍一下本作宁宁线的剧情内容和构成故事高潮的终极矛盾&#34;&gt;下面大概介绍一下本作宁宁线的剧情内容和构成故事高潮的终极矛盾&lt;/h3&gt;
 &lt;h4 id=&#34;主要背景&#34;&gt;主要背景：&lt;/h4&gt;
 &lt;p&gt;大概是男主拥有读取他人心情的超能力，（比如对面的人难过，男主会闻到苦味，生气会闻到一股酸味这样的。。导致性格阴暗低沉）女主绫地宁宁有一段不怎么愉快的童年经历（原生家庭矛盾导致父母离婚以至于影响到了她本人的性格和处事方式：变得圆滑，冷漠，没有朋友之类的）于是为了实现父母和好并拥有愉快童年的愿望和一只有魔力的猫签订契约变成魔女（代价是。。不大方便透露，总之非常戏剧化）&lt;/p&gt;
