@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>时间感受 on </title>
+        <title>dendrobiumcgk's blog</title>
         <link>https://Dendrobium123.github.io/tags/%E6%97%B6%E9%97%B4%E6%84%9F%E5%8F%97/</link>
-        <description>Recent content in 时间感受 on </description>
+        <description>希望我们都能成为更好的人</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 11 May 2025 13:10:42 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/%E6%97%B6%E9%97%B4%E6%84%9F%E5%8F%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 11 May 2025 13:10:42 +0800</lastBuildDate>
+                    
+                    <image>
+                        <url>https://Dendrobium123.github.io/favicon.ico</url>
+                        <title></title>
+                        <link>https://Dendrobium123.github.io/</link>
+                    </image>
+                    <atom:link href="https://Dendrobium123.github.io/tags/%E6%97%B6%E9%97%B4%E6%84%9F%E5%8F%97/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>对时间感知的思考，观看毕导最新视频后的想法</title>
         <link>https://Dendrobium123.github.io/p/%E5%AF%B9%E6%97%B6%E9%97%B4%E6%84%9F%E7%9F%A5%E7%9A%84%E6%80%9D%E8%80%83%E8%A7%82%E7%9C%8B%E6%AF%95%E5%AF%BC%E6%9C%80%E6%96%B0%E8%A7%86%E9%A2%91%E5%90%8E%E7%9A%84%E6%83%B3%E6%B3%95/</link>
         <pubDate>Sun, 11 May 2025 13:10:42 +0800</pubDate>
         
         <guid>https://Dendrobium123.github.io/p/%E5%AF%B9%E6%97%B6%E9%97%B4%E6%84%9F%E7%9F%A5%E7%9A%84%E6%80%9D%E8%80%83%E8%A7%82%E7%9C%8B%E6%AF%95%E5%AF%BC%E6%9C%80%E6%96%B0%E8%A7%86%E9%A2%91%E5%90%8E%E7%9A%84%E6%83%B3%E6%B3%95/</guid>
-        <description>&lt;p&gt;在昨晚看了毕导最新的一期视频，主要内容是从你为什么感觉时间越过越开开始，引出韦伯费希纳定理
+        <description>&lt;p&gt;在昨晚看了毕导最新的一期视频，主要内容是从你为什么感觉时间越过越快开始，引出韦伯费希纳定理
 $$
 \Delta p=k\frac{\Delta S}{S}
 $$
@@ -75,6 +82,7 @@ $$
 &lt;p&gt;撇开这些，我想谈谈我的猜想，我如果按照我们对世界的感知是对数系统这个前提的话，关于时间越过越快这个事从信息论角度我的猜想是我们人脑对外部事物的信息熵也符合韦伯费纳西的对数机制，随着年龄的增长，大脑对信息熵的感知范围也在不断扩展，类似频谱拓宽，从而使得同一件事的信息熵在人生的不同时期被感知的大小完全不同。小时候的带宽小，同一件事的主观信息熵大，长大后的带宽更大，主观信息熵变小，类似于功率谱密度的衰减，而人脑类似于一个选择性注意的滤波器，讲那些信息熵衰减从而趋向于背景噪声的平庸事件进行了筛除，如果说信息熵的定义式是-log（）的话，我们的主观信息熵应该是对此再次log。也就是说随着我们的长大，一方面我们的大脑会压缩我们主观对信息熵的感知，另一方面我们甚至还会主动降噪，将那些被压缩的低熵事件从记忆中清理出去从而保证我们对世界的感知，所以从这两个层面来讲，也许当我们和比我们小十岁二十岁的孩子聊天或者玩耍时，我们的“时间”流逝是真的不一样的。&lt;/p&gt;
 </description>
         </item>
+        
         
     </channel>
 </rss>

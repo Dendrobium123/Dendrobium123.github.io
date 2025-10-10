@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>博客装修 on </title>
+        <title>dendrobiumcgk's blog</title>
         <link>https://Dendrobium123.github.io/tags/%E5%8D%9A%E5%AE%A2%E8%A3%85%E4%BF%AE/</link>
-        <description>Recent content in 博客装修 on </description>
+        <description>希望我们都能成为更好的人</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 14 Jun 2025 13:10:42 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/%E5%8D%9A%E5%AE%A2%E8%A3%85%E4%BF%AE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 14 Jun 2025 13:10:42 +0800</lastBuildDate>
+                    
+                    <image>
+                        <url>https://Dendrobium123.github.io/favicon.ico</url>
+                        <title></title>
+                        <link>https://Dendrobium123.github.io/</link>
+                    </image>
+                    <atom:link href="https://Dendrobium123.github.io/tags/%E5%8D%9A%E5%AE%A2%E8%A3%85%E4%BF%AE/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>博客装修日志</title>
         <link>https://Dendrobium123.github.io/p/%E5%8D%9A%E5%AE%A2%E8%A3%85%E4%BF%AE%E6%97%A5%E5%BF%97/</link>
         <pubDate>Sat, 14 Jun 2025 13:10:42 +0800</pubDate>
@@ -97,6 +104,7 @@
 &lt;h4 id=&#34;关于魔改的一些css样式文件和代码后续整理之后可能会放到仓库里再说吧&#34;&gt;&lt;del&gt;关于魔改的一些css样式文件和代码后续整理之后可能会放到仓库里，再说吧&lt;/del&gt;&lt;/h4&gt;
 </description>
         </item>
+        
         
     </channel>
 </rss>

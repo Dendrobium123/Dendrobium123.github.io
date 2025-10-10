@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>绫地宁宁 on </title>
+        <title>dendrobiumcgk's blog</title>
         <link>https://Dendrobium123.github.io/tags/%E7%BB%AB%E5%9C%B0%E5%AE%81%E5%AE%81/</link>
-        <description>Recent content in 绫地宁宁 on </description>
+        <description>希望我们都能成为更好的人</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 04 Jan 2025 13:10:42 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/%E7%BB%AB%E5%9C%B0%E5%AE%81%E5%AE%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 04 Jan 2025 13:10:42 +0800</lastBuildDate>
+                    
+                    <image>
+                        <url>https://Dendrobium123.github.io/favicon.ico</url>
+                        <title></title>
+                        <link>https://Dendrobium123.github.io/</link>
+                    </image>
+                    <atom:link href="https://Dendrobium123.github.io/tags/%E7%BB%AB%E5%9C%B0%E5%AE%81%E5%AE%81/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>魔女的夜宴，绫地宁宁线通关感受</title>
         <link>https://Dendrobium123.github.io/p/%E9%AD%94%E5%A5%B3%E7%9A%84%E5%A4%9C%E5%AE%B4%E7%BB%AB%E5%9C%B0%E5%AE%81%E5%AE%81%E7%BA%BF%E9%80%9A%E5%85%B3%E6%84%9F%E5%8F%97/</link>
         <pubDate>Sat, 04 Jan 2025 13:10:42 +0800</pubDate>
@@ -71,6 +78,7 @@
 &lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/image-20250107135552294.png&#34; alt=&#34;image-20250107135552294&#34; style=&#34;zoom:50%;&#34; /&gt;
 </description>
         </item>
+        
         
     </channel>
 </rss>

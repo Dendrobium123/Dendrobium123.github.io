@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>读书笔记 on </title>
+        <title>dendrobiumcgk's blog</title>
         <link>https://Dendrobium123.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
-        <description>Recent content in 读书笔记 on </description>
+        <description>希望我们都能成为更好的人</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 01 Jan 2025 13:10:42 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 01 Jan 2025 13:10:42 +0800</lastBuildDate>
+                    
+                    <image>
+                        <url>https://Dendrobium123.github.io/favicon.ico</url>
+                        <title></title>
+                        <link>https://Dendrobium123.github.io/</link>
+                    </image>
+                    <atom:link href="https://Dendrobium123.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>控制论Norbert Wiener读书笔记</title>
         <link>https://Dendrobium123.github.io/p/%E6%8E%A7%E5%88%B6%E8%AE%BAnorbert-wiener%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Wed, 01 Jan 2025 13:10:42 +0800</pubDate>
@@ -193,6 +200,7 @@ $$I(t)=Re(Ie^{jωt})=Re(I)cosωt-Im(I)sinωt$$
 在只含有电容与电感的电路中总含有一个纯的虚数，这说明电压与电流间总有90度的相位差&lt;/p&gt;
 </description>
         </item>
+        
         
     </channel>
 </rss>

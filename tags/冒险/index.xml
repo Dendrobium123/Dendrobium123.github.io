@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>冒险 on </title>
+        <title>dendrobiumcgk's blog</title>
         <link>https://Dendrobium123.github.io/tags/%E5%86%92%E9%99%A9/</link>
-        <description>Recent content in 冒险 on </description>
+        <description>希望我们都能成为更好的人</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 24 Feb 2024 20:46:50 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/%E5%86%92%E9%99%A9/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 24 Feb 2024 20:46:50 +0800</lastBuildDate>
+                    
+                    <image>
+                        <url>https://Dendrobium123.github.io/favicon.ico</url>
+                        <title></title>
+                        <link>https://Dendrobium123.github.io/</link>
+                    </image>
+                    <atom:link href="https://Dendrobium123.github.io/tags/%E5%86%92%E9%99%A9/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>我做了一个异世界的梦</title>
         <link>https://Dendrobium123.github.io/p/%E6%88%91%E5%81%9A%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BC%82%E4%B8%96%E7%95%8C%E7%9A%84%E6%A2%A6/</link>
         <pubDate>Sat, 24 Feb 2024 20:46:50 +0800</pubDate>
@@ -167,6 +174,7 @@
 &lt;p&gt;&lt;del&gt;末尾的文字来源b站up主雁老师&lt;/del&gt;&lt;/p&gt;
 </description>
         </item>
+        
         
     </channel>
 </rss>

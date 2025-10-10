@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>加缪 on </title>
+        <title>dendrobiumcgk's blog</title>
         <link>https://Dendrobium123.github.io/tags/%E5%8A%A0%E7%BC%AA/</link>
-        <description>Recent content in 加缪 on </description>
+        <description>希望我们都能成为更好的人</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 30 Dec 2024 13:10:42 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/%E5%8A%A0%E7%BC%AA/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 30 Dec 2024 13:10:42 +0800</lastBuildDate>
+                    
+                    <image>
+                        <url>https://Dendrobium123.github.io/favicon.ico</url>
+                        <title></title>
+                        <link>https://Dendrobium123.github.io/</link>
+                    </image>
+                    <atom:link href="https://Dendrobium123.github.io/tags/%E5%8A%A0%E7%BC%AA/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>《加缪笔记》读书笔记</title>
         <link>https://Dendrobium123.github.io/p/%E5%8A%A0%E7%BC%AA%E7%AC%94%E8%AE%B0%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Mon, 30 Dec 2024 13:10:42 +0800</pubDate>
@@ -27,6 +34,7 @@
 &lt;/ol&gt;
 </description>
         </item>
+        
         
     </channel>
 </rss>

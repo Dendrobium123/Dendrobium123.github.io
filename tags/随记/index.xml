@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>随记 on </title>
+        <title>dendrobiumcgk's blog</title>
         <link>https://Dendrobium123.github.io/tags/%E9%9A%8F%E8%AE%B0/</link>
-        <description>Recent content in 随记 on </description>
+        <description>希望我们都能成为更好的人</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 03 Mar 2024 13:10:42 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/%E9%9A%8F%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 03 Mar 2024 13:10:42 +0800</lastBuildDate>
+                    
+                    <image>
+                        <url>https://Dendrobium123.github.io/favicon.ico</url>
+                        <title></title>
+                        <link>https://Dendrobium123.github.io/</link>
+                    </image>
+                    <atom:link href="https://Dendrobium123.github.io/tags/%E9%9A%8F%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>中国后现代主义与网络亚文化的发展以“抽象文化”为例</title>
         <link>https://Dendrobium123.github.io/p/%E4%B8%AD%E5%9B%BD%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89%E4%B8%8E%E7%BD%91%E7%BB%9C%E4%BA%9A%E6%96%87%E5%8C%96%E7%9A%84%E5%8F%91%E5%B1%95%E4%BB%A5%E6%8A%BD%E8%B1%A1%E6%96%87%E5%8C%96%E4%B8%BA%E4%BE%8B/</link>
         <pubDate>Sun, 03 Mar 2024 13:10:42 +0800</pubDate>
@@ -64,6 +71,7 @@
 &lt;p&gt;中文互联网经历过各种非主流时期，从早年的杀马特时期，火星文时期，到如今的饭圈文化，抽象文化等。尽管他们迟早会被时间吞噬，但抽象文化作为后现代主义思潮在中国的一种具体体现，其本身将永久地改变整个中文互联网以至于改变新一代网民的思考方式。&lt;/p&gt;
 &lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/20240303134040.png&#34; style=&#34;zoom:50%;#pic_center&#34; /&gt;</description>
         </item>
+        
         
     </channel>
 </rss>

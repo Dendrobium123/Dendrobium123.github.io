@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>突然想起的事 on </title>
+        <title>dendrobiumcgk's blog</title>
         <link>https://Dendrobium123.github.io/tags/%E7%AA%81%E7%84%B6%E6%83%B3%E8%B5%B7%E7%9A%84%E4%BA%8B/</link>
-        <description>Recent content in 突然想起的事 on </description>
+        <description>希望我们都能成为更好的人</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 01 Jun 2024 13:10:42 +0800</lastBuildDate><atom:link href="https://Dendrobium123.github.io/tags/%E7%AA%81%E7%84%B6%E6%83%B3%E8%B5%B7%E7%9A%84%E4%BA%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 01 Jun 2024 13:10:42 +0800</lastBuildDate>
+                    
+                    <image>
+                        <url>https://Dendrobium123.github.io/favicon.ico</url>
+                        <title></title>
+                        <link>https://Dendrobium123.github.io/</link>
+                    </image>
+                    <atom:link href="https://Dendrobium123.github.io/tags/%E7%AA%81%E7%84%B6%E6%83%B3%E8%B5%B7%E7%9A%84%E4%BA%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>突然的想法</title>
         <link>https://Dendrobium123.github.io/p/%E7%AA%81%E7%84%B6%E7%9A%84%E6%83%B3%E6%B3%95/</link>
         <pubDate>Sat, 01 Jun 2024 13:10:42 +0800</pubDate>
@@ -36,7 +43,7 @@
 &lt;p&gt;后面的事我有点记不大清了，我只记得大渡河路好长好长好长，明明坐地铁的时候一下就坐过去了，但骑行的时候却超级折磨，导航不停地说还有5km，还有2km&amp;hellip;在普陀区和宝山区的交界时候还给我导航到一个建筑工地里了，后面又给我导航到一个地下隧道，那个时候已经接近1点了，我也处于一种迷迷糊糊的状态，我记得我还在宝山区一块没怎么开发的地上见到了类似大桥的桥墩一样的建筑，好吧，超级奇妙的感觉。&lt;/p&gt;
 &lt;p&gt;直到最后回到学校，已然到了凌晨2点，结果发现我的室友们居然没一个在睡觉，很强。&lt;/p&gt;
 &lt;p&gt;之所以相隔接近一年才记录这件事情，&lt;del&gt;纯粹是因为我懒&lt;/del&gt;，是因为突发奇想想翻以前高中用的讯飞语记，结果翻到了之前记录的各种句子，看到那句&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“&lt;em&gt;穷尽现在不欲其所无，穷尽其所有重要的不是生活的最好，而是生活得最多。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“&lt;em&gt;穷尽现在，不欲其所无，穷尽其所有。重要的不是生活的最好，而是生活得最多。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;没有任何一种命运是对人的惩罚，只要竭尽全力去穷尽它就应该是幸福的&lt;/em&gt; 。”&lt;/strong&gt;&lt;/p&gt;
 &lt;h4&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&#34;http://tuchuang.dendrobiumcgk.chat/pic/6b445ef4dce62aa8f44ed5400c0c072.png&#34;
@@ -51,6 +58,7 @@
 &gt;&lt;/p&gt;
 </description>
         </item>
+        
         
     </channel>
 </rss>
