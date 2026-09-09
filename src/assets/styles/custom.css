@@ -1,0 +1,32 @@
+/* Personal typography overrides. Keep Pure's original theme styles untouched. */
+:root {
+  --font-zh: "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+  --zh-letter-spacing: 0.025em;
+  --zh-line-height: 1.75;
+  --zh-prose-line-height: 1.9;
+}
+
+html:lang(zh-CN) body {
+  font-family: var(--font-zh);
+  line-height: var(--zh-line-height);
+  letter-spacing: var(--zh-letter-spacing);
+}
+
+html:lang(zh-CN) .prose {
+  line-height: var(--zh-prose-line-height);
+  letter-spacing: var(--zh-letter-spacing);
+}
+
+html:lang(zh-CN) .prose p,
+html:lang(zh-CN) .prose ul,
+html:lang(zh-CN) .prose ol,
+html:lang(zh-CN) .prose blockquote {
+  margin-block: 1.25em;
+}
+
+html:lang(zh-CN) code,
+html:lang(zh-CN) pre,
+html:lang(zh-CN) kbd,
+html:lang(zh-CN) samp {
+  letter-spacing: normal;
+}

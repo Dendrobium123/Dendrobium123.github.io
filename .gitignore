@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+*.log
+legacy-hugo aard
+ submissions? Wait typo.
+STA
+legacy-hugo/
+waline-astro-import.json
