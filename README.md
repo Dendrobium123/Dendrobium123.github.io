@@ -10,8 +10,8 @@ npm run dev
 npm run build
 ```
 
-- `push.bat [提交信息]`：构建、提交并推送当前源码仓库。
-- `deploy-pages.bat`：构建并将 `dist` 强制推送到 `Dendrobium123.github.io` 的 `master` 分支。
+- `push.bat [提交信息]`：一键构建，将源码推送到 `main`，并将 `dist` 发布到 GitHub Pages 的 `master`。
+- `deploy-pages.bat`：仅构建并将 `dist` 强制推送到 `Dendrobium123.github.io` 的 `master` 分支。
 - `deploy.sh`：Linux/macOS 版本的 Pages 发布脚本。
 - `fix_dates.ps1`：修复迁移后文章的紧凑日期格式。
 
@@ -24,6 +24,9 @@ git remote add origin <你的源码仓库地址>
 ## 写文章
 
 文章统一放在 `src/content/blog/`。建议每篇文章创建一个独立文件夹，并在里面新建 `index.md`；图片或附件可以放在同一个文件夹中。
+
+文件夹名称会直接成为文章 URL。请使用小写英文字母、数字和连字符，例如
+`my-new-post/index.md`；文章标题仍可在 frontmatter 的 `title` 中正常使用中文。不要再用中文、空格或 `+` 等特殊字符作为文件夹名称。
 
 `legacy-hugo/` 只是迁移时保留的旧 Hugo 站点备份，不参与当前 Astro 博客构建。确认不再需要旧站原始文件后可以删除。
 
