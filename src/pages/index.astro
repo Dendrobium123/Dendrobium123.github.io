@@ -20,7 +20,7 @@ if (!images[imagePath])
   throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif,avif,webp}"`)
 ---
 
-<PageLayout meta={{ title: 'Home' }} highlightColor='#2b194f' highlightOpacity={0.4}>
+<PageLayout meta={{ title: 'Home' }} highlightColor=''>
   <main class='flex w-full flex-col items-center'>
     <section class='animate mb-10 flex flex-col items-center gap-y-7' id='content-header'>
       <Image src={images[imagePath]()} alt={config.logo.alt || 'Profile'} class='h-28 w-auto rounded-full border p-1' loading='eager' fetchpriority='high' />
@@ -39,7 +39,7 @@ if (!images[imagePath])
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
         <p class='text-muted-foreground'>十三点，戆度，拎不清</p>
-        <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
+        <Button title='More about me' class='glass-control w-fit self-end' href='/about' variant='ahead' />
       </Section>
       {allPostsByDate.length > 0 && (
         <Section title='Posts'>
@@ -48,7 +48,7 @@ if (!images[imagePath])
               <li class='flex flex-col gap-x-2 sm:flex-row'><PostPreview post={p} /></li>
             ))}
           </ul>
-          <Button title='More posts' class='w-fit self-end' href='/blog' variant='ahead' />
+          <Button title='More posts' class='glass-control w-fit self-end' href='/blog' variant='ahead' />
         </Section>
       )}
     </div>

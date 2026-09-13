@@ -2,6 +2,7 @@
 import { Footer, Header, ThemeProvider } from 'astro-pure/components/basic'
 import type { SiteMeta } from 'astro-pure/types'
 import BaseHead from '@/components/BaseHead.astro'
+import ShaderBackground from '@/components/home/ShaderBackground.astro'
 import config from '@/site-config'
 
 // Import the global.css file here so that it is included on
@@ -13,13 +14,13 @@ import '@/assets/styles/custom.css'
 interface Props {
   meta: SiteMeta
   highlightColor?: string
-  highlightOpacity?: number
+  shaderReading?: boolean
 }
 
 const {
   meta: { articleDate, description = config.description, ogImage, title },
   highlightColor = '#659EB9',
-  highlightOpacity = 0.25,
+  shaderReading = false,
   ...props
 } = Astro.props
 ---
@@ -30,19 +31,17 @@ const {
     <ThemeProvider />
   </head>
 
-  <body class='flex justify-center bg-background text-foreground' {...props}>
-    {
-      highlightColor && (
-        <div
-          id='highlight-gradient'
-          class='pointer-events-none absolute start-0 top-0 z-0 h-screen w-full'
-          style={`opacity:${highlightOpacity};background-image:linear-gradient(${highlightColor},transparent)`}
-        />
-      )
-    }
+  <body
+    class:list={[
+      'relative isolate flex justify-center bg-background text-foreground',
+      { 'shader-reading': shaderReading }
+    ]}
+    {...props}
+  >
+    <ShaderBackground />
     <div
       id='main-container'
-      class='w-full max-w-[70rem] min-h-[100dvh] flex flex-col justify-between'
+      class='relative z-10 w-full max-w-[70rem] min-h-[100dvh] flex flex-col justify-between'
     >
       <Header />
       <div class='flex-1 w-full'>

@@ -48,7 +48,7 @@ export const integ: IntegrationUserConfig = {
   links: { logbook: [], applyTip: [], cacheAvatar: true },
   pagefind: true,
   quote: {
-    server: 'data:application/json,%22The%20world%20opens%20itself%20before%20those%20with%20noble%20hearts.%22',
+    server: 'data:application/json,%22The%20world%20open%20itself%20before%20those%20with%20noble%20hearts.%22',
     target: '(data) => data'
   },
   typography: {

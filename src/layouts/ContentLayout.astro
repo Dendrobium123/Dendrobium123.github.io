@@ -11,13 +11,14 @@ interface Props {
   highlightColor?: string
   back?: string
   backId?: string
+  shaderReading?: boolean
 }
 
 const { meta, highlightColor, back = '/', backId, ...props } = Astro.props
 ---
 
 <PageLayout {meta} {highlightColor} {...props}>
-  <Button title='Back' href={back} id={backId} variant='back' />
+  <Button title='Back' href={back} id={backId} variant='back' class='glass-control' />
   <main class='mt-6 items-start gap-x-10 md:flex'>
     {/* Sidebar */}
     <aside
