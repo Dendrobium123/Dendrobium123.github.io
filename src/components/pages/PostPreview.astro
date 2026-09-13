@@ -144,11 +144,6 @@ const postUrl = `/blog/${id}${sourceUrl ? `?from=${encodeURIComponent(sourceUrl)
   </a>
 
   <style>
-    .post-preview:hover {
-      & > a {
-        background-color: var(--glass-bg-hover) !important;
-      }
-    }
     .cover-image {
       -webkit-mask-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
       -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
