@@ -1,0 +1,1 @@
+const e={npmCDN:"https://cdn.jsdelivr.net/npm",integ:{quote:{server:"data:application/json,%22The%20world%20open%20itself%20before%20those%20with%20noble%20hearts.%22",target:"(data) => data"},waline:{server:"https://comment.dendrobiumcgk.chat/",emoji:["bmoji","weibo"],additionalConfigs:{pageview:!0,comment:!0,locale:{placeholder:"随便讲点什么~"},imageUploader:!1}}}};export{e as c};
