@@ -183,12 +183,32 @@
           host.classList.add('is-active')
           animationFrame = requestAnimationFrame(render)
 
+          const handlePageHide = (event: PageTransitionEvent) => {
+            // A page stored in the browser's back-forward cache is only frozen,
+            // not destroyed. Keep its WebGL context alive so the background can
+            // continue when the user returns with the browser Back button.
+            if (!event.persisted) cleanup()
+          }
+
+          const handlePageShow = (event: PageTransitionEvent) => {
+            if (!event.persisted || stopped) return
+
+            // Avoid treating the time spent frozen in bfcache as a slow frame,
+            // and explicitly schedule rendering again for browsers that drop a
+            // pending animation frame while the document is cached.
+            cancelAnimationFrame(animationFrame)
+            lastFrame = performance.now()
+            resize()
+            animationFrame = requestAnimationFrame(render)
+          }
+
           const cleanup = () => {
             if (stopped) return
             stopped = true
             cancelAnimationFrame(animationFrame)
             document.removeEventListener('astro:before-swap', cleanup)
-            window.removeEventListener('pagehide', cleanup)
+            window.removeEventListener('pagehide', handlePageHide)
+            window.removeEventListener('pageshow', handlePageShow)
             gl.deleteVertexArray(vertexArray)
             gl.deleteProgram(program)
             gl.getExtension('WEBGL_lose_context')?.loseContext()
@@ -199,7 +219,8 @@
 
           shaderWindow.__dendrobiumShaderCleanup = cleanup
           document.addEventListener('astro:before-swap', cleanup, { once: true })
-          window.addEventListener('pagehide', cleanup, { once: true })
+          window.addEventListener('pagehide', handlePageHide)
+          window.addEventListener('pageshow', handlePageShow)
         } else {
           console.warn('Background shader failed to link:', gl.getProgramInfoLog(program))
         }
