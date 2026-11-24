@@ -1,0 +1,14 @@
+{
+  "friends": [
+    {
+      "id_name": "common-links",
+      "desc": "Friends",
+      "link_list": [
+        { "name": "Vrchat", "intro": "A space filled with limitless possibilities.", "link": "https://hello.vrchat.com", "avatar": "https://hello.vrchat.com/favicon.ico", "avatar_cache": { "hash": "local", "path": "/avatars/vrchat.ico" } },
+        { "name": "静静的小窝", "intro": "记录自己的感受与收获", "link": "https://wznmickey.com", "avatar": "https://cdn.jsdelivr.net/gh/wznmickey/jsdeliver@images/logo.png", "avatar_cache": { "hash": "local", "path": "/avatars/wznmickey.png" } },
+        { "name": "丫明の小站", "intro": "学生党・Hentai・伪技术宅纠结体", "link": "https://www.tutugreen.com", "avatar": "https://www.tutugreen.com/favicon.png", "avatar_cache": { "hash": "local", "path": "/avatars/tutugreen.png" } }
+      ]
+    },
+    { "id_name": "inactive-links", "desc": "Inactive links", "link_list": [] }
+  ]
+}
