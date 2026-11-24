@@ -10,6 +10,7 @@ import { ArticleBottom, TOC } from 'astro-pure/components/pages'
 import config from 'virtual:config'
 import PageLayout from '@/layouts/ContentLayout.astro'
 import Hero from '@/components/pages/Hero.astro'
+import ArticleMusicPlayer from '@/components/pages/ArticleMusicPlayer.astro'
 import Copyright from '@/components/pages/Copyright.astro'
 import { Comment, PageInfo } from '@/components/waline'
 
@@ -61,6 +62,7 @@ const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--un-tex
     </Fragment>
   </Hero>
 
+  {data.music && <ArticleMusicPlayer {...data.music} />}
   <slot />
 
   <Fragment slot='bottom'>

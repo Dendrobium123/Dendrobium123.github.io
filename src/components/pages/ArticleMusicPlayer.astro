@@ -1,0 +1,318 @@
+---
+interface Props {
+  title: string
+  cover: string
+  src: string
+}
+
+const { title, cover, src } = Astro.props
+---
+
+<article-music-player class='music-player' role='group' aria-label={`音乐播放器：${title}`}>
+  <img class='cover' src={cover} alt='' width='56' height='56' decoding='async' />
+  <div class='track'>
+    <div class='title'>{title}</div>
+    <audio class='audio' controls loop preload='metadata' {src}></audio>
+    <div class='timeline' hidden>
+      <input
+        class='seek'
+        type='range'
+        min='0'
+        max='1'
+        value='0'
+        step='any'
+        aria-label='播放进度'
+        aria-valuetext='0:00'
+        disabled
+      />
+      <span class='time' aria-hidden='true'>0:00 / --:--</span>
+    </div>
+    <span class='error' role='status' hidden>音频暂时无法播放</span>
+  </div>
+  <button class='toggle' type='button' aria-label='播放' hidden>
+    <span class='play-icon' aria-hidden='true'></span>
+  </button>
+</article-music-player>
+
+<script>
+  function formatTime(seconds: number) {
+    const whole = Math.floor(seconds)
+    return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`
+  }
+
+  class ArticleMusicPlayer extends HTMLElement {
+    private listeners?: AbortController
+
+    connectedCallback() {
+      const audio = this.querySelector('audio')
+      const toggle = this.querySelector('button')
+      const seek = this.querySelector('input')
+      const timeline = this.querySelector<HTMLElement>('.timeline')
+      const time = this.querySelector<HTMLElement>('.time')
+      const error = this.querySelector<HTMLElement>('.error')
+      if (!audio || !toggle || !seek || !timeline || !time || !error) return
+
+      this.listeners = new AbortController()
+      const options = { signal: this.listeners.signal }
+
+      const updateProgress = () => {
+        const duration = audio.duration
+        const canSeek = Number.isFinite(duration) && duration > 0 && !audio.error
+        const elapsed = formatTime(audio.currentTime)
+        const total = canSeek ? formatTime(duration) : '--:--'
+        seek.disabled = !canSeek
+        seek.max = canSeek ? String(duration) : '1'
+        seek.value = String(audio.currentTime)
+        seek.style.setProperty('--played', canSeek ? `${100 * audio.currentTime / duration}%` : '0%')
+        seek.setAttribute('aria-valuetext', canSeek ? `${elapsed}，总时长 ${total}` : elapsed)
+        time.textContent = `${elapsed} / ${total}`
+      }
+
+      const updatePlayback = () => {
+        const playing = !audio.paused && !audio.ended
+        toggle.toggleAttribute('data-playing', playing)
+        toggle.setAttribute('aria-label', playing ? '暂停' : '播放')
+      }
+
+      const gestures = new AbortController()
+      const stopListeningForGestures = () => gestures.abort()
+      options.signal.addEventListener('abort', stopListeningForGestures, { once: true })
+      audio.addEventListener('play', stopListeningForGestures, { ...options, once: true })
+
+      const showError = () => {
+        stopListeningForGestures()
+        error.hidden = false
+        toggle.disabled = true
+        updateProgress()
+        updatePlayback()
+      }
+
+      const play = async () => {
+        try {
+          await audio.play()
+        } catch {
+          if (audio.error) showError()
+        }
+      }
+
+      const startFromGesture = (event: Event) => {
+        if (!event.isTrusted || !audio.paused) return
+        const target = event.target
+        if (target instanceof Node && (toggle.contains(target) || seek.contains(target))) return
+        void play()
+      }
+
+      const gestureOptions = { passive: true, signal: gestures.signal }
+      document.addEventListener('mousemove', startFromGesture, { ...gestureOptions, once: true })
+      document.addEventListener('touchmove', startFromGesture, { ...gestureOptions, once: true })
+      // Touch release or a click can unlock audio when movement alone is blocked.
+      document.addEventListener('touchend', startFromGesture, gestureOptions)
+      document.addEventListener('click', startFromGesture, gestureOptions)
+
+      toggle.addEventListener('click', () => {
+        stopListeningForGestures()
+        if (audio.paused) {
+          void play()
+        } else {
+          audio.pause()
+        }
+      }, options)
+
+      seek.addEventListener('input', () => {
+        audio.currentTime = seek.valueAsNumber
+        updateProgress()
+      }, options)
+
+      for (const event of ['loadedmetadata', 'durationchange', 'timeupdate']) {
+        audio.addEventListener(event, updateProgress, options)
+      }
+      for (const event of ['play', 'pause', 'ended']) {
+        audio.addEventListener(event, updatePlayback, options)
+      }
+      audio.addEventListener('error', showError, options)
+
+      audio.controls = false
+      audio.hidden = true
+      timeline.hidden = false
+      toggle.hidden = false
+      updateProgress()
+      updatePlayback()
+      if (audio.error) showError()
+    }
+
+    disconnectedCallback() {
+      this.listeners?.abort()
+      this.querySelector('audio')?.pause()
+    }
+  }
+
+  customElements.define('article-music-player', ArticleMusicPlayer)
+</script>
+
+<style>
+  .music-player {
+    --player-accent: hsl(var(--primary));
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(8px, 2vw, 14px);
+    inline-size: 100%;
+    max-inline-size: 25rem;
+    margin-block: 0 1.5rem;
+    padding: 10px 12px;
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    background-color: var(--glass-bg);
+    background-image: var(--glass-card-sheen);
+    color: hsl(var(--foreground));
+    box-shadow: 0 3px 12px hsl(var(--foreground) / 0.06);
+    line-height: 1.25;
+  }
+
+  .music-player [hidden] {
+    display: none;
+  }
+
+  .cover {
+    display: block;
+    inline-size: clamp(42px, 12vw, 56px);
+    block-size: auto;
+    aspect-ratio: 1;
+    margin: 0;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .title {
+    overflow-wrap: anywhere;
+    font-size: 0.875rem;
+    font-weight: 650;
+    letter-spacing: 0;
+  }
+
+  .audio {
+    display: block;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    block-size: 36px;
+    margin-block-start: 6px;
+  }
+
+  .timeline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-block-start: 4px;
+  }
+
+  .time {
+    flex: none;
+    color: hsl(var(--muted-foreground));
+    font-size: 0.6875rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .seek {
+    --played: 0%;
+    --track: linear-gradient(
+      to right,
+      var(--player-accent) 0 var(--played),
+      hsl(var(--foreground) / 0.18) var(--played) 100%
+    );
+    flex: 1;
+    appearance: none;
+    min-inline-size: 0;
+    block-size: 24px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .seek::-webkit-slider-runnable-track {
+    block-size: 3px;
+    border-radius: 99px;
+    background: var(--track);
+  }
+
+  .seek::-moz-range-track {
+    block-size: 3px;
+    border-radius: 99px;
+    background: var(--track);
+  }
+
+  .seek::-webkit-slider-thumb {
+    appearance: none;
+    inline-size: 9px;
+    block-size: 9px;
+    margin-block-start: -3px;
+    border-radius: 50%;
+    background: var(--player-accent);
+  }
+
+  .seek::-moz-range-thumb {
+    inline-size: 9px;
+    block-size: 9px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--player-accent);
+  }
+
+  .toggle {
+    display: grid;
+    place-items: center;
+    inline-size: 40px;
+    block-size: 40px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: var(--player-accent);
+    color: hsl(var(--background));
+    cursor: pointer;
+    transition: filter 150ms ease;
+  }
+
+  .toggle:hover:enabled {
+    filter: brightness(1.1);
+  }
+
+  .toggle:focus-visible,
+  .seek:focus-visible {
+    outline: 2px solid var(--player-accent);
+    outline-offset: 3px;
+  }
+
+  .toggle:disabled,
+  .seek:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  .play-icon {
+    inline-size: 12px;
+    block-size: 14px;
+    margin-inline-start: 2px;
+    background: currentColor;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+
+  .toggle[data-playing] .play-icon {
+    margin-inline-start: 0;
+    background: linear-gradient(to right, currentColor 0 33%, transparent 33% 67%, currentColor 67%);
+    clip-path: none;
+  }
+
+  .error {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.6875rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .toggle {
+      transition: none;
+    }
+  }
+</style>

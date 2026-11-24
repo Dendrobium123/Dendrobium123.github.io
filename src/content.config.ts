@@ -14,6 +14,11 @@ const blog = defineCollection({
     language: z.string().default('zh-CN'),
     draft: z.boolean().default(false),
     comment: z.boolean().default(true),
+    music: z.object({
+      title: z.string(),
+      cover: z.url(),
+      src: z.url()
+    }).optional(),
     heroImage: z.object({
       src: image(),
       alt: z.string().optional(),
