@@ -313,6 +313,26 @@
     }
   }
 
+  @media (pointer: coarse) {
+    .shader-background {
+      background-color: var(--shader-edge-color);
+    }
+
+    .shader-background::before {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      content: '';
+      background: linear-gradient(
+        to bottom,
+        var(--shader-edge-color),
+        transparent max(2.75rem, env(safe-area-inset-top)),
+        transparent calc(100% - max(2.75rem, env(safe-area-inset-bottom))),
+        var(--shader-edge-color)
+      );
+    }
+  }
+
   @media (max-width: 767px) {
     .shader-background.is-active canvas {
       opacity: 0.82;

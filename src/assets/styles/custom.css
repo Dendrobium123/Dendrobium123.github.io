@@ -4,6 +4,7 @@
   --zh-letter-spacing: 0.025em;
   --zh-line-height: 1.75;
   --zh-prose-line-height: 1.9;
+  --shader-edge-color: #b49ec7;
   --glass-bg: hsl(var(--background) / 0.46);
   --glass-card-bg: hsl(var(--background) / 0.58);
   --glass-card-sheen: linear-gradient(135deg, hsl(0 0% 100% / 0.10), hsl(0 0% 100% / 0.025));
@@ -14,6 +15,7 @@
 }
 
 .dark {
+  --shader-edge-color: #20182e;
   --glass-bg: hsl(var(--background) / 0.38);
   --glass-card-bg: hsl(var(--background) / 0.52);
   --glass-card-sheen: linear-gradient(135deg, hsl(0 0% 100% / 0.045), transparent);
@@ -21,6 +23,14 @@
   --glass-border-hover: hsl(var(--foreground) / 0.26);
   --glass-shadow: 0 14px 36px hsl(0 0% 0% / 0.24), inset 0 1px 0 hsl(0 0% 100% / 0.08);
   --glass-hover-color: hsl(var(--foreground) / 0.055);
+}
+
+/* Mobile browser controls and overscroll can show the page's solid underlay. */
+@media (pointer: coarse) {
+  :root,
+  body.bg-background {
+    background-color: var(--shader-edge-color);
+  }
 }
 
 /* Shared translucent surfaces over the animated shader background. */
